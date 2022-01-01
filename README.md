@@ -1,40 +1,60 @@
 # trojan-dining
 
-## Backend setup
+- If you haven't already, install Visual Studio Code https://code.visualstudio.com/download
 
-Install python 3.10 <link>
+- \[Windows only]: Install git 
+https://git-scm.com/download/win
 
-Enter the backend directory:
-`cd backend`
+---
+# Backend
 
-Create virtual environment:
-`python -m venv env`
+## Setup
 
-Activate virtual environment
-on Mac/linux:
-`source env/bin/activate`
+- Install python 3.10 <link>
 
-Install dependencies:
+- Enter the backend directory: `cd backend`
+
+- Create virtual environment: `python -m venv env`
+
+- Activate virtual environment:
+    - \[Mac/linux]: `source env/bin/activate`
+    - \[Windows]: `./env/bin/activate.bat`
+
+- Install dependencies:
 `pip install -r requirements.txt`
 
-Run whenever database models are changed (when in doubt run this):
-`python manage.py makemigrations`
-`python manage.py migrate`
+## Usage
 
-Run the server:
-`python manage.py runserver`
+- Always make sure to activate the virtual environment:
 
+    - \[Mac/linux]: `source env/bin/activate`
+    - \[Windows]: `./env/bin/activate.bat`
 
-## Frontend Setup
+<br/>
 
-Install Node.js https://nodejs.org/en/download/
+- Run whenever database models are changed (when in doubt run this):
+    - `python manage.py makemigrations`
+    - `python manage.py migrate`
 
-Enter frontend directory:
+- Run the server:
+    - `python manage.py runserver`
+
+- When you're done, deactivate the virtual environment `deactivate`
+
+---
+# Frontend
+
+## Setup
+
+- Install Node.js https://nodejs.org/en/download/
+
+- Enter frontend directory:
 `cd frontend`
 
-Install dependencies:
+- Install dependencies:
 `npm install`
 
-Start the frontend:
-`npm start`
+## Usage
 
+- Start the frontend:
+`npm start`
