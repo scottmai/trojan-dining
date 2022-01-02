@@ -1,6 +1,8 @@
 # trojan-dining
 
-- If you haven't already, install Visual Studio Code https://code.visualstudio.com/download
+- If you haven't already, install Visual Studio Code 
+    - https://code.visualstudio.com/download
+    - You can use whatever editor you like but I highly recommend VS Code
 
 - \[Windows only]: Install git 
 https://git-scm.com/download/win

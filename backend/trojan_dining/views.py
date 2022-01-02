@@ -9,6 +9,7 @@ from rest_framework import status
 from trojan_dining.models import MenuItem
 from trojan_dining.serializers import MenuItemSerialzer
 import getpass
+from time import sleep
 
 # some demo endpoints
 
@@ -27,5 +28,7 @@ class MenuItemList(APIView):
 
 class Username(APIView):
     def get(self, request):
+        # adding an artificial delay to look like this takes longer than it really does xD
+        sleep(5)
         user = getpass.getuser()
         return JsonResponse({"username": user})
