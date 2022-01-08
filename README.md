@@ -68,3 +68,15 @@ https://git-scm.com/download/win
 
 - Start the frontend:
 `yarn start`
+
+# Other stuff
+
+I highly recommend trying out a bunch of VS Code extensions - here is a list I stole from saytama:
+- If you're using VSCode these are the extensions I recommend:
+- Django by Baptiste Darthenay - cuz we using Django
+- Git History by Don Jayamanne - lets you see git commit history in vscode
+- GitLens by GitKraken - so you know who wrote which big brain code
+- MagicPython by MagicStack - see below
+- Pylance, Python, VS IntelliCode by Microsoft - tbh idk which is better i just have them all lol
+- Code Spell Checker by Street Side Software - helps prevent whoopsies of spelling wrong variable names
+- vscode-icons by VSCode Icons Team or Material Icon Theme by Philipp Kief (prettier icons for your code editor)
