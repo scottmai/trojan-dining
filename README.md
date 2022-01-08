@@ -12,7 +12,13 @@ https://git-scm.com/download/win
 
 ## Setup
 
-- Install python 3.10 <link>
+- Install <a href="https://www.python.org/downloads/">python 3.10</a>
+
+- Note: on Windows, run python with `python` , on Mac, run python with `python3`
+
+- Install virtualenv 
+    - [Mac/linux] `pip3 install virtualenv`
+    - [Windows] `pip install virtualenv`
 
 - Enter the backend directory: `cd backend`
 
@@ -23,7 +29,7 @@ https://git-scm.com/download/win
     - \[Windows]: `./env/bin/activate.bat`
 
 - Install dependencies:
-`pip install -r requirements.txt`
+`pip(3) install -r requirements.txt`
 
 ## Usage
 
