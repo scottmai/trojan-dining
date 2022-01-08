@@ -59,10 +59,12 @@ https://git-scm.com/download/win
 - Enter frontend directory:
 `cd frontend`
 
+- Install yarn: `npm install yarn -g`
+
 - Install dependencies:
-`npm install`
+`yarn install`
 
 ## Usage
 
 - Start the frontend:
-`npm start`
+`yarn start`
