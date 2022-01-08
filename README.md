@@ -72,7 +72,8 @@ https://git-scm.com/download/win
 # Other stuff
 
 I highly recommend trying out a bunch of VS Code extensions - here is a list I stole from saytama:
-- If you're using VSCode these are the extensions I recommend:
+
+If you're using VSCode these are the extensions I recommend:
 - Django by Baptiste Darthenay - cuz we using Django
 - Git History by Don Jayamanne - lets you see git commit history in vscode
 - GitLens by GitKraken - so you know who wrote which big brain code
