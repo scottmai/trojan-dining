@@ -23,7 +23,7 @@ https://git-scm.com/download/win
 
 - Install <a href="https://www.python.org/downloads/">python 3.10</a>
 
-- Note: on Windows, run python with `python` , on Mac, run python with `python3`
+- <b>Note: on Windows, run python with `python` , on Mac, run python with `python3`</b>
 
 - Install virtualenv 
     - [Mac/linux] `pip3 install virtualenv`
@@ -40,7 +40,9 @@ https://git-scm.com/download/win
     - \[Windows]: `./env/bin/activate.bat`
 
 - Install dependencies:
-`pip(3) install -r requirements.txt`
+    - \[Mac/linux]: `pip3 install -r requirements.txt`
+    - \[Windows]: `pip install -r requirements.txt`
+
 
 ## Usage
 
