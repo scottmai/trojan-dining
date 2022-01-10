@@ -4,8 +4,15 @@
     - https://code.visualstudio.com/download
     - You can use whatever editor you like but I highly recommend VS Code
 
+- On Windows, <b>only use Powershell for your terminal</b> (and the built-in VS Code terminal)
+
 - \[Windows only]: Install git 
 https://git-scm.com/download/win
+
+- Setup git authentication 
+    - Try this: https://docs.github.com/en/enterprise-server@3.0/authentication
+    - or this: https://bytes.usc.edu/cs104/labs/lab1/
+    - Will update with better details soon
 
 ---
 # Backend
@@ -19,6 +26,8 @@ https://git-scm.com/download/win
 - Install virtualenv 
     - [Mac/linux] `pip3 install virtualenv`
     - [Windows] `pip install virtualenv`
+
+- Clone this repo: `git clone https://github.com/scottmai/trojan-dining.git`
 
 - Enter the backend directory: `cd backend`
 
