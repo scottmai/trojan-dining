@@ -12,7 +12,8 @@
 https://git-scm.com/download/win
 
 - Setup git authentication 
-    - Try this: https://docs.github.com/en/enterprise-server@3.0/authentication
+    - Try the HTTP section here: https://statistics.berkeley.edu/computing/faqs/git-auth#SSH%20keys
+    - or this: https://docs.github.com/en/enterprise-server@3.0/authentication
     - or this: https://bytes.usc.edu/cs104/labs/lab1/
     - Will update with better details soon
 
