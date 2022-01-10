@@ -25,6 +25,7 @@ https://git-scm.com/download/win
 - Install <a href="https://www.python.org/downloads/">python 3.10</a>
 
 - <b>Note: on Windows, run python with `python` , on Mac, run python with `python3`</b>
+    - Same goes for pip - on windows, use `pip` , on Mac, use `pip3`
 
 - Install virtualenv 
     - [Mac/linux] `pip3 install virtualenv`
