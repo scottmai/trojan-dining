@@ -51,7 +51,7 @@ https://git-scm.com/download/win
 - Always make sure to activate the virtual environment:
 
     - \[Mac/linux]: `source env/bin/activate`
-    - \[Windows]: `./env/bin/activate.bat`
+    - \[Windows]: `./env/Scripts/activate.bat`
 
 <br/>
 
