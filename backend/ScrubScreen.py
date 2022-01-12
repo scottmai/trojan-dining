@@ -118,13 +118,13 @@ def ScrubScreen(Date):
 
 
 # some testing code
-''' 
 
-today = datetime.datetime.now() + datetime.timedelta(1)
+
+today = datetime.datetime.now() + datetime.timedelta()
 todaysMenu = ScrubScreen(today)
 
 print(todaysMenu)
-for time in todaysMenu.MealTime:
+for time in todaysMenu.MealTimes:
     print("\t" + str(time))
     for hall in time.DiningHalls:
         print("\t\t"+str(hall))
@@ -135,4 +135,4 @@ for time in todaysMenu.MealTime:
                 for allergen in food.Allergens:
                     print("\t\t\t\t\t"+str(allergen))
 
-                    '''
+                  
