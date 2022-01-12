@@ -133,6 +133,3 @@ if __name__ == "__main__" :
                     for allergen in food.Allergens:
                         print("\t\t\t\t\t"+str(allergen))
 
-
-
-# some testing code
