@@ -116,23 +116,23 @@ def ScrubScreen(Date):
     # returns the overall menu of the day
     return Menu
 
+if __name__ == "__main__" :
+    #test on today
+    today = datetime.datetime.now() + datetime.timedelta()
+    todaysMenu = ScrubScreen(today)
+
+    print(todaysMenu)
+    for time in todaysMenu.MealTimes:
+        print("\t" + str(time))
+        for hall in time.DiningHalls:
+            print("\t\t"+str(hall))
+            for station in hall.Stations:
+                print("\t\t\t"+str(station))
+                for food in station.MenuItems:
+                    print("\t\t\t\t"+str(food))
+                    for allergen in food.Allergens:
+                        print("\t\t\t\t\t"+str(allergen))
+
+
 
 # some testing code
-
-
-today = datetime.datetime.now() + datetime.timedelta()
-todaysMenu = ScrubScreen(today)
-
-print(todaysMenu)
-for time in todaysMenu.MealTimes:
-    print("\t" + str(time))
-    for hall in time.DiningHalls:
-        print("\t\t"+str(hall))
-        for station in hall.Stations:
-            print("\t\t\t"+str(station))
-            for food in station.MenuItems:
-                print("\t\t\t\t"+str(food))
-                for allergen in food.Allergens:
-                    print("\t\t\t\t\t"+str(allergen))
-
-                  
