@@ -101,11 +101,7 @@ def ScrubScreen(Date):
                             text=True, recursive=False)
                         # get all the allergens for that food item
                         Allergens_HTML = menuItem.find_all("i")
-                        ListOfAllergens = []
-                        for allergen in Allergens_HTML:  # add all the allergens for the food items
-                            AllergenName = allergen.find("span").text
-    # nest the lists inside eachother
-                            ListOfAllergens.append(Allergen(AllergenName))
+                        ListOfAllergens = [allergen.find("span").text for allergen in Allergens_HTML]
                         ListOfMenuItems.append(
                             MenuItem(MenuItemName, ListOfAllergens))
                 ListOfStations.append(Station(StationName, ListOfMenuItems))
