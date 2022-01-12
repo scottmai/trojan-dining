@@ -80,9 +80,9 @@ def ScrubScreen(Date):
         # make a new list of all the dining halls in a block
         DiningHalls_HTML = block.find_all("div", class_="col-sm-6 col-md-4")
         ListOfDiningHalls = []
+
         for Hall in DiningHalls_HTML:
             DiningHallName = Hall.find("h3", class_="menu-venue-title").text
-
             Station_Names_HTML = Hall.find_all("h4")
             # the list of foods is a bunch of lists not under stations but under DiningHalls so have to get a list of foods in each stations here
             MenuItems_ListList = Hall.find_all("ul")
@@ -116,9 +116,10 @@ def ScrubScreen(Date):
     # returns the overall menu of the day
     return Menu
 
-if __name__ == "__main__" :
-    #test on today
-    today = datetime.datetime.now() 
+
+if __name__ == "__main__":
+    # test on today
+    today = datetime.datetime.now()
     todaysMenu = ScrubScreen(today)
 
     print(todaysMenu)
@@ -132,4 +133,3 @@ if __name__ == "__main__" :
                     print("\t\t\t\t"+str(food))
                     for allergen in food.Allergens:
                         print("\t\t\t\t\t"+str(allergen))
-
