@@ -118,7 +118,7 @@ def ScrubScreen(Date):
 
 if __name__ == "__main__" :
     #test on today
-    today = datetime.datetime.now() + datetime.timedelta()
+    today = datetime.datetime.now() 
     todaysMenu = ScrubScreen(today)
 
     print(todaysMenu)
