@@ -45,6 +45,10 @@ https://git-scm.com/download/win
     - \[Mac/linux]: `pip3 install -r requirements.txt`
     - \[Windows]: `pip install -r requirements.txt`
 
+- If you install any new packages, make sure you activate your virtual environment first and then update the `requirements.txt` file with the new dependencies afterwards. This can be performed with the following command:
+    - \[Mac/linux]: `pip3 freeze -r requirements.txt`
+    - \[Windows]: `pip freeze -r requirements.txt`
+
 
 ## Usage
 
