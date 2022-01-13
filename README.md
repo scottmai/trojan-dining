@@ -1,4 +1,7 @@
-# trojan-dining
+# Trojan Dining
+This is a redesign of the USC Hospitality daily Dining Hall Menu, optimized for the mobile web experience. It will also allow users to subscribe to notifications for their favorite items. 
+
+Built by a TCSS 401x team :)
 
 # Setup Instructions
 
