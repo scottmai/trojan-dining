@@ -58,7 +58,7 @@ class Allergen:
 
 # 3 dining halls each with x stations. each station has x foodItems
 
-def ScrubScreen(Date):
+def ScrubWeb(Date):
     # convert date into url
     month = Date.strftime("%B")
     day = Date.strftime("%d")
@@ -92,7 +92,7 @@ def ScrubScreen(Date):
                 StationName = Station_Names_HTML[i].text  # station name
                 ListOfMenuItems = []
                 # when theres no items program bugs out; my workaround
-                if(StationName != "No items to display for this date"):
+                if StationName != "No items to display for this date":
                     MenuItems_HTML = MenuItems_ListList[i].find_all(
                         "li")  # find all the food items
                     for menuItem in MenuItems_HTML:  # iterate through all the food
@@ -116,7 +116,7 @@ def ScrubScreen(Date):
 if __name__ == "__main__":
     # test on today
     today = datetime.datetime.now()
-    todaysMenu = ScrubScreen(today)
+    todaysMenu = ScrubWeb(today)
 
     print(todaysMenu)
     for time in todaysMenu.MealTimes:
