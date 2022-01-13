@@ -68,6 +68,7 @@ https://git-scm.com/download/win
 
 - Run the server:
     - `python manage.py runserver`
+    - Note: if you receive a `ModuleNotFoundError: No module named '<module-name>'`, try updating your dependencies with the `pip install -r ...` instructions above 
 
 - When you're done, deactivate the virtual environment `deactivate`
 
