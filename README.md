@@ -55,10 +55,10 @@ https://git-scm.com/download/win
 
 ## Usage
 
-- Always make sure to activate the virtual environment:
+- Always make sure to activate the virtual environment when working in the backend:
 
     - \[Mac/linux]: `source env/bin/activate`
-    - \[Windows]: `./env/Scripts/activate.bat`
+    - \[Windows]: `./env/Scripts/activate`
 
 <br/>
 
