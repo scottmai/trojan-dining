@@ -42,7 +42,7 @@ https://git-scm.com/download/win
 
 - Activate virtual environment:
     - \[Mac/linux]: `source env/bin/activate`
-    - \[Windows]: `./env/bin/activate`
+    - \[Windows]: `./env/Scripts/activate`
 
 - Install dependencies:
     - \[Mac/linux]: `pip3 install -r requirements.txt`
