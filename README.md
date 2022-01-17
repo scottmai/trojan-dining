@@ -27,9 +27,6 @@ https://git-scm.com/download/win
 
 - Install <a href="https://www.python.org/downloads/">python 3.10</a>
 
-- <b>Note: on Windows, run python with `python` , on Mac, run python with `python3`</b>
-    - Same goes for pip - on windows, use `pip` , on Mac, use `pip3`
-
 - Install virtualenv 
     - [Mac/linux] `pip3 install virtualenv`
     - [Windows] `pip install virtualenv`
@@ -44,13 +41,9 @@ https://git-scm.com/download/win
     - \[Mac/linux]: `source env/bin/activate`
     - \[Windows]: `./env/Scripts/activate`
 
-- Install dependencies:
-    - \[Mac/linux]: `pip3 install -r requirements.txt`
-    - \[Windows]: `pip install -r requirements.txt`
+- Install dependencies: `pip3 install -r requirements.txt`
 
-- If you install any new packages, make sure you activate your virtual environment first and then update the `requirements.txt` file with the new dependencies afterwards. This can be performed with the following command:
-    - \[Mac/linux]: `pip3 freeze > requirements.txt`
-    - \[Windows]: `pip freeze > requirements.txt`
+- If you install any new packages, make sure you activate your virtual environment first and then update the `requirements.txt` file with the new dependencies afterwards. This can be performed with the following command: `pip freeze > requirements.txt`
 
 
 ## Usage
