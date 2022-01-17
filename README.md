@@ -21,6 +21,24 @@ https://git-scm.com/download/win
     - Will update with better details soon
 
 ---
+
+# MongoDB Database
+We are using a popular database called MongoDB for this project. MongoDB is notable for being a NoSQL database, differing from the traditional SQL table format with "SELECT * FROM ..." queries. NoSQL is preferred here due to the heavily nested menu data type it will be storing, as well as general flexibility for future use cases.
+
+## Installation
+### MacOS
+1. All instruction are on <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/">here</a> - I recommend using this over the instructions below if anything doesn't work. Here's the shortened version:
+2. Install <a href="https://brew.sh/#install">Homebrew</a> 
+3. Run `brew tap mongodb/brew`
+4. Run `brew install mongodb-community@5.0`
+5. To run the database server: `brew services start mongodb-community@5.0`
+6. To kill the database server: `brew services start mongodb-community@5.0`
+
+### Windows
+1. https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+2. Pending
+
+
 # Backend
 
 ## Setup
@@ -48,6 +66,8 @@ https://git-scm.com/download/win
 
 ## Usage
 
+- Start the database: `brew services start mongodb-community@5.0`
+
 - Always make sure to activate the virtual environment when working in the backend:
 
     - \[Mac/linux]: `source env/bin/activate`
@@ -64,6 +84,8 @@ https://git-scm.com/download/win
     - Note: if you receive a `ModuleNotFoundError: No module named '<module-name>'`, try updating your dependencies with the `pip install -r ...` instructions above 
 
 - When you're done, deactivate the virtual environment `deactivate`
+
+- And kill the database: `brew services start mongodb-community@5.0`
 
 ---
 # Frontend
