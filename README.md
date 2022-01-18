@@ -66,6 +66,7 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 
 
 ## Usage
+:)
 
 - Start the database: 
   - [Mac] `brew services start mongodb-community@5.0`
