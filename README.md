@@ -36,7 +36,10 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 
 ### Windows
 1. https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
-2. Pending
+2. Download MongoDB installer from <a href="https://www.mongodb.com/try/download/community?tck=docs_server">here.</a>
+3. Run installer, do not check option for "Install MongoDB as a service", you may wish to install MongoDB compass for a graphical interface but its not necessary.
+4.  You may need to restart you computer here ;.;
+5. Start the server (`Ctrl-C` to quit) (you must keep this terminal window open for as long as you want the server to run): ` . "C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath=".db"` (VS Code terminal windows are your friend!!!)
 
 
 # Backend
@@ -48,8 +51,6 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 - Install virtualenv 
     - [Mac/linux] `pip3 install virtualenv`
     - [Windows] `pip install virtualenv`
-
-- Clone this repo: `git clone https://github.com/scottmai/trojan-dining.git`
 
 - Enter the backend directory: `cd backend`
 
@@ -66,8 +67,12 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 
 ## Usage
 
-- Start the database: `brew services start mongodb-community@5.0`
-
+- Start the database: 
+  - [Mac] `brew services start mongodb-community@5.0`
+  - [Windows] `"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath=".db"`
+    - Note: This *must* be performed from the root directory, *not* `backend`
+    
+- Enter the backend directory: `cd backend`
 - Always make sure to activate the virtual environment when working in the backend:
 
     - \[Mac/linux]: `source env/bin/activate`
