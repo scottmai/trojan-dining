@@ -8,13 +8,11 @@ import json
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 class DailyMenu:
-    def __init__(self, date, MealTime):
-        self.date = date
+    def __init__(self, MealTime):
         self.MealTimes = MealTime
 
     def __str__(self):
         return str(self.date.month) + "/"+str(self.date.day) + "/" + str(self.date.year)
-
 
 class MealTime:
     def __init__(self, name, DiningHalls):
@@ -23,8 +21,6 @@ class MealTime:
 
     def __str__(self):
         return self.name
-
-
 class DiningHall:
     def __init__(self, name, Stations):
         self.name = name
@@ -33,7 +29,6 @@ class DiningHall:
     def __str__(self):
         return self.name
 
-
 class Station:
     def __init__(self, name, MenuItems):
         self.name = name
@@ -41,7 +36,6 @@ class Station:
 
     def __str__(self):
         return self.name
-
 
 class MenuItem:
     def __init__(self, name, Allergens):
@@ -59,7 +53,6 @@ class Allergen:
     def __str__(self):
         return self.name
 
-
 # 3 dining halls each with x stations. each station has x foodItems
 
 def ScrubWeb(Date):
@@ -73,10 +66,20 @@ def ScrubWeb(Date):
     html_text = req.get(url).text
     # make it into soup
     soup = BeautifulSoup(html_text, "lxml")
+    return MakeMenu(soup)
+    
+def ScrubHTML(file_name):
+    # convert date into url
+    with open(file_name, "r") as ifile:
+        html_text = ifile.read()
+        # make it into soup
+        soup = BeautifulSoup(html_text, "lxml")
+        return MakeMenu(soup)
+
+def MakeMenu(soup):
     # get all meal blocks (brkfast, lunch, dinner etc)
     MealTimes_HTML = soup.find_all("div", class_="hsp-accordian-container")
     ListOfMealTime = []
-
     for block in MealTimes_HTML:  # loop through all the meal blocks
         # find the name of the block
         MealTimeName = block.find(
@@ -112,15 +115,13 @@ def ScrubWeb(Date):
             ListOfDiningHalls.append(DiningHall(
                 DiningHallName, ListOfStations))
         ListOfMealTime.append(MealTime(MealTimeName, ListOfDiningHalls))
-    Menu = DailyMenu(Date, ListOfMealTime)
+    Menu = DailyMenu( ListOfMealTime)
     # returns the overall menu of the day
     return Menu
 
 def MenuToDict(Menu):
     TimeList = []
-
     for time in Menu.MealTimes:
-
         TimeDict = {}
         HallList = []
         for hall in time.DiningHalls:
@@ -148,7 +149,6 @@ def MenuToDict(Menu):
         TimeList.append(TimeDict)   
     return TimeList
 
-
 def MenuToTxt(todaysMenu):
     output_file_name = "output.txt"
     with open(os.path.join(__location__, output_file_name), "a") as out:
@@ -164,10 +164,17 @@ def MenuToTxt(todaysMenu):
                         for allergen in food.Allergens:
                             out.write("\t\t\t\t\t"+str(allergen)+"\n")
 
+def MenuToJson(Menu):
+    return json.dumps(MenuToDict(Menu), ensure_ascii=False, indent=4)                  
+
+def MenuOutputJson(Menu, OutputFile):
+        ExperimentalJson = MenuToJson(Menu)
+        with open(OutputFile, "w") as ExperimentalOutput:
+            ExperimentalOutput.write(ExperimentalJson)
+
 if __name__ == "__main__":
     # test on today
     today = datetime.datetime.now()
-    todaysMenu = ScrubWeb(today)
-    Menu = MenuToDict(todaysMenu)
-    with open('json.txt', 'w') as json_file:
-        json.dump(Menu, json_file, indent = 4,)
+    Menu = ScrubHTML("test_htmls//winter_break.html")
+    JsonMenu = MenuToJson(Menu)
+
