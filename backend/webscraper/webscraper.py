@@ -1,8 +1,12 @@
+import os
+from typing import List
 from bs4 import BeautifulSoup
 import requests as req
 import datetime
+import json
 
-
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
 class DailyMenu:
     def __init__(self, date, MealTime):
         self.date = date
@@ -112,20 +116,57 @@ def ScrubWeb(Date):
     # returns the overall menu of the day
     return Menu
 
+def MenuToDict(Menu):
+    TimeList = []
+
+    for time in Menu.MealTimes:
+
+        TimeDict = {}
+        HallList = []
+        for hall in time.DiningHalls:
+            HallDict = {}
+            StationList = []
+            for station in hall.Stations:
+                StationDict = {}
+                FoodList = []
+                for food in station.MenuItems:
+                    AllergensList = []
+                    FoodDict = {}
+                    for allergen in food.Allergens:
+                        AllergensList.append(str(allergen))
+                    FoodDict["name"] = str(food)
+                    FoodDict["allergens"] = AllergensList
+                    FoodList.append(FoodDict)
+                StationDict["name"] = str(station)
+                StationDict["items"] = FoodList
+                StationList.append(StationDict)
+            HallDict["name"] = str(hall)
+            HallDict["stations"] = StationList
+            HallList.append(HallDict)
+        TimeDict["name"] = str(time)
+        TimeDict["dining_halls"]=HallList
+        TimeList.append(TimeDict)   
+    return TimeList
+
+def MenuToTxt(todaysMenu):
+    output_file_name = "output.txt"
+    with open(os.path.join(__location__, output_file_name), "a") as out:
+        out.write(str(todaysMenu) + "\n")
+        for time in todaysMenu.MealTimes:
+            out.write("\t" + str(time) + "\n")
+            for hall in time.DiningHalls:
+                out.write("\t\t"+str(hall) + "\n")
+                for station in hall.Stations:
+                    out.write("\t\t\t"+str(station) + "\n")
+                    for food in station.MenuItems:
+                        out.write("\t\t\t\t"+str(food) + "\n")
+                        for allergen in food.Allergens:
+                            out.write("\t\t\t\t\t"+str(allergen)+"\n")
 
 if __name__ == "__main__":
     # test on today
     today = datetime.datetime.now()
     todaysMenu = ScrubWeb(today)
-
-    print(todaysMenu)
-    for time in todaysMenu.MealTimes:
-        print("\t" + str(time))
-        for hall in time.DiningHalls:
-            print("\t\t"+str(hall))
-            for station in hall.Stations:
-                print("\t\t\t"+str(station))
-                for food in station.MenuItems:
-                    print("\t\t\t\t"+str(food))
-                    for allergen in food.Allergens:
-                        print("\t\t\t\t\t"+str(allergen))
+    Menu = MenuToDict(todaysMenu)
+    with open('json.txt', 'w') as json_file:
+        json.dump(Menu, json_file, indent = 4,)
