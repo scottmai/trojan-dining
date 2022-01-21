@@ -8,7 +8,6 @@ import json
 import webscraper
 
 
-
 prg = "./webscraper.py"
 
 normal_weekday_html = "test_htmls//normal_weekday.html"
@@ -17,18 +16,21 @@ winter_break_html = "test_htmls/winter_break.html"
 normal_weekday_json = "test_expected_values/normal_weekday.json"
 normal_weekend_json = "test_expected_values/normal_weekend.json"
 winter_break_json = "test_expected_values/winter_break.json"
-#----------------------------------------------
+# ----------------------------------------------
+
+
 class Test(unittest.TestCase):
     bs = None
+
     def testNormalWeekday(self):
-        Menu = webscraper.ScrubHTML(normal_weekday_html) #experimental menu
+        Menu = webscraper.ScrubHTML(normal_weekday_html)  # experimental menu
         webscraper.MenuOutputJson(Menu, "output.json")
         with open(normal_weekday_json) as jsonFile:
             HardCoded = json.load(jsonFile)
         with open("output.json", "r") as i:
             ExperimentalJson = json.load(i)
+        print("testing Normal Weekday...")
         self.assertEqual(HardCoded, ExperimentalJson)
-
 
     def testNormalWeekend(self):
         Menu = webscraper.ScrubHTML(normal_weekend_html)
@@ -37,8 +39,8 @@ class Test(unittest.TestCase):
             HardCoded = json.load(jsonFile)
         with open("output.json", "r") as i:
             ExperimentalJson = json.load(i)
+        print("testing Normal Weekend...")
         self.assertEqual(HardCoded, ExperimentalJson)
-
 
     def testWinterBreak(self):
         Menu = webscraper.ScrubHTML(winter_break_html)
@@ -47,14 +49,10 @@ class Test(unittest.TestCase):
             HardCoded = json.load(jsonFile)
         with open("output.json", "r") as i:
             ExperimentalJson = json.load(i)
+        print("testing Normal Weekend...")
         self.assertEqual(HardCoded, ExperimentalJson)
-        
 
 
-
-
-#----------------------------------------------
-
-
+# ----------------------------------------------
 if __name__ == '__main__':
     unittest.main()
