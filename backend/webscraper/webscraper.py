@@ -148,6 +148,7 @@ def MenuToDict(Menu):
         TimeList.append(TimeDict)   
     return TimeList
 
+
 def MenuToTxt(todaysMenu):
     output_file_name = "output.txt"
     with open(os.path.join(__location__, output_file_name), "a") as out:
