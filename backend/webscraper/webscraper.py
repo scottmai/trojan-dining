@@ -4,10 +4,7 @@ from bs4 import BeautifulSoup
 import requests as req
 import datetime
 import json
-
-__location__ = os.path.realpath(
-    os.path.join(os.getcwd(), os.path.dirname(__file__)))
-
+#for when comma
 
 class DailyMenu:
     def __init__(self, MealTime):

@@ -8,6 +8,7 @@ import json
 import webscraper
 
 
+
 prg = "./webscraper.py"
 
 normal_weekday_html = "test_htmls//normal_weekday.html"
@@ -19,8 +20,12 @@ winter_break_json = "test_expected_values/winter_break.json"
 # ----------------------------------------------
 
 
+def DeleteFile(file):
+    if os.path.exists(file):
+        os.remove(file)
+    else:
+        print(file)  
 class Test(unittest.TestCase):
-    bs = None
 
     def testNormalWeekday(self):
         Menu = webscraper.ScrubHTML(normal_weekday_html)  # experimental menu
@@ -31,6 +36,8 @@ class Test(unittest.TestCase):
             ExperimentalJson = json.load(i)
         print("testing Normal Weekday...")
         self.assertEqual(HardCoded, ExperimentalJson)
+        DeleteFile("output.json")
+      
 
     def testNormalWeekend(self):
         Menu = webscraper.ScrubHTML(normal_weekend_html)
@@ -41,6 +48,7 @@ class Test(unittest.TestCase):
             ExperimentalJson = json.load(i)
         print("testing Normal Weekend...")
         self.assertEqual(HardCoded, ExperimentalJson)
+        DeleteFile("output.json")
 
     def testWinterBreak(self):
         Menu = webscraper.ScrubHTML(winter_break_html)
@@ -51,8 +59,9 @@ class Test(unittest.TestCase):
             ExperimentalJson = json.load(i)
         print("testing Normal Weekend...")
         self.assertEqual(HardCoded, ExperimentalJson)
-
+        DeleteFile("output.json")
 
 # ----------------------------------------------
 if __name__ == '__main__':
     unittest.main()
+
