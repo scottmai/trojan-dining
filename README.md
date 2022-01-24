@@ -21,6 +21,27 @@ https://git-scm.com/download/win
     - Will update with better details soon
 
 ---
+
+# MongoDB Database
+We are using a popular database called MongoDB for this project. MongoDB is notable for being a NoSQL database, differing from the traditional SQL table format with "SELECT * FROM ..." queries. NoSQL is preferred here due to the heavily nested menu data type it will be storing, as well as general flexibility for future use cases.
+
+## Installation
+### MacOS
+1. All instruction are on <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/">here</a> - I recommend using this over the instructions below if anything doesn't work. Here's the shortened version:
+2. Install <a href="https://brew.sh/#install">Homebrew</a> 
+3. Run `brew tap mongodb/brew`
+4. Run `brew install mongodb-community@5.0`
+5. To run the database server: `brew services start mongodb-community@5.0`
+6. To kill the database server: `brew services start mongodb-community@5.0`
+
+### Windows
+1. https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+2. Download MongoDB installer from <a href="https://www.mongodb.com/try/download/community?tck=docs_server">here.</a>
+3. Run installer, do not check option for "Install MongoDB as a service", you may wish to install MongoDB compass for a graphical interface but its not necessary.
+4.  You may need to restart you computer here ;.;
+5. Start the server (`Ctrl-C` to quit) (you must keep this terminal window open for as long as you want the server to run): ` . "C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath=".db"` (VS Code terminal windows are your friend!!!)
+
+
 # Backend
 
 ## Setup
@@ -30,8 +51,6 @@ https://git-scm.com/download/win
 - Install virtualenv 
     - [Mac/linux] `pip3 install virtualenv`
     - [Windows] `pip install virtualenv`
-
-- Clone this repo: `git clone https://github.com/scottmai/trojan-dining.git`
 
 - Enter the backend directory: `cd backend`
 
@@ -48,6 +67,12 @@ https://git-scm.com/download/win
 
 ## Usage
 
+- Start the database in a separate terminal:  
+  - [Mac] `brew services start mongodb-community@5.0`
+  - [Windows] `"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath=".db"`
+    - Note: This *must* be performed from the root directory, *not* `backend`
+    
+- Enter the backend directory: `cd backend`
 - Always make sure to activate the virtual environment when working in the backend:
 
     - \[Mac/linux]: `source env/bin/activate`
@@ -65,6 +90,8 @@ https://git-scm.com/download/win
 
 - When you're done, deactivate the virtual environment `deactivate`
 
+- And kill the database: `brew services start mongodb-community@5.0`
+
 ---
 # Frontend
 
@@ -80,11 +107,16 @@ https://git-scm.com/download/win
 - Install dependencies:
 `yarn install`
 
+- Install json-server:
+`yarn add json-server`
+
 ## Usage
 
 - Start the frontend:
 `yarn start`
 
+- Run the mock API:
+`yarn json-server db.json -p 8000 --watch`
 # Other stuff
 
 I highly recommend trying out a bunch of VS Code extensions - here is a list I stole from saytama:
