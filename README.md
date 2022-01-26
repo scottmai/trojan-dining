@@ -107,8 +107,6 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 - Install dependencies:
 `yarn install`
 
-- Install json-server:
-`yarn add json-server`
 
 ## Usage
 
