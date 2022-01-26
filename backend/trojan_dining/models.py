@@ -34,6 +34,8 @@ class Meal(models.Model):
 
 class Menu(models.Model):
         meals = models.ArrayField(model_container = Meal)
+        
+        objects = models.DjongoManager()
     
 class MenuItem(models.Model):
     _id = models.ObjectIdField()
