@@ -60,9 +60,18 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
     - \[Mac/linux]: `source env/bin/activate`
     - \[Windows]: `./env/Scripts/activate`
 
-- Install dependencies: `pip3 install -r requirements.txt`
+- Install dependencies: `pip install -r requirements.txt`
 
 - If you install any new packages, make sure you activate your virtual environment first and then update the `requirements.txt` file with the new dependencies afterwards. This can be performed with the following command: `pip freeze > requirements.txt`
+
+- Setup Pylint with VSCode
+    - Open your command palette (F1 or cmd/ctrl + shift + P)
+    - Type "Python: Select Linter"
+    - Select "Pylint"
+    - Now, enable autoformatting by typing/selecting "Preferences: Open Settings (JSON)"
+    - Find "[python]"
+    - Add/update a field with `"editor.formatOnSave": false`
+    - Save the settings.json file
 
 
 ## Usage
