@@ -83,7 +83,10 @@ DATABASES = {
         'NAME': 'trojan-dining',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb://127.0.0.1:27017/',
+                'host': 'mongodb+srv://cluster0.xfi24.mongodb.net/trojan-dining?retryWrites=true&w=majority',
+                'username': 'username',
+                'password': 'PGSlLTJJu6RpE85z',
+                'authMechanism': 'SCRAM-SHA-1',
         }
     }
 }
