@@ -9,6 +9,7 @@ def save_menu (date):
     retrieved_menu = ScrubWeb(date)
     dict_menu = MenuToDict(retrieved_menu)
     menu_doc = Menu()
+    print(dict_menu)
     menu_doc.meals = dict_menu
     menu_doc.save()
 

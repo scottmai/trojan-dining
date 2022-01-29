@@ -27,7 +27,7 @@ class DiningHall(models.Model):
 
 class Meal(models.Model):
     name = models.CharField(max_length = 50)
-    dining_halls = models.EmbeddedField(model_container = DiningHall) 
+    dining_halls = models.ArrayField(model_container = DiningHall) 
 
     class Meta:
         abstract = True
@@ -35,10 +35,7 @@ class Meal(models.Model):
 class Menu(models.Model):
         meals = models.ArrayField(model_container = Meal)
         
-        objects = models.DjongoManager()
-    
 class MenuItem(models.Model):
-    _id = models.ObjectIdField()
     name = models.CharField(max_length = 100)
     allergens = models.ArrayField(model_container=Allergen)
 
