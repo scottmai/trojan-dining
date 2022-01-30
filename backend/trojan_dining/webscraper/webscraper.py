@@ -143,7 +143,7 @@ def MenuToDict(Menu):
                     AllergensList = []
                     FoodDict = {}
                     for allergen in food.Allergens:
-                        AllergensList.append(str(allergen))
+                        AllergensList.append({'name': str(allergen)})
                     FoodDict["name"] = str(food)
                     FoodDict["allergens"] = AllergensList
                     FoodList.append(FoodDict)
