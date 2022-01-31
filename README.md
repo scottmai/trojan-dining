@@ -114,7 +114,7 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 `yarn start`
 
 - Run the mock API:
-`yarn json-server db.json -p 8000 --watch`
+`npx json-server db.json -p 8000 --watch`
 # Other stuff
 
 I highly recommend trying out a bunch of VS Code extensions - here is a list I stole from saytama:
