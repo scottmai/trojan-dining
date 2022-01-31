@@ -78,7 +78,7 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 
 - Start the database in a separate terminal:  
   - [Mac] `brew services start mongodb-community@5.0`
-  - [Windows] `"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath=".db"`
+  - [Windows] ` . "C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath=".db"`
     - Note: This *must* be performed from the root directory, *not* `backend`
     
 - Enter the backend directory: `cd backend`
