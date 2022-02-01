@@ -1,7 +1,8 @@
 # from django.db import models
 from djongo import models
+ 
 
-# wrapper for allergen stringsneeded because Mongo refuses to directly persist strings stored in MetaMenuItem's Allergen List
+# wrapper for allergen strings needed because Mongo refuses to directly persist strings stored in MetaMenuItem's Allergen List
 class Allergen(models.Model):
     name = models.CharField(max_length=50)
     class Meta:
@@ -39,7 +40,11 @@ class Meal(models.Model):
 
 # model representative of menu
 class Menu(models.Model):
+        # for queries
+        created_at = models.DateField(auto_now_add=True)
         meals = models.ArrayField(model_container = Meal)
+
+        objects = models.DjongoManager()
         
 # used to actually persist the menu
 class MenuItem(models.Model):

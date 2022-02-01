@@ -5,12 +5,17 @@ import datetime
 from trojan_dining.webscraper.webscraper import ScrubWeb, MenuToDict
 import json
 
+# function to persist a scrubbed menu to the database
 def save_menu (date):
+    # get the menu
     retrieved_menu = ScrubWeb(date)
+    # convert the menu to a dict
     dict_menu = MenuToDict(retrieved_menu)
-    print(dict_menu)
+    # create menu document
     menu_doc = Menu()
+    # populate it's meals attribute
     menu_doc.meals = dict_menu
+    # Just add water (persist the menu to the database)
     menu_doc.save()
 
     for meal_time in dict_menu:
