@@ -8,6 +8,7 @@ import json
 def save_menu (date):
     retrieved_menu = ScrubWeb(date)
     dict_menu = MenuToDict(retrieved_menu)
+    print(dict_menu)
     menu_doc = Menu()
     menu_doc.meals = dict_menu
     menu_doc.save()
