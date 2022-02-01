@@ -1,5 +1,3 @@
-import os
-from typing import List
 from bs4 import BeautifulSoup
 import requests as req
 import datetime
@@ -7,11 +5,10 @@ import json
 #for when comma
 
 class DailyMenu:
-    def __init__(self, MealTime):
-        self.MealTimes = MealTime
+    def __init__(self, MealTime_):
+        self.MealTimes = MealTime_
 
-    def __str__(self):
-        return str(self.date.month) + "/"+str(self.date.day) + "/" + str(self.date.year)
+
 
 
 class MealTime:
@@ -76,7 +73,7 @@ def ScrubWeb(Date):
 
 def ScrubHTML(file_name):
     # convert date into url
-    with open(file_name, "r") as ifile:
+    with open(file_name, "r",) as ifile:
         html_text = ifile.read()
         # make it into soup
         soup = BeautifulSoup(html_text, "lxml")
@@ -123,14 +120,14 @@ def MakeMenu(soup):
             ListOfDiningHalls.append(DiningHall(
                 DiningHallName, ListOfStations))
         ListOfMealTime.append(MealTime(MealTimeName, ListOfDiningHalls))
-    Menu = DailyMenu(ListOfMealTime)
+    ReturnMenu = DailyMenu(ListOfMealTime)
     # returns the overall menu of the day
-    return Menu
+    return ReturnMenu
 
 
-def MenuToDict(Menu):
+def MenuToDict(inpMenu):
     TimeList = []
-    for time in Menu.MealTimes:
+    for time in inpMenu.MealTimes:
         TimeDict = {}
         HallList = []
         for hall in time.DiningHalls:
@@ -161,7 +158,7 @@ def MenuToDict(Menu):
 
 def MenuToTxt(todaysMenu):
     output_file_name = "output.txt"
-    with open(os.path.join(__location__, output_file_name), "a") as out:
+    with open( output_file_name, "a") as out:
         out.write(str(todaysMenu) + "\n")
         for time in todaysMenu.MealTimes:
             out.write("\t" + str(time) + "\n")
@@ -175,8 +172,8 @@ def MenuToTxt(todaysMenu):
                             out.write("\t\t\t\t\t"+str(allergen)+"\n")
 
 
-def MenuToJson(Menu):
-    return json.dumps(MenuToDict(Menu), ensure_ascii=False, indent=4)
+def MenuToJson(inpMenu):
+    return json.dumps(MenuToDict(inpMenu), ensure_ascii=False, indent=4)
 
 
 def MenuOutputJson(Menu, OutputFile):

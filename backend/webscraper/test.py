@@ -1,15 +1,11 @@
 import os
 import unittest
-from typing import List
-from bs4 import BeautifulSoup
-import requests as req
-import datetime
 import json
 import webscraper
 
 
 
-prg = "./webscraper.py"
+
 
 normal_weekday_html = "test_htmls//normal_weekday.html"
 normal_weekend_html = "test_htmls//normal_weekend.html"
