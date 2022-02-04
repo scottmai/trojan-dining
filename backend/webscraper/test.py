@@ -24,8 +24,8 @@ def delete_file(file):
 class Test(unittest.TestCase):
 
     def test_normal_weekday(self):
-        menu = webscraper.ScrubHTML(NORMAL_WEEKDAY_HTML)  # experimental menuw 
-        webscraper.MenuOutputJson(menu, "output.json")
+        menu = webscraper.scrub_html(NORMAL_WEEKDAY_HTML)  # experimental menu
+        webscraper.menu_output_json(menu, "output.json")
         with open(NORMAL_WEEKDAY_JSON,) as json_file:
             hard_coded = json.load(json_file)
         with open("output.json", ) as i:
@@ -33,11 +33,10 @@ class Test(unittest.TestCase):
         print("testing Normal Weekday...")
         self.assertEqual(hard_coded, experimental_json)
         delete_file("output.json")
-      
 
     def test_normal_weekend(self):
-        menu = webscraper.ScrubHTML(NORMAL_WEEKEND_HTML)
-        webscraper.MenuOutputJson(menu, "output.json")
+        menu = webscraper.scrub_html(NORMAL_WEEKEND_HTML)
+        webscraper.menu_output_json(menu, "output.json")
         with open(NORMAL_WEEKEND_JSON, ) as json_file:
             hard_coded = json.load(json_file)
         with open("output.json", ) as i:
@@ -47,8 +46,8 @@ class Test(unittest.TestCase):
         delete_file("output.json")
 
     def test_winter_break(self):
-        menu = webscraper.ScrubHTML(WINTER_BREAK_HTML)
-        webscraper.MenuOutputJson(menu, "output.json")
+        menu = webscraper.scrub_html(WINTER_BREAK_HTML)
+        webscraper.menu_output_json(menu, "output.json")
         with open(WINTER_BREAK_JSON,) as json_file:
             hard_coded = json.load(json_file)
         with open("output.json", ) as i:
