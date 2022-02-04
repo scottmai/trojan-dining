@@ -1,3 +1,5 @@
+import os
+from typing import List
 from bs4 import BeautifulSoup
 import requests as req
 import datetime
@@ -5,11 +7,11 @@ import json
 #for when comma
 
 class DailyMenu:
-    def __init__(self, MealTime_):
-        self.MealTimes = MealTime_
+    def __init__(self, MealTime):
+        self.MealTimes = MealTime
 
-
-
+    def __str__(self):
+        return str(self.date.month) + "/"+str(self.date.day) + "/" + str(self.date.year)
 
 class MealTime:
     def __init__(self, name, DiningHalls):
@@ -18,8 +20,6 @@ class MealTime:
 
     def __str__(self):
         return self.name
-
-
 class DiningHall:
     def __init__(self, name, Stations):
         self.name = name
@@ -28,7 +28,6 @@ class DiningHall:
     def __str__(self):
         return self.name
 
-
 class Station:
     def __init__(self, name, MenuItems):
         self.name = name
@@ -36,7 +35,6 @@ class Station:
 
     def __str__(self):
         return self.name
-
 
 class MenuItem:
     def __init__(self, name, Allergens):
@@ -73,12 +71,11 @@ def ScrubWeb(Date):
 
 def ScrubHTML(file_name):
     # convert date into url
-    with open(file_name, "r",) as ifile:
+    with open(file_name, "r") as ifile:
         html_text = ifile.read()
         # make it into soup
         soup = BeautifulSoup(html_text, "lxml")
         return MakeMenu(soup)
-
 
 def MakeMenu(soup):
     # get all meal blocks (brkfast, lunch, dinner etc)
@@ -120,14 +117,66 @@ def MakeMenu(soup):
             ListOfDiningHalls.append(DiningHall(
                 DiningHallName, ListOfStations))
         ListOfMealTime.append(MealTime(MealTimeName, ListOfDiningHalls))
-    ReturnMenu = DailyMenu(ListOfMealTime)
+    Menu = DailyMenu(ListOfMealTime)
     # returns the overall menu of the day
-    return ReturnMenu
+    return Menu
 
-
-def MenuToDict(inpMenu):
+def MenuToDict(Menu):
     TimeList = []
-    for time in inpMenu.MealTimes:
+    for time in Menu.MealTimes:
+        TimeDict = {}
+        HallList = []
+        for hall in time.DiningHalls:
+            HallDict = {}
+            StationList = []
+            for station in hall.Stations:
+                StationDict = {}
+                FoodList = []
+                for food in station.MenuItems:
+                    AllergensList = []
+                    FoodDict = {}
+                    for allergen in food.Allergens:
+                        AllergensList.append(str(allergen))
+                    FoodDict["name"] = str(food)
+                    FoodDict["allergens"] = AllergensList
+                    FoodList.append(FoodDict)
+                StationDict["name"] = str(station)
+                StationDict["items"] = FoodList
+                StationList.append(StationDict)
+            HallDict["name"] = str(hall)
+            HallDict["stations"] = StationList
+            HallList.append(HallDict)
+        TimeDict["name"] = str(time)
+        TimeDict["dining_halls"]=HallList
+        TimeList.append(TimeDict)   
+    return TimeList
+
+def MenuToTxt(todaysMenu):
+    output_file_name = "output.txt"
+    with open(os.path.join(__location__, output_file_name), "a") as out:
+        out.write(str(todaysMenu) + "\n")
+        for time in todaysMenu.MealTimes:
+            out.write("\t" + str(time) + "\n")
+            for hall in time.DiningHalls:
+                out.write("\t\t"+str(hall) + "\n")
+                for station in hall.Stations:
+                    out.write("\t\t\t"+str(station) + "\n")
+                    for food in station.MenuItems:
+                        out.write("\t\t\t\t"+str(food) + "\n")
+                        for allergen in food.Allergens:
+                            out.write("\t\t\t\t\t"+str(allergen)+"\n")
+
+def MenuToJson(Menu):
+    return json.dumps(MenuToDict(Menu), ensure_ascii=False, indent=4)                  
+
+def MenuOutputJson(Menu, OutputFile):
+        ExperimentalJson = MenuToJson(Menu)
+        with open(OutputFile, "w") as ExperimentalOutput:
+            ExperimentalOutput.write(ExperimentalJson)
+
+def MenuToDict(Menu):
+    TimeList = []
+    for time in Menu.MealTimes:
         TimeDict = {}
         HallList = []
         for hall in time.DiningHalls:
@@ -158,7 +207,7 @@ def MenuToDict(inpMenu):
 
 def MenuToTxt(todaysMenu):
     output_file_name = "output.txt"
-    with open( output_file_name, "a") as out:
+    with open(os.path.join(__location__, output_file_name), "a") as out:
         out.write(str(todaysMenu) + "\n")
         for time in todaysMenu.MealTimes:
             out.write("\t" + str(time) + "\n")
@@ -172,8 +221,8 @@ def MenuToTxt(todaysMenu):
                             out.write("\t\t\t\t\t"+str(allergen)+"\n")
 
 
-def MenuToJson(inpMenu):
-    return json.dumps(MenuToDict(inpMenu), ensure_ascii=False, indent=4)
+def MenuToJson(Menu):
+    return json.dumps(MenuToDict(Menu), ensure_ascii=False, indent=4)
 
 
 def MenuOutputJson(Menu, OutputFile):
