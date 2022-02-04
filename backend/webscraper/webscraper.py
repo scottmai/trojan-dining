@@ -4,10 +4,11 @@ from bs4 import BeautifulSoup
 import requests as req
 
 #for when comma
-
+                          
 class DailyMenu:
     def __init__(self, inp_meal_time):
         self.meal_times = inp_meal_time
+                        
 
 
 class MealTime:
@@ -52,7 +53,9 @@ class Allergen:
 # 3 dining halls each with x stations. each station has x foodItems
 
 
+
 def scrub_web(date):
+
     # convert date into url
     month = date.strftime("%B")
     day = date.strftime("%d")
@@ -67,11 +70,13 @@ def scrub_web(date):
 
 
 def scrub_html(file_name):
+
     # convert date into url
     with open(file_name, "r") as ifile:
         html_text = ifile.read()
         # make it into soup
         soup = BeautifulSoup(html_text, "lxml")
+
         return make_menu(soup)
 
 def make_menu(soup):
@@ -79,6 +84,7 @@ def make_menu(soup):
     meal_times_html = soup.find_all("div", class_="hsp-accordian-container")
     list_of_meal_time = []
     for block in meal_times_html:  # loop through all the meal blocks
+
         # find the name of the block
         meal_time_name = block.find(
             "span", class_="fw-accordion-title-inner").text.split()[0]
@@ -106,6 +112,7 @@ def make_menu(soup):
                         menu_item_name = menu_item.find(
                             text=True, recursive=False)
                         # get all the allergens for that food item
+
                         allergens_html = menu_item.find_all("i")
                         list_of_allergens = [allergen.find(
                             "span").text for allergen in allergens_html]
@@ -178,3 +185,4 @@ if __name__ == "__main__":
     today = datetime.datetime.now()
     Menu = scrub_html("test_htmls//winter_break.html")
     JsonMenu = menu_to_json(Menu)
+

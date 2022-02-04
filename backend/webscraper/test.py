@@ -6,7 +6,6 @@ import webscraper
 
 
 
-
 NORMAL_WEEKDAY_HTML = "test_htmls//normal_weekday.html"
 NORMAL_WEEKEND_HTML = "test_htmls//normal_weekend.html"
 WINTER_BREAK_HTML = "test_htmls/winter_break.html"
@@ -56,6 +55,9 @@ class Test(unittest.TestCase):
         self.assertEqual(hard_coded, experimental_json)
         delete_file("output.json")
 
+
 # ----------------------------------------------
 if __name__ == '__main__':
     unittest.main()
+
+
