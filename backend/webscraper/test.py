@@ -1,67 +1,63 @@
 import os
 import unittest
-from typing import List
-from bs4 import BeautifulSoup
-import requests as req
-import datetime
 import json
 import webscraper
 
 
 
-prg = "./webscraper.py"
 
-normal_weekday_html = "test_htmls//normal_weekday.html"
-normal_weekend_html = "test_htmls//normal_weekend.html"
-winter_break_html = "test_htmls/winter_break.html"
-normal_weekday_json = "test_expected_values/normal_weekday.json"
-normal_weekend_json = "test_expected_values/normal_weekend.json"
-winter_break_json = "test_expected_values/winter_break.json"
+NORMAL_WEEKDAY_HTML = "test_htmls//normal_weekday.html"
+NORMAL_WEEKEND_HTML = "test_htmls//normal_weekend.html"
+WINTER_BREAK_HTML = "test_htmls/winter_break.html"
+NORMAL_WEEKDAY_JSON = "test_expected_values/normal_weekday.json"
+NORMAL_WEEKEND_JSON = "test_expected_values/normal_weekend.json"
+WINTER_BREAK_JSON = "test_expected_values/winter_break.json"
 # ----------------------------------------------
 
 
-def DeleteFile(file):
+def delete_file(file):
     if os.path.exists(file):
         os.remove(file)
     else:
-        print(file)  
+        print(file)
 class Test(unittest.TestCase):
 
-    def testNormalWeekday(self):
-        Menu = webscraper.ScrubHTML(normal_weekday_html)  # experimental menu
-        webscraper.MenuOutputJson(Menu, "output.json")
-        with open(normal_weekday_json) as jsonFile:
-            HardCoded = json.load(jsonFile)
-        with open("output.json", "r") as i:
-            ExperimentalJson = json.load(i)
+    def test_normal_weekday(self):
+        menu = webscraper.scrub_html(NORMAL_WEEKDAY_HTML)  # experimental menu
+        webscraper.menu_output_json(menu, "output.json")
+        with open(NORMAL_WEEKDAY_JSON,) as json_file:
+            hard_coded = json.load(json_file)
+        with open("output.json", ) as i:
+            experimental_json = json.load(i)
         print("testing Normal Weekday...")
-        self.assertEqual(HardCoded, ExperimentalJson)
-        DeleteFile("output.json")
-      
+        self.assertEqual(hard_coded, experimental_json)
+        delete_file("output.json")
 
-    def testNormalWeekend(self):
-        Menu = webscraper.ScrubHTML(normal_weekend_html)
-        webscraper.MenuOutputJson(Menu, "output.json")
-        with open(normal_weekend_json) as jsonFile:
-            HardCoded = json.load(jsonFile)
-        with open("output.json", "r") as i:
-            ExperimentalJson = json.load(i)
+    def test_normal_weekend(self):
+        menu = webscraper.scrub_html(NORMAL_WEEKEND_HTML)
+        webscraper.menu_output_json(menu, "output.json")
+        with open(NORMAL_WEEKEND_JSON, ) as json_file:
+            hard_coded = json.load(json_file)
+        with open("output.json", ) as i:
+            experimental_json = json.load(i)
         print("testing Normal Weekend...")
-        self.assertEqual(HardCoded, ExperimentalJson)
-        DeleteFile("output.json")
+        self.assertEqual(hard_coded, experimental_json)
+        delete_file("output.json")
 
-    def testWinterBreak(self):
-        Menu = webscraper.ScrubHTML(winter_break_html)
-        webscraper.MenuOutputJson(Menu, "output.json")
-        with open(winter_break_json) as jsonFile:
-            HardCoded = json.load(jsonFile)
-        with open("output.json", "r") as i:
-            ExperimentalJson = json.load(i)
+    def test_winter_break(self):
+        menu = webscraper.scrub_html(WINTER_BREAK_HTML)
+        webscraper.menu_output_json(menu, "output.json")
+        with open(WINTER_BREAK_JSON,) as json_file:
+            hard_coded = json.load(json_file)
+        with open("output.json", ) as i:
+            experimental_json = json.load(i)
         print("testing Normal Weekend...")
-        self.assertEqual(HardCoded, ExperimentalJson)
-        DeleteFile("output.json")
+        self.assertEqual(hard_coded, experimental_json)
+        delete_file("output.json")
+
 
 # ----------------------------------------------
 if __name__ == '__main__':
     unittest.main()
+
 
