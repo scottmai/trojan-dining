@@ -1,17 +1,17 @@
 import os
 import json
-from django.test import TestCase
+import unittest
 from trojan_dining.webscraper import webscraper
 
 
 
 
-NORMAL_WEEKDAY_HTML = "test_htmls//normal_weekday.html"
-NORMAL_WEEKEND_HTML = "test_htmls//normal_weekend.html"
-WINTER_BREAK_HTML = "test_htmls/winter_break.html"
-NORMAL_WEEKDAY_JSON = "test_expected_values/normal_weekday.json"
-NORMAL_WEEKEND_JSON = "test_expected_values/normal_weekend.json"
-WINTER_BREAK_JSON = "test_expected_values/winter_break.json"
+NORMAL_WEEKDAY_HTML = "trojan_dining/tests/test_htmls/normal_weekday.html"
+NORMAL_WEEKEND_HTML = "trojan_dining/tests/test_htmls/normal_weekend.html"
+WINTER_BREAK_HTML = "trojan_dining/tests/test_htmls/winter_break.html"
+NORMAL_WEEKDAY_JSON = "trojan_dining/tests/test_expected_values/normal_weekday.json"
+NORMAL_WEEKEND_JSON = "trojan_dining/tests/test_expected_values/normal_weekend.json"
+WINTER_BREAK_JSON = "trojan_dining/tests/test_expected_values/winter_break.json"
 # ----------------------------------------------
 
 
@@ -20,7 +20,7 @@ def delete_file(file):
         os.remove(file)
     else:
         print(file)
-class Test(TestCase):
+class Test(unittest.TestCase):
 
     def test_normal_weekday(self):
         menu = webscraper.scrub_html(NORMAL_WEEKDAY_HTML)  # experimental menu
@@ -58,5 +58,5 @@ class Test(TestCase):
 
 # ----------------------------------------------
 if __name__ == '__main__':
-    TestCase.main()
+    unittest.main()
     

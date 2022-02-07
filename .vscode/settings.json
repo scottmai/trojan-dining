@@ -1,9 +1,9 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": false,
     "cSpell.words": [
         "datetime",
-        "Parkside"
+        "Parkside",
     ]
 
 }
