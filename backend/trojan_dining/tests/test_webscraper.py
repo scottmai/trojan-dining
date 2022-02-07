@@ -1,7 +1,7 @@
 import os
-import unittest
 import json
-import webscraper
+from django.test import TestCase
+from trojan_dining.webscraper import webscraper
 
 
 
@@ -20,7 +20,7 @@ def delete_file(file):
         os.remove(file)
     else:
         print(file)
-class Test(unittest.TestCase):
+class Test(TestCase):
 
     def test_normal_weekday(self):
         menu = webscraper.scrub_html(NORMAL_WEEKDAY_HTML)  # experimental menu
@@ -58,6 +58,5 @@ class Test(unittest.TestCase):
 
 # ----------------------------------------------
 if __name__ == '__main__':
-    unittest.main()
-
-
+    TestCase.main()
+    

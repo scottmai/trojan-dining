@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 import requests as req
 
 #for when comma
-                          
+
 class DailyMenu:
     def __init__(self, inp_meal_time):
         self.meal_times = inp_meal_time
-                        
+
 
 
 class MealTime:
@@ -185,4 +185,4 @@ if __name__ == "__main__":
     today = datetime.datetime.now()
     Menu = scrub_html("test_htmls//winter_break.html")
     JsonMenu = menu_to_json(Menu)
-
+    
