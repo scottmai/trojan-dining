@@ -81,4 +81,5 @@ function Username() {
   }
 }
 
+// this allows other files to use the App component
 export default App;

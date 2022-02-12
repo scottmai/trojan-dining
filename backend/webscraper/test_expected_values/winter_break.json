@@ -1,0 +1,130 @@
+[
+    {
+        "name": "Breakfast",
+        "dining_halls": [
+            {
+                "name": "USC Village Dining Hall",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Parkside Restaurant & Grill",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Everybody's Kitchen",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Brunch",
+        "dining_halls": [
+            {
+                "name": "USC Village Dining Hall",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Parkside Restaurant & Grill",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Everybody's Kitchen",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "dining_halls": [
+            {
+                "name": "USC Village Dining Hall",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Parkside Restaurant & Grill",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Everybody's Kitchen",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dinner",
+        "dining_halls": [
+            {
+                "name": "USC Village Dining Hall",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Parkside Restaurant & Grill",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Everybody's Kitchen",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            }
+        ]
+    }
+]

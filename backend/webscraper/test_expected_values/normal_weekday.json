@@ -1,0 +1,2558 @@
+[
+    {
+        "name": "Breakfast",
+        "dining_halls": [
+            {
+                "name": "USC Village Dining Hall",
+                "stations": [
+                    {
+                        "name": "Plant Based",
+                        "items": [
+                            {
+                                "name": "Mixed Berry Quinoa Spiced Porridge",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Steamed Carrots",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Green Chickpea Falafel Patties",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crepes",
+                        "items": [
+                            {
+                                "name": "MADE TO ORDER OMELETES",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Whole Eggs",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Egg Whites",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Bacon",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Ham",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Bell Peppers",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Onion",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Tomatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Mushrooms",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Baby Spinach",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Shredded Monterey Jack and Cheddar Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Flexitarian",
+                        "items": [
+                            {
+                                "name": "Scrambled Eggs",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Bacon",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Turkey Sausage Patty",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Herb Roasted Red Potatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Boiled Eggs",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Biscuits and Country Pork Sausage Gravy",
+                                "allergens": [
+                                    "Dairy",
+                                    "Pork",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Breakfast/Dessert/Fruit",
+                        "items": [
+                            {
+                                "name": "Assorted Breads and Bagels",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Oat n' Honey Granola",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Vanilla Yogurt",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Strawberry Yogurt",
+                                "allergens": [
+                                    "Dairy"
+                                ]
+                            },
+                            {
+                                "name": "Steel Cut Oatmeal",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Berries",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Parkside Restaurant & Grill",
+                "stations": [
+                    {
+                        "name": "Bistro",
+                        "items": [
+                            {
+                                "name": "MADE TO ORDER OMELETES",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Whole Eggs",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Egg Whites",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Diced Tofu",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Bacon",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Ham",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Bell Peppers",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Onion",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Baby Spinach",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Mushrooms",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Black Olives",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Pickled Jalapenos",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Shredded Monterey Jack and Cheddar Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Spicy Salsa Verde",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Spicy Salsa Molcajete",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Americana",
+                        "items": [
+                            {
+                                "name": "Egg, Ham and Cheese Biscuit Sandwich",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Pork",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Scrambled Eggs",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Boiled Eggs",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Bacon",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Gardein Vegan Sausage Patty",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Crispy Diced Potatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Turkey Maple Sausage Links",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Green Chickpea Falafel Patties",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Oatmeal",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pizza/Salad Bar",
+                        "items": [
+                            {
+                                "name": "Waffle Bar",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Fruits",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Breads and Bagels",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Breakfast Pastries",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Cottage Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Plain Greek Yogurt",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Strawberry Yogurt",
+                                "allergens": [
+                                    "Dairy"
+                                ]
+                            },
+                            {
+                                "name": "Vanilla Yogurt",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Everybody's Kitchen",
+                "stations": [
+                    {
+                        "name": "Hot Line",
+                        "items": [
+                            {
+                                "name": "MADE TO ORDER OMELETES",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Scrambled Eggs",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Bacon",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Pork Andouille Sausage with Peppers and Onions",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Boiled Eggs",
+                                "allergens": [
+                                    "Eggs",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Triangle Hash Browns",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Gardein Vegan Sausage Patty",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Chilaquiles with Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Croissant Beignets",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Fresh from the Farm",
+                        "items": [
+                            {
+                                "name": "Vanilla Yogurt",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Strawberry Yogurt",
+                                "allergens": [
+                                    "Dairy"
+                                ]
+                            },
+                            {
+                                "name": "Dairy Free Vegan Coconut Yogurt Available Upon Request",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Cottage Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Fresh Berries",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Waffle Bar",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Fruits",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Oatmeal",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Breads and Bagels",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Strawberry Banana Smoothie",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Brunch",
+        "dining_halls": [
+            {
+                "name": "USC Village Dining Hall",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Parkside Restaurant & Grill",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "name": "Everybody's Kitchen",
+                "stations": [
+                    {
+                        "name": "No items to display for this date",
+                        "items": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "dining_halls": [
+            {
+                "name": "USC Village Dining Hall",
+                "stations": [
+                    {
+                        "name": "Expo",
+                        "items": [
+                            {
+                                "name": "All Beef Hot Dog (no bun)",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Louisiana Hot Links (no bun)",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Hot Dog Bun",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Mixed Bean and Veggie Chili",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Nacho Cheese Sauce",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Kimchi Slaw",
+                                "allergens": [
+                                    "Fish",
+                                    "Sesame",
+                                    "Shellfish"
+                                ]
+                            },
+                            {
+                                "name": "Dijon Mustard",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Pickled Jalapenos",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Onion",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Dill Pickles",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Shoestring French Fries",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Plant Based - Mezze Bar",
+                        "items": [
+                            {
+                                "name": "Cilantro Hummus",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Red Pepper Hummus",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Traditional Hummus",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Grilled Vegetables",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Antipasti Pickled Vegetables",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Olives",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Pasta Salad",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Southwestern Sweet Potato Salad",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Harissa Chickpea Salad",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Bulgur Crunch Salad with Almonds",
+                                "allergens": [
+                                    "Soy",
+                                    "Tree Nuts",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Breakfast/Dessert/Fruit",
+                        "items": [
+                            {
+                                "name": "Assorted Pastries and Desserts",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Peanuts",
+                                    "Soy",
+                                    "Tree Nuts",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Fruits",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crepes",
+                        "items": [
+                            {
+                                "name": "Plain Crepe",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Whipped Cream",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Berries",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Nutella",
+                                "allergens": [
+                                    "Dairy",
+                                    "Tree Nuts",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Almonds",
+                                "allergens": [
+                                    "Tree Nuts",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Powdered Sugar",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chocolate Chips",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Unsweetened Shredded Coconut",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Oat n' Honey Granola",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Chia Seeds",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Acai Sorbet",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Salted Caramel Ice Cream",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chocolate Ice Cream",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Deli Bar",
+                        "items": [
+                            {
+                                "name": "Tuna Salad",
+                                "allergens": [
+                                    "Eggs",
+                                    "Fish",
+                                    "Soy"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Turkey",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Sliced Ham",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Sliced Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Dijon Mustard",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Mayonnaise",
+                                "allergens": [
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Lettuce",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Tomatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Dill Pickles",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Honey Wheat Bread",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Multi Grain Bread",
+                                "allergens": [
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Sourdough Bread",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Sliced French Bread",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Salad Bar",
+                        "items": [
+                            {
+                                "name": "Shrimp Bisque",
+                                "allergens": [
+                                    "Dairy",
+                                    "Fish",
+                                    "Shellfish",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Spinach, Sweet Potato and Farro Soup",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Ranch Dressing",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Blue Cheese Dressing",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Creamy Caesar Dressing",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Fish",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Golden Italian Dressing",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Olive Oil",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Balsamic Vinegar",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Flexitarian",
+                        "items": [
+                            {
+                                "name": "Bourbon BBQ Chicken",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Smoked Pork Loin with Bacon and Wild Mushroom Sauce",
+                                "allergens": [
+                                    "Dairy",
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Braised Collard Greens",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "BBQ Baked Beans",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Steamed California Blend Vegetables",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Brown Rice Pilaf",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Plant Based",
+                        "items": [
+                            {
+                                "name": "Butternut Squash Veggie Power Bowl",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Gardein Veggie Chik'n with Almonds",
+                                "allergens": [
+                                    "Soy",
+                                    "Tree Nuts",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Herb Sorghum Pilaf with Almond,  Dates and Apricots",
+                                "allergens": [
+                                    "Tree Nuts",
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Parkside Restaurant & Grill",
+                "stations": [
+                    {
+                        "name": "Eurasia",
+                        "items": [
+                            {
+                                "name": "North Indian Butter Chicken",
+                                "allergens": [
+                                    "Dairy"
+                                ]
+                            },
+                            {
+                                "name": "Pork Vindaloo",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Garlic and Herb Roasted Potato Wedges",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Golden Saffron Coconut Lentils",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sautéed Green Beans",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Brussels Sprouts",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Plain Yakisoba Noodles",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Sesame Ginger Sauce",
+                                "allergens": [
+                                    "Sesame",
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Southwestern Spiced Millet",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Fried Tofu Provencale",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Pork and Shrimp Wonton Soup",
+                                "allergens": [
+                                    "Eggs",
+                                    "Pork",
+                                    "Sesame",
+                                    "Shellfish",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "White Bean and Veggie Soup",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Bistro",
+                        "items": [
+                            {
+                                "name": "TOSTADA BAR",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Fried Tostada Shells",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chicken Asada",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Pork Carnitas",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Carne Asada",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Pinto Beans",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Black Beans",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Shredded Lettuce",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Green Onions",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Tomatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Shredded Monterey Jack and Cheddar Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Onion",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Pickled Jalapenos",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Sour Cream",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Sauteed Peppers and Onions",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Cilantro",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Americana",
+                        "items": [
+                            {
+                                "name": "Gardein Black Bean Burger on Vegan Bun",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Philly Cheesesteak Sandwich",
+                                "allergens": [
+                                    "Dairy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Curly Fries",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Allergen Awareness Zone (must register for access)",
+                        "items": [
+                            {
+                                "name": "AAZ Cilantro Lime Chicken",
+                                "allergens": []
+                            },
+                            {
+                                "name": "AAZ Red Lentils",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "AAZ Roasted Butternut Squash",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pizza/Salad Bar",
+                        "items": [
+                            {
+                                "name": "Salad and Deli Bar (Customize for veggie options)",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Brussels Sprouts, Onion and Bacon Pita Pizza",
+                                "allergens": [
+                                    "Dairy",
+                                    "Pork",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Cheese Pita Pizza",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Three Bean Salad",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Everybody's Kitchen",
+                "stations": [
+                    {
+                        "name": "Hot Line",
+                        "items": [
+                            {
+                                "name": "Sea Bass with White Wine and Saffron Cream Sauce",
+                                "allergens": [
+                                    "Dairy",
+                                    "Fish",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Brisket with Onions",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Gardein Vegan Chik'n Parmesan",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Brown Rice with Mushrooms and Herbs",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Corn on the Cob",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Pasta with Arugula Pesto and Tomatoes",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Brussels Sprouts with Lemon and Garlic",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Three Cheese Pizza",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Pepperoni Pizza",
+                                "allergens": [
+                                    "Dairy",
+                                    "Pork",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "SOUVLAKI BAR",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Pork Souvlaki",
+                                "allergens": [
+                                    "Pork",
+                                    "Soy"
+                                ]
+                            },
+                            {
+                                "name": "Beef Souvlaki",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Chicken Shawarma",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Pita Bread",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Feta Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Baby Lettuce Mix",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Tomatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Red Onion",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Cucumbers",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Traditional Hummus",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Tzatziki Sauce",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Fresh from the Farm",
+                        "items": [
+                            {
+                                "name": "Salad and Deli Bar (Customize for veggie options)",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Italian Wedding Soup",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Pork",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Creamy Cauliflower Soup",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Broccoli Caesar Salad",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Fish",
+                                    "Soy"
+                                ]
+                            },
+                            {
+                                "name": "Tomato Bruschetta Pasta Salad",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dinner",
+        "dining_halls": [
+            {
+                "name": "USC Village Dining Hall",
+                "stations": [
+                    {
+                        "name": "Expo",
+                        "items": [
+                            {
+                                "name": "All Beef Hot Dog (no bun)",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Louisiana Hot Links (no bun)",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Hot Dog Bun",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Mixed Bean and Veggie Chili",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Nacho Cheese Sauce",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Kimchi Slaw",
+                                "allergens": [
+                                    "Fish",
+                                    "Sesame",
+                                    "Shellfish"
+                                ]
+                            },
+                            {
+                                "name": "Dijon Mustard",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Pickled Jalapenos",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Onion",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Dill Pickles",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Shoestring French Fries",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Flexitarian",
+                        "items": [
+                            {
+                                "name": "Roasted Beef with Chimichurri Sauce",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Smoked Herb Turkey Breast",
+                                "allergens": [
+                                    "Dairy"
+                                ]
+                            },
+                            {
+                                "name": "Cajun Spiced Potato Rounds with Peppers and Onions",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Mushroom and Herb Barley with Parmesan",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Cauliflower with Parmesan Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Steamed Swiss Chard",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Plant Based - Mezze Bar",
+                        "items": [
+                            {
+                                "name": "Cilantro Hummus",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Red Pepper Hummus",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Traditional Hummus",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Grilled Vegetables",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Antipasti Pickled Vegetables",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Olives",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Pasta Salad",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Southwestern Sweet Potato Salad",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Harissa Chickpea Salad",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Bulgur Crunch Salad with Almonds",
+                                "allergens": [
+                                    "Soy",
+                                    "Tree Nuts",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Breakfast/Dessert/Fruit",
+                        "items": [
+                            {
+                                "name": "Assorted Pastries and Desserts",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Peanuts",
+                                    "Soy",
+                                    "Tree Nuts",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Fruits",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crepes",
+                        "items": [
+                            {
+                                "name": "Plain Crepe",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Whipped Cream",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Berries",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Nutella",
+                                "allergens": [
+                                    "Dairy",
+                                    "Tree Nuts",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Almonds",
+                                "allergens": [
+                                    "Tree Nuts",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Powdered Sugar",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chocolate Chips",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Unsweetened Shredded Coconut",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Oat n' Honey Granola",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Chia Seeds",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Acai Sorbet",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Salted Caramel Ice Cream",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chocolate Ice Cream",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Deli Bar",
+                        "items": [
+                            {
+                                "name": "Tuna Salad",
+                                "allergens": [
+                                    "Eggs",
+                                    "Fish",
+                                    "Soy"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Turkey",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Sliced Ham",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Assorted Sliced Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Dijon Mustard",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Mayonnaise",
+                                "allergens": [
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Lettuce",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Tomatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Dill Pickles",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Honey Wheat Bread",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Multi Grain Bread",
+                                "allergens": [
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Sourdough Bread",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Sliced French Bread",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Salad Bar",
+                        "items": [
+                            {
+                                "name": "Shrimp Bisque",
+                                "allergens": [
+                                    "Dairy",
+                                    "Fish",
+                                    "Shellfish",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Spinach, Sweet Potato and Farro Soup",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Ranch Dressing",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Blue Cheese Dressing",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Soy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Creamy Caesar Dressing",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Fish",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Golden Italian Dressing",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Olive Oil",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Balsamic Vinegar",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Plant Based",
+                        "items": [
+                            {
+                                "name": "Butternut Squash Veggie Power Bowl",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Gardein Veggie Chik'n with Almonds",
+                                "allergens": [
+                                    "Soy",
+                                    "Tree Nuts",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Herb Sorghum Pilaf with Almond,  Dates and Apricots",
+                                "allergens": [
+                                    "Tree Nuts",
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Parkside Restaurant & Grill",
+                "stations": [
+                    {
+                        "name": "Allergen Awareness Zone (must register for access)",
+                        "items": [
+                            {
+                                "name": "AAZ Quinoa Pasta and Beef Meatballs",
+                                "allergens": []
+                            },
+                            {
+                                "name": "AAZ Steamed Brown Rice",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "AAZ Steamed Carrots",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Bistro",
+                        "items": [
+                            {
+                                "name": "TOSTADA BAR",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Fried Tostada Shells",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chicken Asada",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Pork Carnitas",
+                                "allergens": [
+                                    "Pork"
+                                ]
+                            },
+                            {
+                                "name": "Carne Asada",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Pinto Beans",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Black Beans",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Shredded Lettuce",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Green Onions",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Tomatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Shredded Monterey Jack and Cheddar Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Onion",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Pickled Jalapenos",
+                                "allergens": [
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Sour Cream",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Sauteed Peppers and Onions",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Cilantro",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Americana",
+                        "items": [
+                            {
+                                "name": "Gardein Black Bean Burger on Vegan Bun",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Philly Cheesesteak Sandwich",
+                                "allergens": [
+                                    "Dairy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Curly Fries",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pizza/Salad Bar",
+                        "items": [
+                            {
+                                "name": "Salad and Deli Bar (Customize for veggie options)",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Brussels Sprouts, Onion and Bacon Pita Pizza",
+                                "allergens": [
+                                    "Dairy",
+                                    "Pork",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Cheese Pita Pizza",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Three Bean Salad",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Eurasia",
+                        "items": [
+                            {
+                                "name": "Teriyaki Beef",
+                                "allergens": [
+                                    "Sesame",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Lemon Garlic Tilapia",
+                                "allergens": [
+                                    "Dairy",
+                                    "Fish"
+                                ]
+                            },
+                            {
+                                "name": "Saffron Basmati Rice",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Steamed Bok Choy",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Roasted Eggplant Matbucha",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chana Masala",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sesame Ginger Sauce",
+                                "allergens": [
+                                    "Sesame",
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Plain Yakisoba Noodles",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Steamed Farro",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Split Pea Stew with Root Vegetables",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Pork and Shrimp Wonton Soup",
+                                "allergens": [
+                                    "Eggs",
+                                    "Pork",
+                                    "Sesame",
+                                    "Shellfish",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "White Bean and Veggie Soup",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Everybody's Kitchen",
+                "stations": [
+                    {
+                        "name": "Hot Line",
+                        "items": [
+                            {
+                                "name": "Tandoori Chicken with Cilantro Shallot Relish",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Beef Vindaloo",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Chickpea, Tofu and Chard Stew",
+                                "allergens": [
+                                    "Soy",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Coconut Curry Lentils",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Steamed Basmati Rice",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Steamed Cauliflower",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Sautéed Green Beans",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Three Cheese Pizza",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Pepperoni Pizza",
+                                "allergens": [
+                                    "Dairy",
+                                    "Pork",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "SOUVLAKI BAR",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Pork Souvlaki",
+                                "allergens": [
+                                    "Pork",
+                                    "Soy"
+                                ]
+                            },
+                            {
+                                "name": "Beef Souvlaki",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Chicken Shawarma",
+                                "allergens": []
+                            },
+                            {
+                                "name": "Pita Bread",
+                                "allergens": [
+                                    "Dairy",
+                                    "Soy",
+                                    "Vegetarian",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Tzatziki Sauce",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Traditional Hummus",
+                                "allergens": [
+                                    "Sesame",
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Feta Cheese",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Sliced Cucumbers",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Baby Lettuce Mix",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            },
+                            {
+                                "name": "Chopped Tomatoes",
+                                "allergens": [
+                                    "Vegan"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Fresh from the Farm",
+                        "items": [
+                            {
+                                "name": "Salad and Deli Bar (Customize for veggie options)",
+                                "allergens": [
+                                    "Food Not Analyzed for Allergens"
+                                ]
+                            },
+                            {
+                                "name": "Italian Wedding Soup",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Pork",
+                                    "Soy",
+                                    "Wheat / Gluten"
+                                ]
+                            },
+                            {
+                                "name": "Creamy Cauliflower Soup",
+                                "allergens": [
+                                    "Dairy",
+                                    "Vegetarian"
+                                ]
+                            },
+                            {
+                                "name": "Broccoli Caesar Salad",
+                                "allergens": [
+                                    "Dairy",
+                                    "Eggs",
+                                    "Fish",
+                                    "Soy"
+                                ]
+                            },
+                            {
+                                "name": "Tomato Bruschetta Pasta Salad",
+                                "allergens": [
+                                    "Vegan",
+                                    "Wheat / Gluten"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
