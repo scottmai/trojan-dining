@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import Menu from './menu';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <Menu/>
       </header>
     </div>
   );

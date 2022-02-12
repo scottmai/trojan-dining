@@ -1,21 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function Menu() {
+    const [menu, setMenu] = useState(null);
+    
     useEffect(() => {
 
-        async function fetchMenu(){
-            const menuRes = await axios.get('http://localhost:8000/menu/')
-            setMenu()(menuRes.data)
+        try {
+            async function fetchMenu(){
+                const menuRes = await axios.get('http://localhost:8000/menu/')
+                if (menuRes.statusText === "OK") {
+                    setMenu(menuRes.data)
+                }
+            }
+            fetchMenu()
         }
-        fetchMenu()
+        catch (e) {
+            console.log(e)
+        }
     }, []);
 
+    console.log({menu: menu })
+
+    if (menu == null ){
+        return <div>Menu was not fetched</div>
+    }
+    else {
+        return <div>Menu was fetched!</div>
+    }
 }
 
 //npx json-server --watch db.json --port 8000
-//that creates endpoints:
-//   /menu GET means fetch all menus
-//   /menu/{id} GET fetch a single menu
-//   /menu POST add a new menu
-//   /menu/{id} DELETE delete a blog
+
