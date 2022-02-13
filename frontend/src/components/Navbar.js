@@ -2,13 +2,21 @@ import React from "react";
 
 const Navbar = () => {
     return (
-        <div className="navbar">
-            <ul>
-                <a><li>Village</li></a>
-                <a><li>EVK</li></a>
-                <a><li>Parkside</li></a>
-                <a><li>Mealtime</li></a>
-            </ul>
+        <div className="container-fluid navbar">
+            <div className="row justify-content-center">
+                <div className="col">
+                    <a>Village</a>
+                </div>
+                <div className="col">
+                    <a>EVK</a>
+                </div>
+                <div className="col">
+                    <a>Parkside</a>
+                </div>
+                <div className="col">
+                    <a>Mealtime</a>
+                </div>
+            </div>
         </div>
     );
 }

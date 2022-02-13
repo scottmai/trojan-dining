@@ -1,9 +1,15 @@
-const MealItem = ({name}) => {
+const MealItem = (props) => {
     return (
-        <div className="mealItem">
-            <p>{name}</p>
+        <div className="row mealItem">
+            <div className="col">{props.name}</div>
+            <div className="col">{props.allergens}</div>
         </div>
     );
 }
 
-export default MealItem
+MealItem.defaultProps = {
+    name: "EVK is best",
+    allergens: "none"
+}
+
+export default MealItem;
