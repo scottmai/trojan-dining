@@ -1,9 +1,11 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": false,
+    "python.linting.enabled": true,
     "cSpell.words": [
         "datetime",
         "Parkside",
+    ],
+    "python.linting.pylintArgs": [
+        "--disable=C0111"
     ]
-
 }
