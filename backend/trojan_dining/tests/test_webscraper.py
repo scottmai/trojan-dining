@@ -1,17 +1,17 @@
 import os
-import unittest
 import json
-import webscraper
+import unittest
+from trojan_dining.webscraper import webscraper
 
 
 
 
-NORMAL_WEEKDAY_HTML = "test_htmls//normal_weekday.html"
-NORMAL_WEEKEND_HTML = "test_htmls//normal_weekend.html"
-WINTER_BREAK_HTML = "test_htmls/winter_break.html"
-NORMAL_WEEKDAY_JSON = "test_expected_values/normal_weekday.json"
-NORMAL_WEEKEND_JSON = "test_expected_values/normal_weekend.json"
-WINTER_BREAK_JSON = "test_expected_values/winter_break.json"
+NORMAL_WEEKDAY_HTML = "trojan_dining/tests/test_htmls/normal_weekday.html"
+NORMAL_WEEKEND_HTML = "trojan_dining/tests/test_htmls/normal_weekend.html"
+WINTER_BREAK_HTML = "trojan_dining/tests/test_htmls/winter_break.html"
+NORMAL_WEEKDAY_JSON = "trojan_dining/tests/test_expected_values/normal_weekday.json"
+NORMAL_WEEKEND_JSON = "trojan_dining/tests/test_expected_values/normal_weekend.json"
+WINTER_BREAK_JSON = "trojan_dining/tests/test_expected_values/winter_break.json"
 # ----------------------------------------------
 
 
@@ -59,5 +59,3 @@ class Test(unittest.TestCase):
 # ----------------------------------------------
 if __name__ == '__main__':
     unittest.main()
-
-
