@@ -50,4 +50,4 @@ class Menu(models.Model):
 class MenuItem(models.Model):
     name = models.CharField(max_length = 100)
     allergens = models.ArrayField(model_container=Allergen)
-
+    
