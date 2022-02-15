@@ -1,0 +1,42 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 50px;
+}
+
+.navbar {
+    color: white;
+    background-color: #990000;
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+    position: fixed;
+    justify-content: center;
+    text-align: center;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li {
+            padding: 8px;
+            display: inline;
+        }
+    }
+}
+
+.mealSection {
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+}
+
+.header {
+    h2 {
+        font-size: 1.25em;
+    }
+    display: inline;
+}
