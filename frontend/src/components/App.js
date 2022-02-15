@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import MealSection from './MealSection';
 import Header from './Header'
 import SearchBar from './SearchBar'
+import Menu from '../menu'
 
 // Hardcoded version of data
 const props = {
@@ -48,10 +49,11 @@ const App = () => {
     current = props.dining_halls[0].stations;
     return (
         <div className="App">
+            <Menu />
             <div className="container-fluid">
                 <SearchBar />
                 <Header locationName={props.dining_halls[0].name} />
-                {current.map(function(stations) {
+                {current.map(function (stations) {
                     return (
                         <MealSection stations={stations.name} items={stations.items} />
                     );
