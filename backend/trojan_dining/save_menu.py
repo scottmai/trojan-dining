@@ -1,11 +1,8 @@
-import sys 
-import os
 from trojan_dining.models import Menu, MenuItem
-import datetime
-import json
 
-# function to persist a scrubbed menu to the database
-def save_menu (dict_menu):
+
+def save_menu(dict_menu):
+    # function to persist a scrubbed menu to the database
     # create menu document
     menu_doc = Menu()
     # populate it's meals attribute
