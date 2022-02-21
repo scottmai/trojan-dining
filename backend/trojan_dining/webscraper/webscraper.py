@@ -3,12 +3,10 @@ import json
 from bs4 import BeautifulSoup
 import requests as req
 
-#for when comma
 
 class DailyMenu:
     def __init__(self, inp_meal_time):
         self.meal_times = inp_meal_time
-
 
 
 class MealTime:
@@ -18,6 +16,8 @@ class MealTime:
 
     def __str__(self):
         return self.name
+
+
 class DiningHall:
     def __init__(self, name, stations):
         self.name = name
@@ -26,6 +26,7 @@ class DiningHall:
     def __str__(self):
         return self.name
 
+
 class Station:
     def __init__(self, name, menu_items):
         self.name = name
@@ -33,6 +34,7 @@ class Station:
 
     def __str__(self):
         return self.name
+
 
 class MenuItem:
     def __init__(self, name, allergens):
@@ -51,7 +53,6 @@ class Allergen:
         return self.name
 
 # 3 dining halls each with x stations. each station has x foodItems
-
 
 
 def scrub_web(date):
@@ -78,6 +79,7 @@ def scrub_html(file_name):
         soup = BeautifulSoup(html_text, "lxml")
 
         return make_menu(soup)
+
 
 def make_menu(soup):
     # get all meal blocks (brkfast, lunch, dinner etc)
@@ -118,10 +120,12 @@ def make_menu(soup):
                             "span").text for allergen in allergens_html]
                         list_of_menu_items.append(
                             MenuItem(menu_item_name, list_of_allergens))
-                list_of_stations.append(Station(station_name, list_of_menu_items))
+                list_of_stations.append(
+                    Station(station_name, list_of_menu_items))
             list_of_dining_halls.append(DiningHall(
                 dining_hall_name, list_of_stations))
-        list_of_meal_time.append(MealTime(meal_time_name, list_of_dining_halls))
+        list_of_meal_time.append(
+            MealTime(meal_time_name, list_of_dining_halls))
     return DailyMenu(list_of_meal_time)
 
 
@@ -140,7 +144,7 @@ def menu_to_dict(inp_menu):
                     allergens_list = []
                     food_dict = {}
                     for allergen in food.allergens:
-                        allergens_list.append(str(allergen))
+                        allergens_list.append({'name': str(allergen)})
                     food_dict["name"] = str(food)
                     food_dict["allergens"] = allergens_list
                     food_list.append(food_dict)
@@ -151,9 +155,10 @@ def menu_to_dict(inp_menu):
             hall_dict["stations"] = station_list
             hall_list.append(hall_dict)
         time_dict["name"] = str(time)
-        time_dict["dining_halls"]=hall_list
+        time_dict["dining_halls"] = hall_list
         time_list.append(time_dict)
     return time_list
+
 
 def menu_to_txt(todays_menu):
     output_file_name = "output.txt"
@@ -170,8 +175,10 @@ def menu_to_txt(todays_menu):
                         for allergen in food.allergens:
                             out.write("\t\t\t\t\t"+str(allergen)+"\n")
 
+
 def menu_to_json(inp_menu):
     return json.dumps(menu_to_dict(inp_menu), ensure_ascii=False, indent=4)
+
 
 def menu_output_json(inp_menu, output_file):
     experimental_json = menu_to_json(inp_menu)
@@ -179,10 +186,8 @@ def menu_output_json(inp_menu, output_file):
         experimental_output.write(experimental_json)
 
 
-
 if __name__ == "__main__":
     # test
     today = datetime.datetime.now()
     Menu = scrub_html("test_htmls//winter_break.html")
     JsonMenu = menu_to_json(Menu)
-    
