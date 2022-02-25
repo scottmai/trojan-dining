@@ -1,1 +1,1 @@
-web: gunicorn ./project/wsgi.py
+web: gunicorn --pythonpath project trojan_dining.py
