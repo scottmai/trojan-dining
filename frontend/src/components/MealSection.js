@@ -3,7 +3,7 @@ import MealItem from './MealItem'
 const MealSection = (props) => {
 
     return (
-        <div className='mealSection'>
+        <div className="mealSection">
             <h1>{props.stations}</h1>
             <ul>
                 {props.items.map(function(item) {

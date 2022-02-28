@@ -1,9 +1,11 @@
-@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
 
 body {
     margin: 0;
     padding: 0;
     padding-bottom: 50px;
+    font-family: Roboto, sans-serif;
 }
 
 .navbar {
@@ -11,10 +13,17 @@ body {
     background-color: #990000;
     width: 100%;
     bottom: 0;
-    padding: 10px;
+    padding: 20px;
     position: fixed;
     justify-content: center;
     text-align: center;
+    font-size: 1.1em;
+    height: 10vh;
+
+     a {
+         text-decoration: none;
+         color: white;
+     }
     
     ul {
         margin: 0;
@@ -25,9 +34,34 @@ body {
             display: inline;
         }
     }
+
+    .mealtime-icon {
+        width: 50px;
+        transform: translateY(-5px);
+    }
+}
+
+.searchBar {
+    padding: 10px 0;
+
+    input {
+        background-image: url("./assets/icons/search.svg");
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        background-color: #EAEAEA;
+        border-radius: 8px;
+        height: 30px;
+        width: 90vw;
+        border: none;
+        padding: 0 25px;
+    }
 }
 
 .mealSection {
+    h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
     ul {
         list-style-type: none;
         padding: 0;
@@ -36,7 +70,19 @@ body {
 
 .header {
     h2 {
-        font-size: 1.25em;
+        font-size: 1.1em;
+        color: #990000;
+        font-weight: bold;
     }
-    display: inline;
+    button {
+        font-size: 0.9em;
+        width: 80%;
+        background: none;
+        border: none;
+        color: #707070;
+        padding: none;
+        margin: none;
+    }
+    padding: 20px 0;
+    box-shadow: 0 5px 5px -5px #00000060;
 }
