@@ -35,6 +35,55 @@ const props = {
                         {
                             name: "UCLA",
                             allergens: ["Traitors"]
+                        },
+                        {
+                            name: "ABCD",
+                            allergens: ["AB"]
+                        },
+                        {
+                            name: "Lalalalala",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "UCLA",
+                            allergens: ["Traitors"]
+                        }
+                    ]
+                },
+                {
+                    name: "Flexiterian2",
+                    items: [
+                        {
+                            name: "Cow",
+                            allergens: ["Cows"]
+                        },
+                        {
+                            name: "UCLA",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "ABCD",
+                            allergens: ["AB"]
+                        },
+                        {
+                            name: "Lalalalala",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "UCLA",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "ABCD",
+                            allergens: ["AB"]
+                        },
+                        {
+                            name: "Lalalalala",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "UCLA",
+                            allergens: ["Traitors"]
                         }
                     ]
                 }
@@ -50,9 +99,12 @@ const App = () => {
     return (
         <div className="App">
             <Menu />
-            <div className="container-fluid">
+            <div className="container-fluid top-navbar">
                 <SearchBar />
                 <Header locationName={props.dining_halls[0].name} />
+            </div>
+            <div className="container-fluid menuItems">
+                <h1 className="mealtimeTitle">Breakfast</h1>
                 {current.map(function (stations) {
                     return (
                         <MealSection stations={stations.name} items={stations.items} />
