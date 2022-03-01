@@ -6,42 +6,46 @@ import SearchBar from './SearchBar'
 import Menu from '../menu'
 
 // Hardcoded version of data
-const props = {
-    name: "Breakfast",
-    dining_halls: [
-        {
-            name: "USC Village Dining Hall",
-            stations: [
-                {
-                    name: "Plant Based",
-                    items: [
-                        {
-                            name: "Steamed Carrots",
-                            allergens: ["Vegan"]
-                        },
-                        {
-                            name: "Your Mom",
-                            allergens: ["Vegan"]
-                        }
-                    ]
-                },
-                {
-                    name: "Flexiterian",
-                    items: [
-                        {
-                            name: "Cow",
-                            allergens: ["Cows"]
-                        },
-                        {
-                            name: "UCLA",
-                            allergens: ["Traitors"]
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
+// const props = {
+//     name: "Breakfast",
+//     dining_halls: [
+//         {
+//             name: "USC Village Dining Hall",
+//             stations: [
+//                 {
+//                     name: "Plant Based",
+//                     items: [
+//                         {
+//                             name: "Steamed Carrots",
+//                             allergens: ["Vegan"]
+//                         },
+//                         {
+//                             name: "Your Mom",
+//                             allergens: ["Vegan"]
+//                         }
+//                     ]
+//                 },
+//                 {
+//                     name: "Flexiterian",
+//                     items: [
+//                         {
+//                             name: "Cow",
+//                             allergens: ["Cows"]
+//                         },
+//                         {
+//                             name: "UCLA",
+//                             allergens: ["Traitors"]
+//                         }
+//                     ]
+//                 }
+//             ]
+//         }
+//     ]
+// }
+
+
+//set props to fetch
+const props = Menu();
 
 var current;  // which dining hall you want to display
 
