@@ -5,20 +5,19 @@ const Navbar = () => {
         <div className="container-fluid navbar">
             <div className="row justify-content-center">
                 <div className="col">
-                    <a>Village</a>
+                    <a href="url">Village</a>
                 </div>
                 <div className="col">
-                    <a>EVK</a>
+                    <a href="url">EVK</a>
                 </div>
                 <div className="col">
-                    <a>Parkside</a>
+                    <a href="url">Parkside</a>
                 </div>
                 <div className="col">
-                    <a>Mealtime</a>
+                    <a href="url">Mealtime</a>
                 </div>
             </div>
         </div>
     );
 }
-
 export default Navbar;
