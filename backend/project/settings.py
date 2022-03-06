@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import django_heroku
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -81,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'trojan-dining',
-        'ENFORCE_SCHEMA': False,
+        'ENFORCE_SCHEMA': True,
         'CLIENT': {
             'host': 'mongodb://127.0.0.1:27017/',
         }
@@ -133,3 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_ALLOW_ALL = True
 ALLOWED_HOSTS = ['*']
+
+django_heroku.settings(locals())

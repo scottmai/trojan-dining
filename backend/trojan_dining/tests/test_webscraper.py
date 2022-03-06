@@ -1,9 +1,7 @@
 import os
 import json
-import unittest
+from django.test import TestCase
 from trojan_dining.webscraper import webscraper
-
-
 
 
 NORMAL_WEEKDAY_HTML = "trojan_dining/tests/test_htmls/normal_weekday.html"
@@ -20,8 +18,9 @@ def delete_file(file):
         os.remove(file)
     else:
         print(file)
-class Test(unittest.TestCase):
 
+
+class Test(TestCase):
     def test_normal_weekday(self):
         menu = webscraper.scrub_html(NORMAL_WEEKDAY_HTML)  # experimental menu
         webscraper.menu_output_json(menu, "output.json")
@@ -54,8 +53,3 @@ class Test(unittest.TestCase):
         print("testing Normal Weekend...")
         self.assertEqual(hard_coded, experimental_json)
         delete_file("output.json")
-
-
-# ----------------------------------------------
-if __name__ == '__main__':
-    unittest.main()
