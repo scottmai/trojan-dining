@@ -5,13 +5,15 @@ from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from trojan_dining.webscraper.webscraper import menu_to_dict, scrub_web
 
 from trojan_dining.models import MenuItem
 from trojan_dining.serializers import MenuItemSerialzer
 import getpass
 from time import sleep
 import datetime
-from .models import Menu
+from .models import *
+from trojan_dining.save_menu import save_menu
 
 # some demo endpoints
 
@@ -37,15 +39,20 @@ class Username(APIView):
 
 class GetMenu(APIView):
     def get(self, request):
-        #get the date and if it doesnt exist return 1
+        #get the date and if it doesnt exist return ''
         date = request.GET.get('date', '')
         #turn it into datetime
-        date = datetime.strptime("date", "%Y", '%d',"%d")
+        date = datetime.datetime.strptime(date, "%Y-%m-%d")
         #get the menu from that date 
         try:
             retrieved_menu = Menu.objects.get(
-            created_at=datetime.datetime.date(date))
-        except model.DoesNotExist:
-            retrieved_menu = None
-        return 
+                menu_date=datetime.datetime.date(date))
+        except Menu.DoesNotExist:
+            scrubed_site = scrub_web(date)
+            menu_dict = menu_to_dict(scrubed_site)
+            save_menu(menu_dict, date)
+            retrieved_menu = Menu.objects.get(
+                menu_date=datetime.datetime.date(date))
+
+        return JsonResponse({"Menu": retrieved_menu.meals})
 
