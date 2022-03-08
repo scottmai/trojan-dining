@@ -42,7 +42,7 @@ class Meal(models.Model):
 class Menu(models.Model):
         # for queries
         created_at = models.DateField(auto_now_add=True)
-        menu_date = models.DateField(default = None)
+        date = models.DateField(default = None)
         meals = models.ArrayField(model_container = Meal)
 
         objects = models.DjongoManager()

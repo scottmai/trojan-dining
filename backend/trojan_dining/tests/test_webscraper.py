@@ -1,6 +1,6 @@
 import os
 import json
-import unittest
+from django.test import TestCase
 from trojan_dining.webscraper import webscraper
 
 

@@ -1,17 +1,18 @@
 from trojan_dining.models import Menu, MenuItem
 import datetime
 
-def save_menu(dict_menu, menu_day = None):
+
+def save_menu(dict_menu, menu_day=None):
     # function to persist a scrubbed menu to the database
     # create menu document
     menu_doc = Menu()
     # populate it's meals attribute
     menu_doc.meals = dict_menu
-    #add which day the menu reffers to
+    # add which day the menu reffers to
     if(menu_day is None):
-        menu_doc.menu_date = datetime.datetime.now()
+        menu_doc.date = datetime.datetime.now()
     else:
-        menu_doc.menu_date = menu_day
+        menu_doc.date = menu_day
     # Just add water (persist the menu to the database)
     menu_doc.save()
 

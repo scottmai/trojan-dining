@@ -37,22 +37,24 @@ class Username(APIView):
         user = getpass.getuser()
         return JsonResponse({"username": user})
 
+
 class GetMenu(APIView):
     def get(self, request):
-        #get the date and if it doesnt exist return ''
+        # get the date and if it doesnt exist return ''
         date = request.GET.get('date', '')
-        #turn it into datetime
-        date = datetime.datetime.strptime(date, "%Y-%m-%d")
-        #get the menu from that date 
+        # turn it into datetime
+        try:
+            date = datetime.datetime.strptime(date, "%Y-%m-%d")
+        except:
+            return HttpResponse(status=400)
+        # get the menu from that date
         try:
             retrieved_menu = Menu.objects.get(
-                menu_date=datetime.datetime.date(date))
+                date=datetime.datetime.date(date))
         except Menu.DoesNotExist:
             scrubed_site = scrub_web(date)
             menu_dict = menu_to_dict(scrubed_site)
             save_menu(menu_dict, date)
             retrieved_menu = Menu.objects.get(
-                menu_date=datetime.datetime.date(date))
-
+                date=datetime.datetime.date(date))
         return JsonResponse({"Menu": retrieved_menu.meals})
-
