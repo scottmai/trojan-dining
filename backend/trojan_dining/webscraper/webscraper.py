@@ -102,53 +102,32 @@ def make_menu(soup):
             menu_items_list_list = hall.find_all("ul")
             list_of_stations = []
             # check if dining hall is evk
-            if(dining_hall_name.strip() == "Everybody's Kitchen"):
-                for i in range(len(station_names_html)):  # loop through all the stations
-                    station_name = station_names_html[i].text  # station name
-                    list_of_menu_items = []
-                    # when theres no items program bugs out; my workaround
-                    if station_name != "No items to display for this date":
-                        menu_items_html = menu_items_list_list[i].find_all(
-                            "li")  # find all the food items
-                        for menu_item in menu_items_html:  # iterate through all the food
-                            # get the name of the food item
-                            menu_item_name = menu_item.find(
-                                text=True, recursive=False)
-                            #check if evk is making a section in all caps 
-                            if(menu_item_name.isupper() and menu_item_name.strip() != "MADE TO ORDER OMELETES"):
-                                list_of_stations.append(
-                                    Station(station_name, list_of_menu_items))
-                                station_name = menu_item_name
-                                list_of_menu_items = []
-                                continue
-                            # get all the allergens for that food item
-                            allergens_html = menu_item.find_all("i")
-                            list_of_allergens = [allergen.find(
-                                "span").text for allergen in allergens_html]
-                            list_of_menu_items.append(
-                                MenuItem(menu_item_name, list_of_allergens))
-                    list_of_stations.append(
-                        Station(station_name, list_of_menu_items))
-            else:
-                for i in range(len(station_names_html)):  # loop through all the stations
-                    station_name = station_names_html[i].text  # station name
-                    list_of_menu_items = []
-                    # when theres no items program bugs out; my workaround
-                    if station_name != "No items to display for this date":
-                        menu_items_html = menu_items_list_list[i].find_all(
-                            "li")  # find all the food items
-                        for menu_item in menu_items_html:  # iterate through all the food
-                            # get the name of the food item
-                            menu_item_name = menu_item.find(
-                                text=True, recursive=False)
-                            # get all the allergens for that food item
-                            allergens_html = menu_item.find_all("i")
-                            list_of_allergens = [allergen.find(
-                                "span").text for allergen in allergens_html]
-                            list_of_menu_items.append(
-                                MenuItem(menu_item_name, list_of_allergens))
-                    list_of_stations.append(
-                        Station(station_name, list_of_menu_items))
+            for i in range(len(station_names_html)):  # loop through all the stations
+                station_name = station_names_html[i].text  # station name
+                list_of_menu_items = []
+                # when theres no items program bugs out; my workaround
+                if station_name != "No items to display for this date":
+                    menu_items_html = menu_items_list_list[i].find_all(
+                        "li")  # find all the food items
+                    for menu_item in menu_items_html:  # iterate through all the food
+                        # get the name of the food item
+                        menu_item_name = menu_item.find(
+                            text=True, recursive=False)
+                        #check if evk is making a section in all caps 
+                        if dining_hall_name.strip() == "Everybody's Kitchen" and menu_item_name.isupper() and menu_item_name.strip() != "MADE TO ORDER OMELETES":
+                            list_of_stations.append(
+                                Station(station_name, list_of_menu_items))
+                            station_name = menu_item_name.title()
+                            list_of_menu_items = []
+                            continue
+                        # get all the allergens for that food item
+                        allergens_html = menu_item.find_all("i")
+                        list_of_allergens = [allergen.find(
+                            "span").text for allergen in allergens_html]
+                        list_of_menu_items.append(
+                            MenuItem(menu_item_name, list_of_allergens))
+                list_of_stations.append(
+                    Station(station_name, list_of_menu_items))
             list_of_dining_halls.append(DiningHall(
                 dining_hall_name, list_of_stations))
         list_of_meal_time.append(

@@ -54,7 +54,7 @@ class GetMenu(APIView):
         except Menu.DoesNotExist:
             scrubed_site = scrub_web(date)
             menu_dict = menu_to_dict(scrubed_site)
-            save_menu(menu_dict, date)
+            save_menu(menu_dict, date) 
             retrieved_menu = Menu.objects.get(
                 date=datetime.datetime.date(date))
         return JsonResponse({"Menu": retrieved_menu.meals})
