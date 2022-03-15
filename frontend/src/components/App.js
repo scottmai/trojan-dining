@@ -44,37 +44,28 @@ import Menu from '../menu'
 // }
 
 
-//var current;  // which dining hall you want to display
+//set props to fetch
+const props = Menu();
 
-export default function App(props){
-    //const props = Menu();
-    const displayMenu = (props) => {
-    //current = props.dining_halls[0].stations;
-        const current = props;
-        if (current.length > 0){
-            return (
-                <div className="App">
-                    <Menu />
-                    <div className="container-fluid">
-                        <SearchBar />
-                        <Header locationName={current.dining_halls[0].name} />           
-                        {current.map(function (stations) {
-                            return (
-                                <MealSection stations={stations.name} items={stations.items} />
-                            );
-                        })}
-                    </div>
-                    <Navbar />
-                </div>
-            );
-        }
-    }
-    return(
-        
-        <displayMenu/>
-        
-    )    
-    
-    
+var current;  // which dining hall you want to display
 
-}
+const App = () => {
+    current = props.dining_halls[0].stations;
+    return (
+        <div className="App">
+            <Menu />
+            <div className="container-fluid">
+                <SearchBar />
+                <Header locationName={props.dining_halls[0].name} />
+                {current.map(function (stations) {
+                    return (
+                        <MealSection stations={stations.name} items={stations.items} />
+                    );
+                })}
+            </div>
+            <Navbar />
+        </div>
+    );
+};
+
+export default App;
