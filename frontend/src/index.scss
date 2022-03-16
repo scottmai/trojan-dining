@@ -45,7 +45,9 @@ body {
     }
 }
 
-.mealSection {   
+.mealSection {  
+    padding-bottom: 20px;
+
     button.sectionTitle {
         padding: 0;
         margin: 0;
@@ -61,10 +63,65 @@ body {
             padding-bottom: 2px;
         }
     }
-    dropdown-container {
-        padding: 0;
+    .dropdown-container {
+        margin-left: 9px;
+        padding-left: 20px;
+        border-left: 2px solid #707070;
+        color: #707070;
     }
-    padding-bottom: 20px;
+    .mealItem {
+        .allergens {
+            font-size: 3em;
+            padding: none;
+            line-height: 0;
+            span {
+                padding-top: 0.25em;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            /*** Allergen Color Codes ***/
+            .allergen-dairy {
+                color: #862aff;
+            }
+            .allergen-eggs {
+                color: #ffd82a;
+            }
+            .allergen-fish {
+                color: #348cff;
+            }
+            .allergen-peanuts {
+                color: #753e11;
+            }
+            .allergen-pork {
+                color: #ee1818;
+            }
+            .allergen-sesame {
+                color: #585151;
+            }
+            .allergen-shellfish {
+                color: #07d6c5;
+            }
+            .allergen-soy {
+                color: #c046d8;
+            }
+            .allergen-tree-nuts {
+                color: #b46703;
+            }
+            .allergen-vegan {
+                color: #2aff2a;
+            }
+            .allergen-vegetarian {
+                color: #0b9e37;
+            }
+            .allergen-gluten {
+                color: #f85e91;
+            }
+            .allergen-food-not-analyzed-for-allergens {
+                color: #000000;
+            }
+        }
+    }
 }
 
 .menuItems {

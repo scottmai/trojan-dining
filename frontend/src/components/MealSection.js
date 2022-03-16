@@ -8,18 +8,14 @@ class MealSection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            toggled: false,
+            toggled: false
         };
     }
 
     toggleDropdown = () => {
         this.setState(prevState => ({
-            toggled: !prevState.toggled,
+            toggled: !prevState.toggled
         }));
-
-        if (this.state.toggled) {
-            
-        }
     }
 
     render() {
