@@ -24,6 +24,9 @@ export default function Menu() {
             console.log(e)
         }
     }, []);
+    if (menu == null) {
+        return <div>Loading...</div>
+    }
 
     return (
         <div style={{ marginTop: 0 }}>
