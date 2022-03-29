@@ -46,7 +46,7 @@ class Menu(models.Model):
         objects = models.DjongoManager()
         
 class MenuItem(models.Model):
-    item_uuid = models.UUIDField(editable=False, default = uuid.uuid4())
+    item_uuid = models.CharField(max_length = 32)
     name = models.CharField(max_length = 100)
     allergens = models.ArrayField(model_container=Allergen)
     
