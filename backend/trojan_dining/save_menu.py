@@ -4,10 +4,14 @@ from trojan_dining.models import Menu, MenuItem
 import uuid
 import copy
 
+# saves menu from database given a dictionary object
+# VERY IMPORTANT!: This changes the menu dict in place. So it may need to be necessary to create another menu dict depending on your 
+# uses
 
 def save_menu(dict_menu):
     # create menu document
     menu_doc = Menu()
+    
     
     # add uuids to items in  and persist menuitems to menuitem collection with uuids
     for meal in dict_menu:
