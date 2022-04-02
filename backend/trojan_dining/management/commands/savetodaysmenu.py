@@ -7,10 +7,11 @@ from datetime import datetime
 
 
 class Command(BaseCommand):
-    help = 'Saves today\'s menu'
+    help = "Saves today's menu"
 
 
     def handle(self, *args, **options):
         menu_soup = scrub_web(datetime.date(datetime.now()))
         menu_dict = menu_to_dict(menu_soup)
         save_menu(menu_dict)
+        print("today's menu saved to database")
