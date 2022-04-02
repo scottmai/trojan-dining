@@ -2,12 +2,12 @@ from datetime import datetime
 from django.test import TestCase
 
 from trojan_dining.webscraper.webscraper import scrub_html, menu_to_dict
-from trojan_dining.models import Menu, MenuItem
+from trojan_dining.models import Menu
 from trojan_dining.save_menu import save_menu
 from trojan_dining.retrieve_menu import retrieve_menu
 
-from trojan_dining.tests.test_webscraper import NORMAL_WEEKDAY_HTML, NORMAL_WEEKEND_HTML, WINTER_BREAK_HTML
-import copy
+from trojan_dining.tests.test_webscraper import NORMAL_WEEKDAY_HTML
+from trojan_dining.tests.test_webscraper import NORMAL_WEEKEND_HTML, WINTER_BREAK_HTML
 
 class SaveMenuTestCase(TestCase):
     def test_save_menu(self):

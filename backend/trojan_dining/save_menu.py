@@ -1,8 +1,5 @@
-from operator import itemgetter
-from tkinter import Menubutton
-from trojan_dining.models import Menu, MenuItem
 import uuid
-import copy
+from trojan_dining.models import Menu, MenuItem
 
 # saves menu from database given a dictionary object
 # VERY IMPORTANT!: This changes the menu dict in place. So it may need to be necessary to create another menu dict depending on your 
@@ -11,8 +8,6 @@ import copy
 def save_menu(dict_menu):
     # create menu document
     menu_doc = Menu()
-    
-    
     # add uuids to items in  and persist menuitems to menuitem collection with uuids
     for meal in dict_menu:
         for hall in meal['dining_halls']:
@@ -36,8 +31,6 @@ def save_menu(dict_menu):
 
                 # get rid of array of menu item objects on the station object
                 station.pop('items')
-
-    
     # populate menu doc's meals attribute
     menu_doc.meals = dict_menu
 
