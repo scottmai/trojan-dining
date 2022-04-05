@@ -107,7 +107,7 @@ const App = () => {
                 <h1 className="mealtimeTitle">Breakfast</h1>
                 {current.map(function (stations) {
                     return (
-                        <MealSection stations={stations.name} items={stations.items} />
+                        <MealSection stationName={stations.name} items={stations.items} />
                     );
                 })}
             </div>
