@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'trojan-dining',
         'ENFORCE_SCHEMA': True,
         'CLIENT': {
-            'host': 'mongodb://127.0.0.1:27017/',
+            'host': 'mongodb+srv://chef-tommy:EvkGreats123@cluster0.ikave.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
         }
     }
 }
