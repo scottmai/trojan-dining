@@ -81,7 +81,6 @@ toml==0.10.2
 Twisted==18.9.0
 typing-extensions==4.0.1
 tzdata==2021.5
-ubuntu-advantage-tools==27.5
 ufw==0.36
 unattended-upgrades==0.1
 urllib3==1.26.8
