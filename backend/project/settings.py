@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import django_heroku
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i3^0!8!bso4s8vlsw0vigherl!n(ljt201l^nh0o46&2cp+2g2'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'True' == str(os.getenv('DEBUG'))
 
 ALLOWED_HOSTS = []
 
@@ -84,7 +86,7 @@ DATABASES = {
         'NAME': 'trojan-dining',
         'ENFORCE_SCHEMA': True,
         'CLIENT': {
-            'host': 'mongodb+srv://chef-tommy:EvkGreats123@cluster0.ikave.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+            'host': 'mongodb://127.0.0.1:27017/' if 'True' == str(os.getenv('DEBUG')) else str(os.getenv('CONNECTION_STRING_PROD')),
         }
     }
 }
