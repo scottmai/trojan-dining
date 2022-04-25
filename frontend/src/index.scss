@@ -9,7 +9,6 @@ body {
     overflow-x: none;
 }
 
-// TODO: Fix scrolling problem
 .navbar {
     color: white;
     background-color: #990000;
@@ -179,6 +178,12 @@ body {
             border: none;
             padding: 0 15px;
             outline: none;
+        }
+    }
+
+    .date-picker {
+        #menu_date {
+            font-size: 0.9em;
         }
     }
 }
