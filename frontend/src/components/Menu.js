@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
 import Header from './Header';
 import MealSection from './MealSection';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar'
 import axios from 'axios';
+import NotifyModal from './NotifyModal'
 
 export default function Menu() {
     const [menu, setMenu] = useState(null);
@@ -33,6 +33,7 @@ export default function Menu() {
             <div className="container-fluid top-navbar">
                 <SearchBar />
                 <Header locationName={menu[0].dining_halls[0].name} />
+                <NotifyModal/>
             </div>
             {menu != null && menu.length > 0
                 ? <div className="container-fluid menuItems">
