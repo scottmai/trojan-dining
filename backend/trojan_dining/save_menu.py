@@ -1,11 +1,13 @@
 import uuid
 from trojan_dining.models import Menu, MenuItem
+import datetime
 
 # saves menu from database given a dictionary object
 # VERY IMPORTANT!: This changes the menu dict in place. So it may need to be necessary to create another menu dict depending on your 
 # uses
 
-def save_menu(dict_menu):
+def save_menu(dict_menu, menu_day=None):
+    # function to persist a scrubbed menu to the database
     # create menu document
     menu_doc = Menu()
     # add uuids to items in  and persist menuitems to menuitem collection with uuids
@@ -33,6 +35,12 @@ def save_menu(dict_menu):
                 station.pop('items')
     # populate menu doc's meals attribute
     menu_doc.meals = dict_menu
+
+    # add which day the menu reffers to
+    if(menu_day is None):
+        menu_doc.date = datetime.datetime.now()
+    else:
+        menu_doc.date = menu_day
 
     # Just add water (persist the menu to the database)
     menu_doc.save()

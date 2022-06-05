@@ -101,7 +101,7 @@ def make_menu(soup):
             # so have to get a list of foods in each stations here
             menu_items_list_list = hall.find_all("ul")
             list_of_stations = []
-
+            # check if dining hall is evk
             for i in range(len(station_names_html)):  # loop through all the stations
                 station_name = station_names_html[i].text  # station name
                 list_of_menu_items = []
@@ -113,8 +113,14 @@ def make_menu(soup):
                         # get the name of the food item
                         menu_item_name = menu_item.find(
                             text=True, recursive=False)
+                        #check if evk is making a section in all caps 
+                        if dining_hall_name.strip() == "Everybody's Kitchen" and menu_item_name.isupper() and menu_item_name.strip() != "MADE TO ORDER OMELETES":
+                            list_of_stations.append(
+                                Station(station_name, list_of_menu_items))
+                            station_name = menu_item_name.title()
+                            list_of_menu_items = []
+                            continue
                         # get all the allergens for that food item
-
                         allergens_html = menu_item.find_all("i")
                         list_of_allergens = [allergen.find(
                             "span").text for allergen in allergens_html]
@@ -189,5 +195,7 @@ def menu_output_json(inp_menu, output_file):
 if __name__ == "__main__":
     # test
     today = datetime.datetime.now()
-    Menu = scrub_html("test_htmls//winter_break.html")
+    Menu = scrub_html("normal_weekday.html")
     JsonMenu = menu_to_json(Menu)
+    with open('data.json', 'w') as f:
+        f.write(JsonMenu)

@@ -1,0 +1,34 @@
+sun.svg
+Sun by Nina Sandgaard Rasmussen from NounProject.com
+
+sunrise.svg
+Sunrise by ruliani08 from NounProject.com
+
+search.svg
+Search by Landan Lloyd from NounProject.com
+
+dropdown.svg
+Dropdown by DailyPM from NounProject.com
+
+calendar.svg
+Calendar by Storm Icons from NounProject.com
+
+notification.svg
+Notification by Landan Lloyd from NounProject.com
+
+chevron.svg
+Chevron by Thomas Le Bas from NounProject.com
+
+moon.svg
+Moon by rivercon from NounProject.com
+
+x.svg
+X by Royyan Wijaya from NounProject.com
+
+rate.svg
+Rate by Saurus Icon from NounProject.com
+
+## UNUSED
+
+sunset.svg
+Sunset by Brandon Shields from NounProject.com

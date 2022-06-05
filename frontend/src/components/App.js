@@ -1,9 +1,5 @@
+import Menu from './Menu'
 import React from 'react';
-import Navbar from './Navbar';
-import MealSection from './MealSection';
-import Header from './Header'
-import SearchBar from './SearchBar'
-import Menu from '../menu'
 
 // Hardcoded version of data
 const props = {
@@ -35,6 +31,55 @@ const props = {
                         {
                             name: "UCLA",
                             allergens: ["Traitors"]
+                        },
+                        {
+                            name: "ABCD",
+                            allergens: ["AB"]
+                        },
+                        {
+                            name: "Lalalalala",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "UCLA",
+                            allergens: ["Traitors"]
+                        }
+                    ]
+                },
+                {
+                    name: "Flexiterian2",
+                    items: [
+                        {
+                            name: "Cow",
+                            allergens: ["Cows"]
+                        },
+                        {
+                            name: "UCLA",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "ABCD",
+                            allergens: ["AB"]
+                        },
+                        {
+                            name: "Lalalalala",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "UCLA",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "ABCD",
+                            allergens: ["AB"]
+                        },
+                        {
+                            name: "Lalalalala",
+                            allergens: ["Traitors"]
+                        },
+                        {
+                            name: "UCLA",
+                            allergens: ["Traitors"]
                         }
                     ]
                 }
@@ -43,23 +88,10 @@ const props = {
     ]
 }
 
-var current;  // which dining hall you want to display
-
 const App = () => {
-    current = props.dining_halls[0].stations;
     return (
         <div className="App">
             <Menu />
-            <div className="container-fluid">
-                <SearchBar />
-                <Header locationName={props.dining_halls[0].name} />
-                {current.map(function (stations) {
-                    return (
-                        <MealSection stations={stations.name} items={stations.items} />
-                    );
-                })}
-            </div>
-            <Navbar />
         </div>
     );
 };
