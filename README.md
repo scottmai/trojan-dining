@@ -46,6 +46,8 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 
 ## Setup
 
+- Create your database directory. `mkdir .db`
+
 - Install <a href="https://www.python.org/downloads/">python 3.10</a>
 
 - Install virtualenv 
