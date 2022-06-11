@@ -2,11 +2,11 @@ from trojan_dining.models import Menu, MenuItem
 import copy
 
 # inputs (1)
-# date: datetime.date object specifying the date the menu was created
+# d: datetime.date object specifying the date the menu was created
 # outputs (1)
 # Returns a reconstructed menu dict
-def retrieve_menu(date):
-        retrieved_menu = Menu.objects.get(created_at = date)
+def retrieve_menu(d):
+        retrieved_menu = Menu.objects.get(date = d)
 
         retrieved_copy = copy.deepcopy(retrieved_menu.meals)
 

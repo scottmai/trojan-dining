@@ -27,7 +27,7 @@ class SaveMenuTestCase(TestCase):
         assert retrieved_menu == normal_weekday_dict
 
         # clean record from database for next test
-        Menu.objects.filter(created_at = datetime.date(datetime.now())).delete()
+        Menu.objects.filter(date = datetime.date(datetime.now())).delete()
 
         # # persist normal weekend menu test html to database
         normal_weekend_html = scrub_html(NORMAL_WEEKEND_HTML)
@@ -46,7 +46,7 @@ class SaveMenuTestCase(TestCase):
         assert retrieved_menu == normal_weekend_dict
 
         # # clean record from database for next test
-        Menu.objects.filter(created_at = datetime.date(datetime.now())).delete()
+        Menu.objects.filter(date = datetime.date(datetime.now())).delete()
 
         # # persist winter break html to database
         winter_break_html = scrub_html(WINTER_BREAK_HTML)

@@ -40,7 +40,6 @@ class Meal(models.Model):
 # model representation of menu
 class Menu(models.Model):
         # for queries
-        created_at = models.DateField(auto_now_add=True)
         date = models.DateField(default = None)
         meals = models.ArrayField(model_container = Meal)
 
