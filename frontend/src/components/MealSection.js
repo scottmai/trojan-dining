@@ -13,7 +13,7 @@ const MealSection = (props) => {
 
             <button className="sectionTitle" onClick={toggleDropdown}>
                 <img src={isOpen ? dropdownIcon : dropupIcon} alt="dropdown" />
-                <span>{props.stationName}</span>
+                <span>{props.stations}</span>
             </button>
 
             <div className={`dropdown-container ${isOpen ? 'open' : ''}`}>
