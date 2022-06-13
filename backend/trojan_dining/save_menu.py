@@ -38,7 +38,7 @@ def save_menu(dict_menu, menu_day=None):
 
     # add which day the menu reffers to
     if(menu_day is None):
-        menu_doc.date = datetime.date(datetime.datetime.now())
+        menu_doc.date = datetime.datetime.now()
     else:
         menu_doc.date = menu_day
 
