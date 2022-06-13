@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 
 const MealSection = (props) => {
     const [isOpen, setIsOpen] = useState(true);
-    const [items, setItems] = useState(props.items);
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -18,7 +17,7 @@ const MealSection = (props) => {
             </button>
 
             <div className={`dropdown-container ${isOpen ? 'open' : ''}`}>
-                {items.map((item) => {
+                {props.items.map((item) => {
                     return (
                         <MealItem name={item.name} allergens={item.allergens} />
                     );
