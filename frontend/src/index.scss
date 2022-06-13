@@ -120,3 +120,18 @@ body {
         }
     }
 }
+
+.notify-modal {
+    text-align: right;
+    margin-right: 50px;
+    margin-bottom: 0px;
+
+    .notify-btn {
+        padding: 10px 32px;
+        border-radius: 4px;
+        border: none;
+        background: #990000;
+        color: #fff;
+        font-size: 15px;
+    }
+}
