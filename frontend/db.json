@@ -26,6 +26,23 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "name": "Hot Line",
+                            "items": [
+                                {
+                                    "name": "Fries",
+                                    "allergens": [
+                                        "eggs"
+                                    ]
+                                },
+                                {
+                                    "name": "Pop Tarts",
+                                    "allergens": [
+                                        "gluten"
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

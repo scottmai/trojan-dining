@@ -1,9 +1,5 @@
+import Menu from './Menu'
 import React from 'react';
-import Navbar from './Navbar';
-import MealSection from './MealSection';
-import Header from './Header'
-import SearchBar from './SearchBar'
-import Menu from '../menu'
 
 // Hardcoded version of data
 const props = {
@@ -92,10 +88,7 @@ const props = {
     ]
 }
 
-var current;  // which dining hall you want to display
-
 const App = () => {
-    current = props.dining_halls[0].stations;
     return (
         <div className="App">
             <Menu />
