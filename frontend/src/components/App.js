@@ -92,19 +92,6 @@ const App = () => {
     return (
         <div className="App">
             <Menu />
-            <div className="container-fluid top-navbar">
-                <SearchBar />
-                <Header locationName={props.dining_halls[0].name} />
-            </div>
-            <div className="container-fluid menuItems">
-                <h1 className="mealtimeTitle">Breakfast</h1>
-                {current.map(function (stations) {
-                    return (
-                        <MealSection stationName={stations.name} items={stations.items} />
-                    );
-                })}
-            </div>
-            <Navbar />
         </div>
     );
 };
