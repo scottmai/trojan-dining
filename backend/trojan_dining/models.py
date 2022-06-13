@@ -48,4 +48,9 @@ class MenuItem(models.Model):
     item_uuid = models.CharField(max_length = 32)
     name = models.CharField(max_length = 100)
     allergens = models.ArrayField(model_container=Allergen)
+
+class Subscription(models.Model):
+    item_uuid = models.CharField(max_length = 32)
+    email = models.CharField(max_length = 100)
+    phone_no = models.CharField(max_length = 100)
     
