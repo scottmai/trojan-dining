@@ -33,10 +33,10 @@ export default function Menu() {
             <div className="container-fluid top-navbar">
                 <SearchBar />
                 <Header locationName={menu[0].dining_halls[0].name} />
-                <NotifyModal/>
             </div>
             {menu != null && menu.length > 0
                 ? <div className="container-fluid menuItems">
+                    <NotifyModal/>
                     <h1 className="mealtimeTitle">Breakfast</h1>
                     {menu[0].dining_halls[0].stations.map(function (stations) {
                         return (
