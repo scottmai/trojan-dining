@@ -2,28 +2,28 @@ import React, {useState} from 'react';
 import Modal from 'react-modal';
 import img from "./meal.jpg";
 
-// Modal.setAppElement('root')
-function NotifyModal() {
-     const [modalIsOpen, setModalIsOpen] = useState(false)
-     return (
-        <div className="notify-modal">
+const modalStyles = {
+    overlay: {
+        zIndex: 8,
+        background: 'rgba(0, 0, 0, 0.80)',
+    },
+    content: {
+        top: '150px',
+        left: '120px',
+        right: '120px',
+        bottom: '150px',
+    }
+};
+
+ function NotifyModal() {
+      const [modalIsOpen, setModalIsOpen] = useState(false)
+      return (
+       <div class="notify-modal">
             <button class="notify-btn" onClick={() => setModalIsOpen(true)}>Notify Me!</button>
             <Modal 
                 isOpen={modalIsOpen} 
                 onRequestClose={() => setModalIsOpen(false)} 
-                style={
-                    {
-                        overlay: {
-                            background: 'rgba(0, 0, 0, 0.80)'
-                        },
-                        content: {
-                            top: '150px',
-                            left: '120px',
-                            right: '120px',
-                            bottom: '150px',
-                        }
-                    }
-                }
+                style={modalStyles}
             >
                 <img class="meal-img" src={img} alt="platter of food"/>
                 <div>
@@ -35,7 +35,7 @@ function NotifyModal() {
                 </div>
             </Modal>
         </div>
-     )
+    )
 }
 
 export default NotifyModal;
