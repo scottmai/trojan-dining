@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 import Header from './Header';
-import MealSection from './MealSection';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar'
 import axios from 'axios';
-import breakfastIcon from "../assets/icons/sunrise-dark.svg";
-import DiningLocation from './DiningLocation';
+import MealtimeSection from './MealtimeSection';
 
 export default function Menu() {
     const [menu, setMenu] = useState(null);
@@ -41,19 +39,7 @@ export default function Menu() {
                 <div className="container-fluid menuItems">
                    {menu.map(function (mealtime) {
                         return (
-                            <div className="mealtime-section">
-                                <div className="mealtime-banner row">
-                                    <h2 className="mealtimeTitle">
-                                        {mealtime.name}
-                                        <img className="mealtime-icon" alt="Breakfast" src={breakfastIcon} />
-                                    </h2>
-                                </div>
-                                {mealtime.dining_halls.map(function (dining_hall) {
-                                    return (
-                                        <DiningLocation location={dining_hall} />
-                                    )
-                                })}
-                            </div>
+                            <MealtimeSection mealtime={mealtime} />
                         )
                    })}
                 </div>

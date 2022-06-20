@@ -30,5 +30,8 @@ Rate by Saurus Icon from NounProject.com
 
 ## UNUSED
 
+chevron-meals.svg
+Chevron by Alex Chamorro from NounProject.com
+
 sunset.svg
 Sunset by Brandon Shields from NounProject.com
