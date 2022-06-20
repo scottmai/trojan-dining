@@ -7,27 +7,21 @@ import copy
 # outputs (1)
 # Returns a reconstructed menu dict
 def retrieve_menu(d):
-<<<<<<< Updated upstream
-        retrieved_menu = Menu.objects.get(date = d)
+    # fetch menu for specific date
+    retrieved_menu = Menu.objects.get(date = d)
 
-        retrieved_copy = copy.deepcopy(retrieved_menu.meals)
-=======
-        # fetch menu for specific date
-        retrieved_menu = Menu.objects.get(date = d)
->>>>>>> Stashed changes
+    # restore menu object using uuids
+    for meal in retrieved_menu.meals:
+        for hall in meal['dining_halls']:
+            for station in hall['stations']:
+                station['items'] = []
+                for id in station['item_ids']:
+                    retrieved_menu_item = MenuItem.objects.get(item_id = id["item_id"])   
+                    menu_item_shell = {}
+                    menu_item_shell["id"] = id["item_id"]
+                    menu_item_shell['name'] = retrieved_menu_item.name
+                    menu_item_shell['allergens'] = retrieved_menu_item.allergens
+                    station['items'].append(menu_item_shell)
+                station.pop('item_ids')
 
-        # restore menu object using uuids
-        for meal in retrieved_menu.meals:
-            for hall in meal['dining_halls']:
-                for station in hall['stations']:
-                    station['items'] = []
-                    for id in station['item_ids']:
-                        retrieved_menu_item = MenuItem.objects.get(item_id = id["item_id"])   
-                        menu_item_shell = {}
-                        menu_item_shell["id"] = id["item_id"]
-                        menu_item_shell['name'] = retrieved_menu_item.name
-                        menu_item_shell['allergens'] = retrieved_menu_item.allergens
-                        station['items'].append(menu_item_shell)
-                    station.pop('item_ids')
-
-        return retrieved_menu
+    return retrieved_menu

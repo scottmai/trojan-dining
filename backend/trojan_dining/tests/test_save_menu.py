@@ -23,14 +23,7 @@ class SaveMenuTestCase(TestCase):
 
         print(retrieve_menu)
 
-<<<<<<< Updated upstream
-        assert retrieved_menu == normal_weekday_dict
-
-        # clean record from database for next test
-        Menu.objects.filter(date = datetime.date(datetime.now())).delete()
-=======
         mi1 = list(MenuItem.objects.all())
->>>>>>> Stashed changes
 
         mi1 = [e.item_id for e in mi1]
 
@@ -43,11 +36,7 @@ class SaveMenuTestCase(TestCase):
 
 
         # # clean record from database for next test
-<<<<<<< Updated upstream
-        Menu.objects.filter(date = datetime.date(datetime.now())).delete()
-=======
         # Menu.objects.filter(date = datetime.date(datetime.now())).delete()
->>>>>>> Stashed changes
 
         # # # persist normal weekend menu test html to database
         # normal_weekend_html = scrub_html(NORMAL_WEEKEND_HTML)
