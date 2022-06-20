@@ -6,7 +6,7 @@ const Header = ({locationName}) => {
     const [displayDate, setDisplayDate] = useState(today);
     return (
         <div className="header row">
-            <h2 className="col-7">{locationName}</h2>
+            {/* <h2 className="col-7">{locationName}</h2> */}
             <div className="col-5 date-picker">
                 <Form.Group controlId="menu_date" size="sm">
                 <Form.Control
