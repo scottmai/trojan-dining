@@ -2,7 +2,7 @@ from datetime import datetime
 from django.test import TestCase
 
 from trojan_dining.webscraper.webscraper import scrub_html, menu_to_dict
-from trojan_dining.models import Menu
+from trojan_dining.models import Menu, MenuItem
 from trojan_dining.save_menu import save_menu
 from trojan_dining.retrieve_menu import retrieve_menu
 
@@ -18,46 +18,55 @@ class SaveMenuTestCase(TestCase):
 
         save_menu(normal_weekday_dict)
 
-        normal_weekday_dict = menu_to_dict(normal_weekday_html)
-
         # retrieve persisted menu from database
         retrieved_menu = retrieve_menu(datetime.date(datetime.now()))
 
+        print(retrieve_menu)
 
-        assert retrieved_menu == normal_weekday_dict
+        mi1 = list(MenuItem.objects.all())
 
-        # clean record from database for next test
-        Menu.objects.filter(date = datetime.date(datetime.now())).delete()
+        mi1 = [e.item_id for e in mi1]
 
-        # # persist normal weekend menu test html to database
-        normal_weekend_html = scrub_html(NORMAL_WEEKEND_HTML)
-        normal_weekend_dict = menu_to_dict(normal_weekend_html)
+        save_menu(menu_to_dict(normal_weekday_html))
 
-        # persist database
-        save_menu(normal_weekend_dict)
+        mi2 = list(MenuItem.objects.all())
+        mi2 = [e.item_id for e in mi2]
 
-        # create another dict
-        normal_weekend_dict = menu_to_dict(normal_weekend_html)
+        assert mi1 == mi2
 
-        # retrieve reconstructed menu
-        retrieved_menu = retrieve_menu(datetime.date(datetime.now()))
-
-        # # make sure the data that was returned from the query is what was returned from scrub_html
-        assert retrieved_menu == normal_weekend_dict
 
         # # clean record from database for next test
-        Menu.objects.filter(date = datetime.date(datetime.now())).delete()
+        # Menu.objects.filter(date = datetime.date(datetime.now())).delete()
 
-        # # persist winter break html to database
-        winter_break_html = scrub_html(WINTER_BREAK_HTML)
-        winter_break_dict = menu_to_dict(winter_break_html)
+        # # # persist normal weekend menu test html to database
+        # normal_weekend_html = scrub_html(NORMAL_WEEKEND_HTML)
+        # normal_weekend_dict = menu_to_dict(normal_weekend_html)
 
-        save_menu(winter_break_dict)
+        # # persist database
+        # save_menu(normal_weekend_dict)
 
-        winter_break_dict = menu_to_dict(winter_break_html)
+        # # create another dict
+        # normal_weekend_dict = menu_to_dict(normal_weekend_html)
 
-        # # retrieve persisted menu from database
-        retrieved_menu = retrieve_menu(datetime.date(datetime.now()))
+        # # retrieve reconstructed menu
+        # retrieved_menu = retrieve_menu(datetime.date(datetime.now()))
 
-        # # make sure the data that was returned from the query is what was returned from scrub_html
-        assert retrieved_menu == winter_break_dict
+        # # # make sure the data that was returned from the query is what was returned from scrub_html
+        # assert retrieved_menu == normal_weekend_dict
+
+        # # # clean record from database for next test
+        # Menu.objects.filter(date = datetime.date(datetime.now())).delete()
+
+        # # # persist winter break html to database
+        # winter_break_html = scrub_html(WINTER_BREAK_HTML)
+        # winter_break_dict = menu_to_dict(winter_break_html)
+
+        # save_menu(winter_break_dict)
+
+        # winter_break_dict = menu_to_dict(winter_break_html)
+
+        # # # retrieve persisted menu from database
+        # retrieved_menu = retrieve_menu(datetime.date(datetime.now()))
+
+        # # # make sure the data that was returned from the query is what was returned from scrub_html
+        # assert retrieved_menu == winter_break_dict
