@@ -14,33 +14,49 @@ def save_menu(dict_menu, menu_day=None):
     for meal in dict_menu:
         for hall in meal['dining_halls']:
             for station in hall['stations']:
-                station['item_uuids'] = []
-
-                # populating the item_uuids field
-                for item in station['items']:
-                    station['item_uuids'].append({'uuid': str(uuid.uuid4())})
+                
+                station['item_ids'] = []
 
                 for index, item in enumerate(station['items']):
-                    # retrieve item uuid from the item_uuids array in station
-                    item['item_uuid'] = station['item_uuids'][index]['uuid']
 
-                    # persist the menu item to the database
-                    menu_item = MenuItem()
-                    menu_item.name = item['name']
-                    menu_item.item_uuid = item['item_uuid']
-                    menu_item.allergens = item['allergens']
-                    menu_item.save()
+                    match = None
+
+                    # check if food item name already exists in menuitems
+                    try:
+                        match = MenuItem.objects.get(name = item["name"])
+                    except:
+                        pass
+
+                    if (match):
+                        # add matched menu item's objectId to menu_ids string
+                        station['item_ids'].append({"item_id": match.item_id})
+
+                    else:
+                        # created a new document 
+                        menu_item = MenuItem()
+
+                        menu_item.item_id = uuid.uuid4()
+
+                        station["item_ids"].append({"item_id": menu_item.item_id})
+
+                        # fill out attributes
+                        menu_item.name = item['name']
+                        menu_item.allergens = item['allergens']
+
+                        # save item
+                        menu_item.save()
 
                 # get rid of array of menu item objects on the station object
                 station.pop('items')
+
     # populate menu doc's meals attribute
     menu_doc.meals = dict_menu
 
-    # add which day the menu reffers to
+    # add which day the menu refers to
     if(menu_day is None):
         menu_doc.date = datetime.datetime.now()
     else:
         menu_doc.date = menu_day
 
-    # Just add water (persist the menu to the database)
+    # persist the menu to the database
     menu_doc.save()

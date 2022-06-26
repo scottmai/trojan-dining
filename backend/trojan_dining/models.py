@@ -1,4 +1,6 @@
 # from django.db import models
+from attr import fields
+from django.forms import UUIDField
 from djongo import models
 import uuid
  
@@ -9,16 +11,23 @@ class Allergen(models.Model):
     class Meta:
         abstract = True
 
-# used for embedded menu document
-class ItemUUID(models.Model):
-    uuid = models.CharField(max_length = 32)
+# used to represent uuids for menu items
+class ItemID(models.Model):
+    item_id = models.UUIDField()
     class Meta:
         abstract = True
 
-# model representative stations 
+# model that represents menu item documents
+class MenuItem(models.Model):
+    item_id = models.UUIDField(default=None)
+    name = models.CharField(max_length = 100)
+    allergens = models.ArrayField(model_container = Allergen)
+
+
+
 class Station(models.Model):
     name = models.CharField(max_length = 50)
-    item_uuids = models.ArrayField(model_container = ItemUUID)
+    item_ids = models.ArrayField(model_container = ItemID)
     class Meta:
         abstract = True
 
@@ -42,11 +51,10 @@ class Menu(models.Model):
         # for queries
         date = models.DateField(default = None)
         meals = models.ArrayField(model_container = Meal)
-
         objects = models.DjongoManager()
         
-class MenuItem(models.Model):
+class Subscription(models.Model):
     item_uuid = models.CharField(max_length = 32)
-    name = models.CharField(max_length = 100)
-    allergens = models.ArrayField(model_container=Allergen)
+    email = models.CharField(max_length = 100)
+    phone_no = models.CharField(max_length = 100)
     
