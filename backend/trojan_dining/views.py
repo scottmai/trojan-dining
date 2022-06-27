@@ -60,4 +60,5 @@ class GetMenu(APIView):
         retrieved_menu_dict = retrieved_menu.__dict__
         del retrieved_menu_dict['id']
         del retrieved_menu_dict['_state']
-        return JsonResponse({"menu": retrieved_menu.__dict__})
+        return JsonResponse({"Menu": retrieved_menu.__dict__})
+

@@ -48,6 +48,7 @@ def save_menu(dict_menu, menu_day=None):
                         # save item
                         menu_item.save()
 
+
                 for id in station["item_ids"]:
                     menu_item = MenuItem.objects.get(item_id = id)
                     subscriptions = Subscription.objects.filter(item_id = id)
@@ -57,6 +58,7 @@ def save_menu(dict_menu, menu_day=None):
                             send_email_alert(menu_item.name, hall.name, subscription.email)
                         if subscription.phone_no:
                             send_text_alert(menu_item.name, hall.name, subscription.phone_no)
+
 
                 # get rid of array of menu item objects on the station object
                 station.pop('items')
