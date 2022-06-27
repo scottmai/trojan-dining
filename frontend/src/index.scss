@@ -37,7 +37,6 @@ body {
             display: inline;
         }
     }
-
     .mealtime-icon {
         width: 50px;
         transform: translateY(-5px);
@@ -69,7 +68,7 @@ body {
         color: #707070;
         display: none;
         &.open {
-            display: block;
+            display: inherit;
         }
     }
     .mealItem {
@@ -128,10 +127,36 @@ body {
 }
 
 .menuItems {
-    padding-top: 150px;
-    .mealtimeTitle {
-        font-weight: bold;
-        font-size: 1.6em;
+    padding-top: 110px;
+    .mealtimeSection {
+        .mealtimeTitle {
+            font-weight: bold;
+            font-size: 1.6em;
+        }
+        .location-title {
+            font-weight: bold;
+            color: #990000;
+            font-size: 1.2em;
+        }
+        .mealtime-icon {
+            width: 50px;
+            margin-bottom: -10px;
+            // transform: translateY(5px);
+        }
+        .mealtime-banner {
+            padding-top: 10px;
+            background-color: white;
+            margin-bottom: 20px;
+            top: 110px;
+            position: sticky;
+            box-shadow: 0 2px 2px -2px #00000060;
+        }
+        .dining-location-list {
+            display: none;
+            &.open {
+                display: inherit;
+            }
+        }
     }
 }
 
