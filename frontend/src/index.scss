@@ -4,7 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-    padding-bottom: 50px;
+    margin-bottom: 59px;
     font-family: Roboto, sans-serif;
     overflow-x: none;
 }
@@ -140,19 +140,39 @@ body {
         }
         .mealtime-icon {
             width: 50px;
-            margin-bottom: -10px;
-            // transform: translateY(5px);
+            &.breakfast {
+                margin-bottom: -10px;
+            }
+            &.lunch {
+                margin-left: 10px;
+                width: 40px;
+            }
+            &.dinner {
+                margin-left: 10px;
+                width: 35px;
+            }
+        }
+        .dropdown-icon {
+            width: 40px;
+            margin-right: 5px;
+            margin-bottom: -5px;
+            &.closed {
+                margin-top: -20px;
+                transform: rotate(180deg);
+            }
         }
         .mealtime-banner {
             padding-top: 10px;
             background-color: white;
-            margin-bottom: 20px;
-            top: 110px;
+
+            top: 109px;
             position: sticky;
-            box-shadow: 0 2px 2px -2px #00000060;
+            border: 1px solid #00000060;
+            box-shadow: 0 2px 2px -2px #00000020;
         }
         .dining-location-list {
             display: none;
+            margin-top: 20px;
             &.open {
                 display: inherit;
             }
