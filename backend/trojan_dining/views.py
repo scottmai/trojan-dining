@@ -56,4 +56,8 @@ class GetMenu(APIView):
             menu_dict = menu_to_dict(scrubed_site)
             save_menu(menu_dict, date) 
             retrieved_menu = retrieve_menu(datetime.datetime.date(date))
-        return JsonResponse({"Menu": retrieved_menu})
+
+        retrieved_menu_dict = retrieved_menu.__dict__
+        del retrieved_menu_dict['id']
+        del retrieved_menu_dict['_state']
+        return JsonResponse({"menu": retrieved_menu.__dict__})
