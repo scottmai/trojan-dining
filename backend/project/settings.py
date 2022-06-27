@@ -28,9 +28,6 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'True' == str(os.getenv('DEBUG'))
 
-ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -120,10 +117,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-NOSE_ARGS = ['--nocapture',
-             '--nologcapture',]
-
 
 
 # Static files (CSS, JavaScript, Images)
