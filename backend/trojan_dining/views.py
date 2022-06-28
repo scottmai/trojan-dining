@@ -41,7 +41,6 @@ class Username(APIView):
 
 class GetMenu(APIView):
     def get(self, request):
-        print("here")
         # get the date and if it doesnt exist return ''
         date = request.GET.get('date', '')
 
