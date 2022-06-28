@@ -41,10 +41,18 @@ class Username(APIView):
 
 class GetMenu(APIView):
     def get(self, request):
+        print("here")
         # get the date and if it doesnt exist return ''
         date = request.GET.get('date', '')
+
+        # automatically set date if it isn't there already
+
+        if date == '':
+            date = datetime.datetime.now().strftime("%Y-%m-%d")\
+
         # turn it into datetime
         try:
+            
             date = datetime.datetime.strptime(date, "%Y-%m-%d")
         except:
             return HttpResponse(status=400)

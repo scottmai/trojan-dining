@@ -50,8 +50,8 @@ def save_menu(dict_menu, menu_day=None):
 
 
                 for id in station["item_ids"]:
-                    menu_item = MenuItem.objects.get(item_id = id)
-                    subscriptions = Subscription.objects.filter(item_id = id)
+                    menu_item = MenuItem.objects.get(item_id = id["item_id"])
+                    subscriptions = Subscription.objects.filter(item_id = id["item_id"])
                     subscriptions = list(subscriptions)
                     for subscription in subscriptions:
                         if subscription.email:
