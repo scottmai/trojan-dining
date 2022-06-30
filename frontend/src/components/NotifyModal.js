@@ -9,10 +9,7 @@ const customStyles = {
         background: 'rgba(0, 0, 0, 0.80)',
     },
     content: {
-        top: '20%',
-        left: '20%',
-        right: '20%',
-        bottom: '20%',
+        margin: 'auto'
     }
 };
 
