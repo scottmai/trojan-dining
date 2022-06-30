@@ -46,6 +46,8 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 
 ## Setup
 
+- Create your database directory. `mkdir .db`
+
 - Install <a href="https://www.python.org/downloads/">python 3.10</a>
 
 - Install virtualenv 
@@ -78,7 +80,7 @@ We are using a popular database called MongoDB for this project. MongoDB is nota
 
 - Start the database in a separate terminal:  
   - [Mac] `brew services start mongodb-community@5.0`
-  - [Windows] `"C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath=".db"`
+  - [Windows] `. "C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe" --dbpath=".db"`
     - Note: This *must* be performed from the root directory, *not* `backend`
     
 - Enter the backend directory: `cd backend`

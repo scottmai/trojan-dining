@@ -1,3 +1,5 @@
 .db
 trojan_dining_workspace.code-workspace
 .vscode
+venv
+.env

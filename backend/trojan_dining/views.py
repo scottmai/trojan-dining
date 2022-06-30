@@ -14,6 +14,7 @@ from time import sleep
 import datetime
 from .models import *
 from trojan_dining.save_menu import save_menu
+from trojan_dining.retrieve_menu import retrieve_menu
 
 # some demo endpoints
 
@@ -41,20 +42,28 @@ class Username(APIView):
 class GetMenu(APIView):
     def get(self, request):
         # get the date and if it doesnt exist return ''
-        date = request.GET.get('date', '')
-        # turn it into datetime
-        try:
-            date = datetime.datetime.strptime(date, "%Y-%m-%d")
-        except:
-            return HttpResponse(status=400)
+        date = request.GET.get('date', None)
+
+        if date is None:
+            date = datetime.datetime.now()
+        else:
+            try:
+                    date = datetime.datetime.strptime(date, "%Y-%m-%d")
+            except:
+                    return HttpResponse(status=400)
+            
+
         # get the menu from that date
         try:
-            retrieved_menu = Menu.objects.get(
-                date=datetime.datetime.date(date))
+            retrieved_menu = retrieve_menu(datetime.datetime.date(date))
         except Menu.DoesNotExist:
             scrubed_site = scrub_web(date)
             menu_dict = menu_to_dict(scrubed_site)
             save_menu(menu_dict, date) 
-            retrieved_menu = Menu.objects.get(
-                date=datetime.datetime.date(date))
-        return JsonResponse({"Menu": retrieved_menu.meals})
+            retrieved_menu = retrieve_menu(datetime.datetime.date(date))
+
+        retrieved_menu_dict = retrieved_menu.__dict__
+        del retrieved_menu_dict['id']
+        del retrieved_menu_dict['_state']
+        return JsonResponse({"Menu": retrieved_menu.__dict__})
+

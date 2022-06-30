@@ -17,7 +17,7 @@ const props = {
                         },
                         {
                             name: "Your Mom",
-                            allergens: ["Vegan"]
+                            allergens: ["Vegan", "Dairy"]
                         }
                     ]
                 },
