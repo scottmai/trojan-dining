@@ -24,17 +24,17 @@ const MealtimeSection = (props) => {
     return (
         <div className="mealtimeSection">
             <div className="mealtime-banner row" onClick={toggleDropdown}>
-                <h2 className="mealtimeTitle">
-                <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
+                <h1 id={props.mealtime.name.toLowerCase()} className="mealtimeTitle">
+                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
                     {props.mealtime.name}
                     <img className={`mealtime-icon ${props.mealtime.name.toLowerCase()}`} alt={props.mealtime.name} src={mealtimeIcon()} />
-                </h2>
+                </h1>
             </div>
             
             <div className={`dining-location-list ${isOpen ? 'open' : ''}`}>
                 {props.mealtime.dining_halls.map(function (dining_hall) {
                     return (
-                        <DiningLocation location={dining_hall} />
+                        <DiningLocation location={dining_hall} mealtime={props.mealtime.name} />
                     )
                 })}
             </div>

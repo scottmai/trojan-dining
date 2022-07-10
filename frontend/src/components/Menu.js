@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Header from './Header';
 import Navbar from './Navbar';
@@ -28,6 +28,10 @@ export default function Menu() {
         return <div>Loading...</div>
     }
 
+    // TODO: Create refs for scrolling to mealtime
+    // Scrolling logic using refs
+    const scrollToRef = (ref) => ref.current.scrollIntoView({ behavior: 'smooth' }); 
+    
     return (
         <div style={{ marginTop: 0 }}>
             <div className="container-fluid top-navbar">
@@ -49,15 +53,5 @@ export default function Menu() {
     )
 }
 
-{/* <div className="container-fluid menuItems">
-    <h1 className="dining-location">{menu[0].dining_halls[0].name}</h1>
-    <h2 className="mealtimeTitle">Breakfast</h2>
-    {menu[0].dining_halls[0].stations.map(function (stations) {
-        return (
-            <MealSection stations={stations.name} items={stations.items} />
-        );
-    })}
-</div> */}
-
-//npx json-server --watch db.json --port 8000
+// npx json-server --watch db.json --port 8000
 

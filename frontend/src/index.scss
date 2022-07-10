@@ -7,6 +7,7 @@ body {
     margin-bottom: 59px;
     font-family: Roboto, sans-serif;
     overflow-x: none;
+    scroll-behavior: smooth;
 }
 
 .navbar {
@@ -21,22 +22,14 @@ body {
     justify-content: center;
     text-align: center;
     font-size: 1.1em;
-    height: 60px;
+    // height: 60px;
 
-     a {
+    a {
          text-decoration: none;
          color: white;
+         background: none;
+         border: none;
      }
-    
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        li {
-            padding: 8px;
-            display: inline;
-        }
-    }
     .mealtime-icon {
         width: 50px;
         transform: translateY(-5px);
@@ -127,7 +120,6 @@ body {
 }
 
 .menuItems {
-    padding-top: 110px;
     .mealtimeSection {
         .mealtimeTitle {
             font-weight: bold;
@@ -164,7 +156,6 @@ body {
         .mealtime-banner {
             padding-top: 10px;
             background-color: white;
-
             top: 109px;
             position: sticky;
             border: 1px solid #00000060;
@@ -172,6 +163,7 @@ body {
         }
         .dining-location-list {
             display: none;
+            scroll-padding-top: 200px;
             margin-top: 20px;
             &.open {
                 display: inherit;
@@ -180,15 +172,13 @@ body {
     }
 }
 
-// TODO: Fix scrolling problem
 .top-navbar {
     z-index: 5;
     background-color: white;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     height: 110px;
-    display: block;
     box-shadow: 0 5px 5px -5px #00000060;
     
     .header {
