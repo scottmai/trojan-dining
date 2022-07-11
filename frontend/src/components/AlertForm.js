@@ -11,8 +11,8 @@ export default function AlertForm() {
     return (
         <form>
             <label>
-                Favorite Meal:
-                <input type="text" name="food" />
+                Email:
+                <input type="email" name="email" />
             </label>
             <label>
                 Phone Number:
