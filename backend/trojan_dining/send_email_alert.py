@@ -5,7 +5,7 @@ from sendgrid.helpers.mail import Mail
 
 def send_email_alert(item_name,dining_hall, email_address):
     message = Mail(
-        from_email='from_email@example.com',
+        from_email='placeholderdining@gmail.com',
         to_emails=email_address,
         subject='Order Up: Menu Item Notification',
         html_content='Alert: {} is being served at {} today'.format(item_name, dining_hall))

@@ -67,3 +67,21 @@ class GetMenu(APIView):
         del retrieved_menu_dict['_state']
         return JsonResponse({"Menu": retrieved_menu.__dict__})
 
+class PostSubscription(APIView):
+    def post(self, request):
+        item_id = request.POST.get('item_id', None)
+
+        if item_id is None:
+            return HttpResponse(status = 400)
+        else:
+            email = request.POST.get('email', None)
+            phone_number = request.POST.get('phone_number', None)
+
+            if not email and not phone_number:
+                return HttpResponse(400)
+            
+            try:  
+                Subscription(item_id = item_id, email = email, phone_no = phone_number).save()
+                return HttpResponse(201)
+            except:
+                return HttpResponse(500)
