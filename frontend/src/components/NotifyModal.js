@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ReactModal from 'react-modal';
 import Modal from 'react-modal';
-
+import AlertForm from './AlertForm'
 
 const customStyles = {
     overlay: {
@@ -30,6 +30,7 @@ function NotifyModal() {
                     <h3>Want to get updated?</h3>
                     <p>Sign up to get alerts every time your favorite meal is featured at the dining hall!</p>
                 </div>
+                <AlertForm/>
             </Modal>
         </div>
     )
