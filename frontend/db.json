@@ -24,6 +24,27 @@
                                         "milk",
                                         "gluten"
                                     ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
                                 }
                             ]
                         },
@@ -39,6 +60,46 @@
                                 {
                                     "name": "Pop Tarts",
                                     "allergens": [
+                                        "gluten"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Expo bar",
+                            "items": [
+                                {
+                                    "name": "Chicken tenders",
+                                    "allergens": [
+                                        "milk",
+                                        "eggs"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
                                         "gluten"
                                     ]
                                 }
@@ -69,6 +130,195 @@
                                     "name": "Soup",
                                     "allergens": [
                                         "shrimp"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Expo bar",
+                            "items": [
+                                {
+                                    "name": "Chicken tenders",
+                                    "allergens": [
+                                        "milk",
+                                        "eggs"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Expo bar",
+                            "items": [
+                                {
+                                    "name": "Chicken tenders",
+                                    "allergens": [
+                                        "milk",
+                                        "eggs"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Dinner", 
+            "date_time_start": "1/22/22",
+            "date_time_end": "1/22/22",
+            "dining_halls":[
+                {   
+                    "name": "EVK",
+                    "stations": [
+                        {
+                            "name": "Expo bar",
+                            "items": [
+                                {
+                                    "name": "Pasta",
+                                    "allergens": [
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Soup",
+                                    "allergens": [
+                                        "shrimp"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Expo bar",
+                            "items": [
+                                {
+                                    "name": "Chicken tenders",
+                                    "allergens": [
+                                        "milk",
+                                        "eggs"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Expo bar",
+                            "items": [
+                                {
+                                    "name": "Chicken tenders",
+                                    "allergens": [
+                                        "milk",
+                                        "eggs"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
+                                    ]
+                                },
+                                {
+                                    "name": "Cereal",
+                                    "allergens": [
+                                        "milk",
+                                        "gluten"
                                     ]
                                 }
                             ]
