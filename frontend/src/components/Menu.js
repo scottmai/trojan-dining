@@ -28,7 +28,6 @@ export default function Menu() {
         return <div>Loading...</div>
     }
 
-    // TODO: Create refs for scrolling to mealtime
     // Scrolling logic using refs
     const scrollToRef = (ref) => ref.current.scrollIntoView({ behavior: 'smooth' }); 
     
