@@ -13,7 +13,6 @@ export default function Menu() {
 
         try {
             async function fetchMenu() {
-                // const menuRes = await axios.get('http://localhost:8000/menu/')
                 const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/')
                 if (menuRes.statusText === "OK") {
                     setMenu(menuRes.data.Menu.meals)
