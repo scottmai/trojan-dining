@@ -10,20 +10,16 @@ const MealSection = (props) => {
 
     return (
         <div className="mealSection">
-
             <button className="sectionTitle" onClick={toggleDropdown}>
                 <img src={isOpen ? dropdownIcon : dropupIcon} alt="dropdown" />
                 <span>{props.stations}</span>
             </button>
 
             <div className={`dropdown-container ${isOpen ? 'open' : ''}`}>
-                {props.items.map((item) => {
-                    return (
-                        <MealItem name={item.name} allergens={item.allergens} />
-                    );
-                })}
+                {props.items.map((item) => (
+                    <MealItem name={item.name} allergens={item.allergens} />
+                ))}
             </div>
-            
         </div>
     );
 }
