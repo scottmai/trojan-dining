@@ -13,9 +13,9 @@ export default function Menu() {
 
         try {
             async function fetchMenu() {
-                const menuRes = await axios.get('http://localhost:8000/menu/')
+                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/')
                 if (menuRes.statusText === "OK") {
-                    setMenu(menuRes.data)
+                    setMenu(menuRes.data.Menu.meals)
                 }
             }
             fetchMenu()
@@ -29,24 +29,28 @@ export default function Menu() {
     }
 
     return (
-        <div style={{ marginTop: 0 }}>
+        <div>
             <div className="container-fluid top-navbar">
                 <SearchBar />
                 <Header locationName={menu[0].dining_halls[0].name} />
+                <NotifyModal />
             </div>
-            {menu != null && menu.length > 0
-                ? <div className="container-fluid menuItems">
-                    <NotifyModal/>
-                    <h1 className="mealtimeTitle">Breakfast</h1>
-                    {menu[0].dining_halls[0].stations.map(function (stations) {
+            {menu.map(meal => (
+                <div className="container-fluid menuItems">
+                    <h1 className="mealtimeTitle">{meal.name}</h1>
+                    {meal.dining_halls.map(diningHall => (
+                        diningHall.stations.map(station => (
+                            <MealSection stations={station.name} items={station.items} />
+                        ))
+                    ))}
+                    {/* {meal.dining_halls[0].stations.map(function (stations) {
                         return (
                             <MealSection stations={stations.name} items={stations.items} />
                         );
-                    })}
+                    })} */}
                 </div>
-                : <p>Menu loading...</p>}
+            ))}
             <Navbar />
         </div>
     )
 }
-
