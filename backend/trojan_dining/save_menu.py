@@ -55,9 +55,9 @@ def save_menu(dict_menu, menu_day=None):
                     subscriptions = list(subscriptions)
                     for subscription in subscriptions:
                         if subscription.email:
-                            send_email_alert(menu_item.name, hall.name, subscription.email)
+                            send_email_alert(menu_item.name, hall['name'], subscription.email)
                         if subscription.phone_no:
-                            send_text_alert(menu_item.name, hall.name, subscription.phone_no)
+                            send_text_alert(menu_item.name, hall['name'], subscription.phone_no)
 
 
                 # get rid of array of menu item objects on the station object
