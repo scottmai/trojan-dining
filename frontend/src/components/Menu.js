@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import SearchBar from './SearchBar'
 import axios from 'axios';
 import NotifyModal from './NotifyModal'
+import MealtimeSection from './MealtimeSection';
 
 export default function Menu() {
     const [menu, setMenu] = useState(null);
@@ -16,6 +17,7 @@ export default function Menu() {
                 const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/')
                 if (menuRes.statusText === "OK") {
                     setMenu(menuRes.data.Menu.meals)
+                    console.log(menuRes.data.Menu.meals)
                 }
             }
             fetchMenu()
@@ -26,30 +28,22 @@ export default function Menu() {
     }, []);
     if (menu == null) {
         return <div>Loading...</div>
+    } else if (menu.length === 0) {
+        return <div>No items 🤔</div>
     }
-
     return (
         <div>
+            <NotifyModal />
             <div className="container-fluid top-navbar">
                 <SearchBar />
                 <Header locationName={menu[0].dining_halls[0].name} />
-                <NotifyModal />
             </div>
-            {menu.map(meal => (
-                <div className="container-fluid menuItems">
-                    <h1 className="mealtimeTitle">{meal.name}</h1>
-                    {meal.dining_halls.map(diningHall => (
-                        diningHall.stations.map(station => (
-                            <MealSection stations={station.name} items={station.items} />
-                        ))
-                    ))}
-                    {/* {meal.dining_halls[0].stations.map(function (stations) {
-                        return (
-                            <MealSection stations={stations.name} items={stations.items} />
-                        );
-                    })} */}
-                </div>
-            ))}
+            <div className="container-fluid menuItems">
+                {menu.map(mealtime => (
+                    <MealtimeSection mealtime={mealtime} />
+                ))}
+            </div>
+
             <Navbar />
         </div>
     )
