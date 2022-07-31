@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
-import MealSection from './MealSection';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar'
 import axios from 'axios';

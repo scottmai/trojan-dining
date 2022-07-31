@@ -5,10 +5,10 @@ const Navbar = () => {
     return (
         <div className="container-fluid nav">
             <div className="d-flex align-items-center gap-3">
-                <a href="#">Village</a>
-                <a href="#">EVK</a>
-                <a href="#">Parkside</a>
-                <a href="#"><img className="mealtime-icon" alt="Breakfast" src={breakfastIcon} /></a>
+                <button className="nostyle">Village</button>
+                <button className="nostyle">EVK</button>
+                <button className="nostyle">Parkside</button>
+                <button className="nostyle"><img className="mealtime-icon" alt="Breakfast" src={breakfastIcon} /></button>
             </div>
         </div>
     );
