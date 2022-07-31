@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-
 import Header from './Header';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar'
 import axios from 'axios';
 import MealtimeSection from './MealtimeSection';
+import NotifyModal from './NotifyModal'
 
 export default function Menu() {
     const [menu, setMenu] = useState(null);
@@ -13,9 +13,9 @@ export default function Menu() {
 
         try {
             async function fetchMenu() {
-                const menuRes = await axios.get('http://localhost:8000/menu/')
+                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/')
                 if (menuRes.statusText === "OK") {
-                    setMenu(menuRes.data)
+                    setMenu(menuRes.data.Menu.meals)
                 }
             }
             fetchMenu()
@@ -32,10 +32,11 @@ export default function Menu() {
     const scrollToRef = (ref) => ref.current.scrollIntoView({ behavior: 'smooth' }); 
     
     return (
-        <div style={{ marginTop: 0 }}>
+        <div>
             <div className="container-fluid top-navbar">
                 <SearchBar />
                 <Header locationName={menu[0].dining_halls[0].name} />
+                <NotifyModal />
             </div>
             {menu != null && menu.length > 0
                 ?
@@ -46,11 +47,8 @@ export default function Menu() {
                         )
                    })}
                 </div>
-                : <p>Menu loading...</p>}
+            ))}
             <Navbar />
         </div>
     )
 }
-
-// npx json-server --watch db.json --port 8000
-

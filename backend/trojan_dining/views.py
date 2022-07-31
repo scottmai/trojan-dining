@@ -42,12 +42,17 @@ class Username(APIView):
 class GetMenu(APIView):
     def get(self, request):
         # get the date and if it doesnt exist return ''
-        date = request.GET.get('date', '')
-        # turn it into datetime
-        try:
-            date = datetime.datetime.strptime(date, "%Y-%m-%d")
-        except:
-            return HttpResponse(status=400)
+        date = request.GET.get('date', None)
+
+        if date is None:
+            date = datetime.datetime.now()
+        else:
+            try:
+                    date = datetime.datetime.strptime(date, "%Y-%m-%d")
+            except:
+                    return HttpResponse(status=400)
+            
+
         # get the menu from that date
         try:
             retrieved_menu = retrieve_menu(datetime.datetime.date(date))
@@ -56,4 +61,27 @@ class GetMenu(APIView):
             menu_dict = menu_to_dict(scrubed_site)
             save_menu(menu_dict, date) 
             retrieved_menu = retrieve_menu(datetime.datetime.date(date))
-        return JsonResponse({"Menu": retrieved_menu})
+
+        retrieved_menu_dict = retrieved_menu.__dict__
+        del retrieved_menu_dict['id']
+        del retrieved_menu_dict['_state']
+        return JsonResponse({"Menu": retrieved_menu.__dict__})
+
+class PostSubscription(APIView):
+    def post(self, request):
+        item_id = request.POST.get('item_id', None)
+
+        if item_id is None:
+            return HttpResponse(status = 400)
+        else:
+            email = request.POST.get('email', None)
+            phone_number = request.POST.get('phone_number', None)
+
+            if not email and not phone_number:
+                return HttpResponse(400)
+            
+            try:  
+                Subscription(item_id = item_id, email = email, phone_no = phone_number).save()
+                return HttpResponse(201)
+            except:
+                return HttpResponse(500)

@@ -28,9 +28,6 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'True' == str(os.getenv('DEBUG'))
 
-ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -86,7 +83,7 @@ DATABASES = {
         'NAME': 'trojan-dining',
         'ENFORCE_SCHEMA': True,
         'CLIENT': {
-            'host': 'mongodb://127.0.0.1:27017/' if 'True' == str(os.getenv('DEBUG')) else str(os.getenv('CONNECTION_STRING_PROD')),
+            'host': str(os.getenv('CONNECTION_STRING_DEV')) if 'True' == str(os.getenv('DEBUG')) else str(os.getenv('CONNECTION_STRING_PROD')),
         }
     }
 }

@@ -54,7 +54,7 @@ class Menu(models.Model):
         objects = models.DjongoManager()
         
 class Subscription(models.Model):
-    item_uuid = models.CharField(max_length = 32)
-    email = models.CharField(max_length = 100)
-    phone_no = models.CharField(max_length = 100)
+    item_id = models.UUIDField(max_length = 32, default = None)
+    email = models.CharField(max_length = 100, default = None)
+    phone_no = models.CharField(max_length = 100, default = None)
     
