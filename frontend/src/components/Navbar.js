@@ -8,7 +8,9 @@ const Navbar = () => {
                 <button className="nostyle">Village</button>
                 <button className="nostyle">EVK</button>
                 <button className="nostyle">Parkside</button>
-                <button className="nostyle"><img className="mealtime-icon" alt="Breakfast" src={breakfastIcon} /></button>
+                <button className="nostyle">
+                    <img className="mealtime-icon" alt="Breakfast" src={breakfastIcon} />
+                </button>
             </div>
         </div>
     );
