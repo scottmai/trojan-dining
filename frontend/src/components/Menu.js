@@ -14,7 +14,8 @@ export default function Menu() {
 
         try {
             async function fetchMenu() {
-                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/')
+                // TODO: change this to current day once backend issues are resolved
+                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/?date=2022-07-30')
                 if (menuRes.statusText === "OK") {
                     setMenu(menuRes.data.Menu.meals)
                     console.log(menuRes.data.Menu.meals)
