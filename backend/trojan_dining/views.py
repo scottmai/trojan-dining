@@ -16,6 +16,8 @@ from .models import *
 from trojan_dining.save_menu import save_menu
 from trojan_dining.retrieve_menu import retrieve_menu
 
+import json
+
 # some demo endpoints
 
 
@@ -81,7 +83,34 @@ class PostSubscription(APIView):
                 return HttpResponse(400)
             
             try:  
-                Subscription(item_id = item_id, email = email, phone_no = phone_number).save()
+                try:
+                    Subscription.objects.get(item_id = item_id, email = email, phone_no = phone_number)
+                except:
+                    Subscription(item_id = item_id, email = email, phone_no = phone_number).save()
                 return HttpResponse(201)
             except:
                 return HttpResponse(500)
+
+class GetSubscriptions(APIView):
+    def get(self, request):
+        user_email = request.GET.get('email')
+
+        if user_email is None:
+            return HttpResponse(status = 400)
+        else:
+            subscription_list = list(Subscription.objects.filter(email = user_email).values())
+
+            for sub in subscription_list:
+                sub['name'] = MenuItem.objects.get(item_id = sub['item_id']).name
+
+            return JsonResponse({"Subscriptions": subscription_list})
+
+class DeleteSubscriptions(APIView):
+    def delete(self, request):
+        body = json.loads(request.body)
+        subscriptions = body['subscriptions']
+
+        for sub in subscriptions:
+            Subscription.objects.filter(item_id = sub["item_id"], email = sub["email"]).delete()
+        
+        return HttpResponse(status = 200)

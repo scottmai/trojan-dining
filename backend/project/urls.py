@@ -24,5 +24,7 @@ urlpatterns = [
     path('items/', views.MenuItemList.as_view()),
     path('username/', views.Username.as_view()),
     path("menu/", views.GetMenu.as_view()),
-    path("notify/", views.PostSubscription.as_view())
+    path("notify/", views.PostSubscription.as_view()),
+    path("subscriptions/", views.GetSubscriptions.as_view()),
+    path("unenroll/", views.DeleteSubscriptions.as_view())
 ]
