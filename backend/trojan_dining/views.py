@@ -114,3 +114,4 @@ class DeleteSubscriptions(APIView):
             Subscription.objects.filter(item_id = sub["item_id"], email = sub["email"]).delete()
         
         return HttpResponse(status = 200)
+        
