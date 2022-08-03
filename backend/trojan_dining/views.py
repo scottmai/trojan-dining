@@ -94,16 +94,13 @@ class PostSubscription(APIView):
 class GetSubscriptions(APIView):
     def get(self, request):
         user_email = request.GET.get('email')
+        
+        subscription_list = list(Subscription.objects.filter(email = user_email).values())
 
-        if user_email is None:
-            return HttpResponse(status = 400)
-        else:
-            subscription_list = list(Subscription.objects.filter(email = user_email).values())
+        for sub in subscription_list:
+            sub['name'] = MenuItem.objects.get(item_id = sub['item_id']).name
 
-            for sub in subscription_list:
-                sub['name'] = MenuItem.objects.get(item_id = sub['item_id']).name
-
-            return JsonResponse({"Subscriptions": subscription_list})
+        return JsonResponse({"Subscriptions": subscription_list})
 
 class DeleteSubscriptions(APIView):
     def delete(self, request):
@@ -114,4 +111,3 @@ class DeleteSubscriptions(APIView):
             Subscription.objects.filter(item_id = sub["item_id"], email = sub["email"]).delete()
         
         return HttpResponse(status = 200)
-        
