@@ -241,3 +241,17 @@ body {
 .nostyle {
     all: unset;
 }
+
+.btn-primary {
+    padding: 10px 32px;
+        border-radius: 10px;
+        border: none;
+        background: #990000;
+        color: #fff;
+        font-size: 15px;
+}
+
+.form-control {
+    border: none;
+    background: rgb(240, 237, 237);
+}
