@@ -9,8 +9,8 @@ export default function AlertForm() {
                 <input type="email" className="form-control" id="email" aria-describedby="emailForm" placeholder="tommytrojan@usc.edu" required/>
             </div>
             <div className="form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                <small className="form-text text-muted">Check the box if you would like to receive email notifications too</small>
+                <input type="checkbox" className="form-check-input" id="emailCheckbox" defaultChecked/>
+                <small className="form-text text-muted">Receive email notifications too</small>
             </div>
             <div className="form-group mt-3">
                 <label for="userPhone" className="text-muted">Phone</label>
