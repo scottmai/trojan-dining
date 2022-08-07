@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
-import ReactModal from 'react-modal';
-import Modal from 'react-modal';
+import React, {useState} from 'react'
+import ReactModal from 'react-modal'
+import Modal from 'react-modal'
 import AlertForm from './AlertForm'
+import xIcon from "../assets/icons/x.svg"
 
 const customStyles = {
     overlay: {
@@ -25,7 +26,11 @@ function NotifyModal() {
                 onRequestClose={() => setModalIsOpen(false)} 
                 style={customStyles}
             >
-                <button className="close-btn" onClick={() => setModalIsOpen(false)}>X</button>
+                <div className="position-absolute top-0 end-0">
+                    <button className="close-btn" onClick={() => setModalIsOpen(false)}>
+                        <img className="xIcon" src={xIcon} alt="close button"></img>
+                    </button>
+                </div>
                 <div>
                     <h3>Get notified for [FOOD_NAME]?</h3>
                     <p>Sign up to get alerts every time your favorite meal is featured at the dining hall!</p>
