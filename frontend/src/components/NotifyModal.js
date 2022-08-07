@@ -32,7 +32,7 @@ function NotifyModal() {
                     </button>
                 </div>
                 <div>
-                    <h3>Get notified for [FOOD_NAME]?</h3>
+                    <h3>Get notified for <span className="selectedFood">[FOOD_NAME]</span>?</h3>
                     <p>Sign up to get alerts every time your favorite meal is featured at the dining hall!</p>
                 </div>
                 <AlertForm/>
