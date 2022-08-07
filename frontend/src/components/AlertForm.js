@@ -12,12 +12,11 @@ export default function AlertForm() {
                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                 <small className="form-text text-muted">Check the box if you would like to receive email notifications too</small>
             </div>
-            <div className="form-group">
+            <div className="form-group mt-3">
                 <label for="userPhone" className="text-muted">Phone</label>
-                <input type="tel" className="form-control" id="tel" aria-describedby="phoneForm" placeholder="123-456-7890" pattern="^\d{4}-\d{3}-\d{4}$" required/>
+                <input type="tel" className="form-control" id="tel" aria-describedby="phoneForm" placeholder="123-456-7890" pattern="^\d{4}-\d{3}-\d{4}$" />
             </div>
-            <button type="submit" className="btn btn-primary">Subscribe</button>
+            <button type="submit" className="btn btn-primary mt-3">Subscribe</button>
         </form>
     )
 }
-
