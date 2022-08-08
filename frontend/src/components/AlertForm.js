@@ -4,7 +4,7 @@ import React from 'react';
 export default function AlertForm() {
     return (
         <form>
-            <div className="form-group">
+            <div className="form-group mt-3">
                 <label for="userEmail" className="text-muted">Email</label>
                 <input type="email" className="form-control" id="email" aria-describedby="emailForm" placeholder="tommytrojan@usc.edu" required/>
             </div>
