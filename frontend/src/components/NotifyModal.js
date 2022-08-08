@@ -23,7 +23,7 @@ function NotifyModal() {
                     </button>
                 </div>
                 <div>
-                    <h5 className="modalTitle">Type in your email or phone number to access notification settings.</h5>
+                    <h5 className="modalTitle mb-0">Type in your email or phone number to access notification settings.</h5>
                     <small className="text-muted mb-3 mt-0">Please fill out at least one field.</small>
                 </div>
                 <AlertForm/>
