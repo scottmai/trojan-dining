@@ -2,7 +2,7 @@
 import os
 from twilio.rest import Client
 
-def send_text_alert(item_name, dining_hall, phone_number):
+def send_text_alert(msg, phone_number):
     # Find your Account SID and Auth Token at twilio.com/console
     # and set the environment variables. See http://twil.io/secure
     account_sid = os.environ['TWILIO_ACCOUNT_SID']
@@ -11,8 +11,7 @@ def send_text_alert(item_name, dining_hall, phone_number):
 
     message = client.messages \
         .create(
-            body='Alert: {} is being served at {} today'.format(item_name, dining_hall),
+            body=msg,
             from_='+12692485394',
             to=phone_number
         )
-
