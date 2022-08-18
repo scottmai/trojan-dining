@@ -1,12 +1,18 @@
 from re import sub
 import uuid
-from trojan_dining.construct_notification import construct_notification
 from trojan_dining.models import Menu, MenuItem, Station, Subscription
 from trojan_dining.send_email_alert import send_email_alert
 from trojan_dining.send_text_alert import send_text_alert
-from trojan_dining.AssociatedItem import AssociatedItem
 from collections import defaultdict
 import datetime
+
+class AssociatedItem():
+    
+    def __init__(self, item_name, hall_name, hall_time, phone_number = None):
+        self.name = item_name
+        self.times_to_halls = defaultdict(set)
+        self.times_to_halls[hall_time].add(hall_name)
+        self.phone_number = phone_number
 
 # saves menu from database given a dictionary object
 # VERY IMPORTANT!: This changes the menu dict in place. So it may need to be necessary to create another menu dict depending on your 
@@ -17,8 +23,8 @@ def save_menu(dict_menu, menu_day=None):
 
     # core structures
    
-    email_to_item_name = defaultdict(lambda: set())
-    email_to_item = defaultdict(lambda: [])
+    email_to_item_name = defaultdict(set)
+    email_to_item = defaultdict(list)
 
     # create menu document
     menu_doc = Menu()
@@ -45,9 +51,7 @@ def save_menu(dict_menu, menu_day=None):
                 station['item_ids'] = []
 
                 for index, item in enumerate(station['items']):
-
                     match = None
-
                     curr_item = None
 
                     # check if food item name already exists in menuitems
@@ -56,7 +60,7 @@ def save_menu(dict_menu, menu_day=None):
                     except:
                         pass
 
-                    if (match):
+                    if match:
                         curr_item = match
                         # add matched menu item's objectId to menu_ids string
                         station['item_ids'].append({"item_id": match.item_id})
@@ -97,7 +101,7 @@ def save_menu(dict_menu, menu_day=None):
                                 email_to_item[subscription.email].append(AssociatedItem(curr_item.name, hall["name"], meal["name"]))
                         # otherwise update the item mapped to the the subscriber with new time and its complimentary dining hall
                         else:
-                            filtered = email_to_item[subscription.email].filter(lambda x: x.name == curr_item.name)
+                            filtered = [x for x in email_to_item[subscription.email] if x.name == curr_item.name]
                             found_item = filtered[0]
                             found_item.times_to_halls[meal["name"]].add(hall["name"])
 
@@ -119,6 +123,7 @@ def save_menu(dict_menu, menu_day=None):
             else:
                 email_only.append(item)
 
+        # mealtime to food item mapping for email only subscriptions
         email_mealtime_items = {"Breakfast": [], "Brunch": [], "Lunch": [], "Dinner": []}
         
         for meal_item in email_only: 
@@ -131,6 +136,7 @@ def save_menu(dict_menu, menu_day=None):
             if "Dinner" in meal_item.times_to_halls:
                 email_mealtime_items["Dinner"].append(meal_item)
 
+        # mealtime to food item mapping for email + phone subscriptions
         phone_mealtime_items = {"Breakfast": [], "Brunch": [], "Lunch": [], "Dinner": []}
         
         for meal_item in phone_and_email: 
@@ -144,9 +150,9 @@ def save_menu(dict_menu, menu_day=None):
                 phone_mealtime_items["Dinner"].append(meal_item)
 
         if (len(phone_and_email) != 0):
-            send_text_alert(construct_notification(phone_mealtime_items),phone_and_email[0].phone_number)
+            send_text_alert(phone_mealtime_items,phone_and_email[0].phone_number)
         if (len(email_only) != 0):
-            send_email_alert(construct_notification(email_mealtime_items), email)
+            send_email_alert(email_mealtime_items, email)
 
     # populate menu doc's meals attribute
     menu_doc.meals = dict_menu
@@ -158,4 +164,4 @@ def save_menu(dict_menu, menu_day=None):
         menu_doc.date = menu_day
 
     # persist the menu to the database
-    menu_doc.save()
+    # menu_doc.save()
