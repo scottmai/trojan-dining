@@ -24,5 +24,3 @@ def send_email_alert(association_map, email_address):
         print(response.headers)
     except Exception as e:
         print(e)
-
-   
