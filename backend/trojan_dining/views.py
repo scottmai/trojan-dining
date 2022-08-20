@@ -17,8 +17,7 @@ from trojan_dining.save_menu import save_menu
 from trojan_dining.retrieve_menu import retrieve_menu
 
 import json
-
-# some demo endpoints
+import re
 
 
 class Hello(APIView):
@@ -77,11 +76,27 @@ class PostSubscription(APIView):
             return HttpResponse(status = 400)
         else:
             email = request.POST.get('email', None)
+
+            # no email, no service :P
+            if (email is None):
+                return HttpResponse(status = 400)
+
             phone_number = request.POST.get('phone_number', None)
 
-            if not email and not phone_number:
-                return HttpResponse(400)
-            
+            # regex patterns for email and phone number
+            rgx_email = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+            rgx_phone = r'(?:\+\d{2})?\d{3,4}\D?\d{3}\D?\d{3}'
+
+            # check if email is valid
+            if (not re.fullmatch(rgx_email, email)):
+                return HttpResponse(status = 400)
+
+            # if phone exists, validate it
+            if (phone_number):
+                if (not re.fullmatch(rgx_phone, phone_number)):
+                    return HttpResponse(status = 400)
+
+            # create subscription if it doesnt exist
             try:  
                 try:
                     Subscription.objects.get(item_id = item_id, email = email, phone_no = phone_number)
