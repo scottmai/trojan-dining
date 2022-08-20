@@ -164,4 +164,4 @@ def save_menu(dict_menu, menu_day=None):
         menu_doc.date = menu_day
 
     # persist the menu to the database
-    # menu_doc.save()
+    menu_doc.save()
