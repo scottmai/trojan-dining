@@ -17,8 +17,6 @@ body {
     width: 100%;
     bottom: 0;
     position: fixed;
-    // justify-content: center;
-    // text-align: center;
     font-size: 0.9em;
     height: 45px;
 
@@ -26,7 +24,6 @@ body {
         background: none;
         border: none;
         color: inherit;
-        // width: inherit;
         height: 45px;
     }
 
@@ -38,7 +35,6 @@ body {
      }
     .mealtime-icon {
         height: 50px;
-        // transform: translateY(-5px);
     }
     .notifications {
         background-color: #EBAD09;
@@ -53,8 +49,6 @@ body {
 }
 
 .mealSection {  
-    // padding-bottom: 15px;
-
     button.sectionTitle {
         font-size: 0.9em;
         padding: 0;
@@ -67,8 +61,10 @@ body {
         border-bottom: 1px solid #C7C7C7;
         min-height: 32px;
     }
+    .sectionTitle .col-1 {
+        padding: 0;
+    }
     .dropdown-container {
-        margin-left: 9px;
         color: #707070;
     }
     .mealItem {
@@ -76,21 +72,13 @@ body {
         line-height: 1.3em;
         margin: 0 5px;
         padding: 7px 0;
-        margin-inline: 10px 0;
+        margin-inline: 20px 0;
         padding-inline: 10px 10px;
         border-bottom: 1px solid #C7C7C7;
 
-        .col-1 {
-            padding-left: 3px;
-        }
+        .col-1 { padding-left: 3px; }
 
-        .notification-btn { 
-            // display: block;
-            // margin-left: auto;
-            // padding: inherit;
-            // margin-right: 10px;
-            height: 20px;
-        }
+        .notification-btn { height: 20px; }
         
         .allergens {
             font-size: 1.15em;
@@ -190,7 +178,6 @@ body {
             border-color: #C7C7C7;
         }
         .mealtime-banner, .location-banner, .sectionTitle {
-            line-height: 0;
             vertical-align: middle;
         }
         .mealtime-icon {
