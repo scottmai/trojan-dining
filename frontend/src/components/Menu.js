@@ -25,6 +25,7 @@ export default function Menu() {
             console.log(e)
         }
     }, []);
+
     if (menu == null) {
         return <div>Loading...</div>
     } else if (menu.length === 0) {

@@ -10,16 +10,16 @@ const MealSection = (props) => {
 
     return (
         <div className="mealSection">
-            <button className="row align-items-center sectionTitle" onClick={toggleDropdown}>
+            <button className="row align-items-center meal-header" onClick={toggleDropdown}>
                 <div className='col-1'>
                     {(props.items.length == 0) 
                         ? ""
                         : <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={isOpen ? dropdownIcon : dropupIcon} alt="dropdown" />}
                 </div>
-                <span className='col-11'>{props.stations}</span>
+                <span className='meal-title col-11'>{props.stations}</span>
             </button>
 
-            <div className={`${isOpen ? 'dd-open' : 'dd-closed'} dropdown-container`}>
+            <div className={`dropdown-container ${isOpen ? 'dd-open' : 'dd-closed'}`}>
                 {props.items.map((item) => (
                     <MealItem name={item.name} allergens={item.allergens} />
                 ))}

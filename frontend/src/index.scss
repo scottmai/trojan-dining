@@ -1,5 +1,5 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
-@import url("https://fonts.googleapis.com/css2?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
 body {
     margin: 0;
@@ -49,23 +49,19 @@ body {
 }
 
 .mealSection {  
-    button.sectionTitle {
+    button.meal-header {
         font-size: 0.9em;
         padding: 0;
         margin: 0;
         background: none;
         border: none;
-        font-weight: bold;
         text-align: left;
         width: 100%;
         border-bottom: 1px solid #C7C7C7;
         min-height: 32px;
     }
-    .sectionTitle .col-1 {
+    .meal-header .col-1 {
         padding: 0;
-    }
-    .dropdown-container {
-        color: #707070;
     }
     .mealItem {
         font-size: 0.9em;
@@ -135,25 +131,33 @@ body {
     }
 }
 
-.dd-open {
-    display: inherit;
+.dropdown-container {
+    color: #707070;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
 }
+
 .dd-closed {
-    display: none;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
 }
 
 .menuItems {
     .mealtimeSection {
-        .mealtimeTitle {
-            font-weight: bold;
+        .mealtime-title {
             font-size: 1.4em;
         }
         .location-title {
-            font-weight: bold;
             color: #990000;
             font-size: 1.2em;
         }
-        .mealtime-banner {
+        .mealtime-title, .location-title, .meal-title {
+            font-weight: 700;
+        }
+        .mealtime-header {
             z-index: 4;
             top: 44px;
             margin-top: -1px;
@@ -165,7 +169,7 @@ body {
             border-width: 1px 0;
             border-color: #C7C7C7;
         }
-        .location-banner {
+        .location-header {
             z-index: 3;
             top: 96px;
             margin-top: -1px;
@@ -177,7 +181,7 @@ body {
             border-width: 1px 0;
             border-color: #C7C7C7;
         }
-        .mealtime-banner, .location-banner, .sectionTitle {
+        .mealtime-header, .location-header, .meal-header {
             vertical-align: middle;
         }
         .mealtime-icon {
