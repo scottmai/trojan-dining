@@ -13,7 +13,7 @@ const Header = () => {
                         value={Moment(startDate).format('YYYY-MM-DD')} min={Moment(startDate).format('YYYY-MM-DD')} />
                 </div>
                 <div className="legend col-4">
-                    <button onClick={void(0)}>Legend</button>
+                    <button onClick={void(0)}>Allergen Key</button>
                 </div>
             </div>
         </div>
