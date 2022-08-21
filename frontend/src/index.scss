@@ -220,11 +220,14 @@ body {
         width: 100%;
         padding: 2px 0;
     }
+    .col-5 {
+        text-align: center;
+    }
     .datepicker input {
         font-size: 0.85em;
         border: none;
         color: #707070;
-        width: 75%;
+        width: 100%;
     }
     ::-webkit-datetime-edit-text { padding: 0 0.1em; }
     ::-webkit-calendar-picker-indicator { opacity: 70%; }

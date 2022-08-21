@@ -8,12 +8,12 @@ const Header = () => {
     return (
         <div className="container-fluid header">
             <div className="row justify-content-center">
-                <div className="legend col-4">
-                    <button onClick={void(0)}>Legend</button>
-                </div>
-                <div className="datepicker col-5">
+                <div className="datepicker col-4">
                     <input type="date" id="datepicker" name="meal-date"
                         value={Moment(startDate).format('YYYY-MM-DD')} min={Moment(startDate).format('YYYY-MM-DD')} />
+                </div>
+                <div className="legend col-4">
+                    <button onClick={void(0)}>Legend</button>
                 </div>
             </div>
         </div>
