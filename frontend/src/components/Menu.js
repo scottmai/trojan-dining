@@ -14,7 +14,7 @@ export default function Menu() {
         try {
             async function fetchMenu() {
                 // TODO: change this to current day once backend issues are resolved
-                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/?date=2022-07-30')
+                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/')
                 if (menuRes.statusText === "OK") {
                     setMenu(menuRes.data.Menu.meals)
                     console.log(menuRes.data.Menu.meals)
@@ -32,12 +32,9 @@ export default function Menu() {
         return <div>No items 🤔</div>
     }
     return (
-        <div>
-            <NotifyModal />
-            <div className="container-fluid top-navbar">
-                <SearchBar />
-                <Header locationName={menu[0].dining_halls[0].name} />
-            </div>
+        <div className="menu nostyle">
+            <Header />
+            {/* <NotifyModal /> */}
             <div className="container-fluid menuItems">
                 {menu.map(mealtime => (
                     <MealtimeSection mealtime={mealtime} />

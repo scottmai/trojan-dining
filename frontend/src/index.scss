@@ -10,19 +10,25 @@ body {
     scroll-behavior: smooth;
 }
 
-.nav {
+.nav-bot {
+    z-index: 5;
     color: white;
-    background-color: #990000;
+    background-color: #C50000;
     width: 100%;
     bottom: 0;
-    // left: 0;
-    // z-index: 5;
-    // padding: 20px;
     position: fixed;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.1em;
-    height: 60px;
+    // justify-content: center;
+    // text-align: center;
+    font-size: 0.9em;
+    height: 45px;
+
+    button {
+        background: none;
+        border: none;
+        color: inherit;
+        // width: inherit;
+        height: 45px;
+    }
 
     a {
          text-decoration: none;
@@ -34,47 +40,69 @@ body {
         height: 50px;
         // transform: translateY(-5px);
     }
+    .notifications {
+        background-color: #EBAD09;
+        img { width: 25px; }
+    }
+    .location {
+        border-right: 1px solid #9C0000;
+    }
+    .mealtime {
+        border-left: 1px solid #9C0000;
+    }
 }
 
 .mealSection {  
-    padding-bottom: 20px;
+    // padding-bottom: 15px;
 
     button.sectionTitle {
+        font-size: 0.9em;
         padding: 0;
         margin: 0;
         background: none;
         border: none;
-        span {
-            padding-left: 10px;
-            font-size: 1.3em;
-            font-weight: bold;
-        }
-        img {
-            width: 20px;
-            padding-bottom: 2px;
-        }
+        font-weight: bold;
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px solid #C7C7C7;
+        min-height: 32px;
     }
     .dropdown-container {
         margin-left: 9px;
-        padding-left: 20px;
-        border-left: 2px solid #707070;
         color: #707070;
-        display: none;
-        &.open {
-            display: inherit;
-        }
     }
     .mealItem {
+        font-size: 0.9em;
+        line-height: 1.3em;
+        margin: 0 5px;
+        padding: 7px 0;
+        margin-inline: 10px 0;
+        padding-inline: 10px 10px;
+        border-bottom: 1px solid #C7C7C7;
+
+        .col-1 {
+            padding-left: 3px;
+        }
+
+        .notification-btn { 
+            // display: block;
+            // margin-left: auto;
+            // padding: inherit;
+            // margin-right: 10px;
+            height: 20px;
+        }
+        
         .allergens {
-            font-size: 3em;
-            padding: none;
-            line-height: 0;
+            font-size: 1.15em;
+            letter-spacing: 1px;
+            line-height: 1em;
+            word-break: break-all;
+            white-space: normal;
+            padding-left: 3px;
+            text-align: right;
             span {
-                padding-top: 0.25em;
-                display: inline-block;
                 vertical-align: middle;
             }
-
             /*** Allergen Color Codes ***/
             .allergen-dairy {
                 color: #862aff;
@@ -119,16 +147,51 @@ body {
     }
 }
 
+.dd-open {
+    display: inherit;
+}
+.dd-closed {
+    display: none;
+}
+
 .menuItems {
     .mealtimeSection {
         .mealtimeTitle {
             font-weight: bold;
-            font-size: 1.6em;
+            font-size: 1.4em;
         }
         .location-title {
             font-weight: bold;
             color: #990000;
             font-size: 1.2em;
+        }
+        .mealtime-banner {
+            z-index: 4;
+            top: 44px;
+            margin-top: -1px;
+            padding-top: 10px;
+            background-color: white;
+            height: 53px;
+            position: sticky;
+            border-style: solid;
+            border-width: 1px 0;
+            border-color: #C7C7C7;
+        }
+        .location-banner {
+            z-index: 3;
+            top: 96px;
+            margin-top: -1px;
+            padding-top: 8px;
+            background-color: white;
+            height: 48px;
+            position: sticky;
+            border-style: solid;
+            border-width: 1px 0;
+            border-color: #C7C7C7;
+        }
+        .mealtime-banner, .location-banner, .sectionTitle {
+            line-height: 0;
+            vertical-align: middle;
         }
         .mealtime-icon {
             width: 50px;
@@ -145,76 +208,57 @@ body {
             }
         }
         .dropdown-icon {
-            width: 40px;
             margin-right: 5px;
-            margin-bottom: -5px;
-            &.closed {
-                margin-top: -20px;
-                transform: rotate(180deg);
-            }
-        }
-        .mealtime-banner {
-            padding-top: 10px;
-            background-color: white;
-            top: 109px;
-            position: sticky;
-            border: 1px solid #00000060;
-            box-shadow: 0 2px 2px -2px #00000020;
-        }
-        .dining-location-list {
-            display: none;
-            scroll-padding-top: 200px;
-            margin-top: 20px;
-            &.open {
-                display: inherit;
-            }
         }
     }
 }
 
-.top-navbar {
+.header {
     z-index: 5;
     background-color: white;
     position: sticky;
     top: 0;
     width: 100%;
-    height: 110px;
-    box-shadow: 0 5px 5px -5px #00000060;
-    
-    .header {
-        h2 {
-            font-size: 1.1em;
-            color: #990000;
-            font-weight: bold;
-        }
-        button {
-            font-size: 0.9em;
-            width: 80%;
-            background: none;
-            border: none;
-            color: #707070;
-            padding: none;
-            margin: none;
-        }
-        padding: 15px 0 20px;
+    height: 45px;
+    box-shadow: 0 0 3px 0 #00000060;
+    .col-4, .col-5 {
+        padding-top: 10px;
+    }
+    .legend button {
+        font-size: 0.75em;
+        background-color: #707070;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        padding: 2px 0;
+    }
+    .datepicker input {
+        font-size: 0.85em;
+        border: none;
+        color: #707070;
+        width: 75%;
+    }
+    ::-webkit-datetime-edit-text { padding: 0 0.1em; }
+    ::-webkit-calendar-picker-indicator { opacity: 70%; }
+}
+
+.searchBar {
+    padding: 10px 0;
+
+    input {
+        background-image: url("./assets/icons/search.svg");
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        background-color: #EAEAEA;
+        border-radius: 8px;
+        height: 30px;
+        width: 90vw;
+        border: none;
+        padding: 0 15px;
+        outline: none;
     }
     
-    .searchBar {
-        padding: 10px 0;
-    
-        input {
-            background-image: url("./assets/icons/search.svg");
-            background-position: 10px 10px; 
-            background-repeat: no-repeat;
-            background-color: #EAEAEA;
-            border-radius: 8px;
-            height: 30px;
-            width: 90vw;
-            border: none;
-            padding: 0 15px;
-            outline: none;
-        }
-    }
 
     .date-picker {
         #menu_date {
