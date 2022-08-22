@@ -132,21 +132,40 @@ body {
 }
 
 .dropdown-container {
+    background-color: white;
     color: #707070;
+    transform-origin: top center;
+}
+
+@keyframes animateDown-1 {
+    0% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scaleY(1.1);
+    }
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+.dd-open {
     visibility: visible;
-    opacity: 1;
-    height: auto;
+    animation: animateDown-1 0.5s ease-out;
 }
 
 .dd-closed {
-    pointer-events: none;
-    visibility: hidden;
     opacity: 0;
     height: 0;
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .menuItems {
     .mealtimeSection {
+        background-color: white;
         .mealtime-title {
             font-size: 1.4em;
         }
@@ -162,7 +181,6 @@ body {
             top: 44px;
             margin-top: -1px;
             padding-top: 10px;
-            background-color: white;
             height: 53px;
             position: sticky;
             border-style: solid;
@@ -174,7 +192,6 @@ body {
             top: 96px;
             margin-top: -1px;
             padding-top: 8px;
-            background-color: white;
             height: 48px;
             position: sticky;
             border-style: solid;
@@ -182,6 +199,7 @@ body {
             border-color: #C7C7C7;
         }
         .mealtime-header, .location-header, .meal-header {
+            background-color: white;
             vertical-align: middle;
         }
         .mealtime-icon {

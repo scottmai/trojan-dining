@@ -19,6 +19,7 @@ const MealSection = (props) => {
                 <span className='meal-title col-11'>{props.stations}</span>
             </button>
 
+            {/* TODO: Possiby turn allergen colors into tooltip */}
             <div className={`dropdown-container ${isOpen ? 'dd-open' : 'dd-closed'}`}>
                 {props.items.map((item) => (
                     <MealItem name={item.name} allergens={item.allergens} />
