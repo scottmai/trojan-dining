@@ -1,8 +1,7 @@
 import DiningLocation from './DiningLocation'
 import React, { useState } from 'react';
 
-import dropdownIcon from '../assets/icons/chevron-red-down.png';
-import dropupIcon from '../assets/icons/chevron-red-up.png';
+import dropdownIcon from '../assets/icons/chevron-black-down.png';
 
 import breakfastIcon from "../assets/icons/sunrise-dark.svg";
 import lunchIcon from "../assets/icons/sun.svg";
@@ -28,7 +27,7 @@ const MealtimeSection = (props) => {
         <div className="mealtimeSection nostyle">
             <div className="mealtime-header row" onClick={toggleDropdown}>
                 <h1 id={props.mealtime.name.toLowerCase()} className="mealtime-title">
-                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={isOpen ? dropdownIcon : dropupIcon} alt="dropdown" />
+                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
                     <span>{props.mealtime.name}</span>
                     {/* <img className={`mealtime-icon ${props.mealtime.name.toLowerCase()}`} alt={props.mealtime.name} src={mealtimeIcon()} /> */}
                 </h1>

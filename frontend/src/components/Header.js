@@ -7,6 +7,9 @@ const Header = () => {
 
     return (
         <div className="container-fluid header">
+            <div className="row justify-content-center align-items-center">
+                <h5 className="col text-center header-title">Trojan Dining</h5>
+            </div>
             <div className="row justify-content-center">
                 <div className="datepicker col-4">
                     <input type="date" id="datepicker" name="meal-date"

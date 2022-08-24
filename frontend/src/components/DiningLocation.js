@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import MealSection from "./MealSection";
 import dropdownIcon from '../assets/icons/chevron-red-down.png';
-import dropupIcon from '../assets/icons/chevron-red-up.png';
 
 const DiningLocation = (props) => {
     const [isOpen, setIsOpen] = useState(true);
@@ -12,7 +11,7 @@ const DiningLocation = (props) => {
         <div className="diningLocation nostyle">
             <div className="location-header row" onClick={toggleDropdown}>
                 <h2 className="location-title">
-                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={isOpen ? dropdownIcon : dropupIcon} alt="dropdown" />
+                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
                     <span>{props.location.name}</span>
                 </h2>
             </div>
