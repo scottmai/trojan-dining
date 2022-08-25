@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import ReactModal from 'react-modal'
 import AlertForm from './AlertForm'
-import xIcon from "../assets/icons/x.svg"
+import xIcon from "../assets/icons/altx.png"
 
 ReactModal.setAppElement('#root');
 
