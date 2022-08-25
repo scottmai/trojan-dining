@@ -16,4 +16,5 @@ def send_email_alert(item_name,dining_hall, email_address):
         print(response.body)
         print(response.headers)
     except Exception as e:
-        print(e.message)
+        print(e)
+        
