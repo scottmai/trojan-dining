@@ -238,6 +238,71 @@ body {
     }
 }
 
+.Modal{
+    position: absolute;
+    min-height: 380px;
+    min-width: 300px;
+    max-height: 70vh;
+    max-width: 70vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background: white;
+}
+
+.Overlay {
+    z-index: 8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal--Overlay--before-close {
+    opacity: 0;
+}
+
 .nostyle {
     all: unset;
 }
+
+.modalTitle {
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.subscribeBtn {
+    margin-right: 30px;
+    padding: 5px 22px;
+    border-radius: 10px;
+    border: none;
+    background: #C50000;
+    color: #fff;
+    font-size: 15px;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: none;
+    background: rgb(240, 237, 237);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+}
+
+.xIcon {
+    width: 35px;
+    height: 35px;
+}
+
