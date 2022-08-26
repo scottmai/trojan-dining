@@ -1,22 +1,23 @@
 import React, {useState} from "react";
-import Form from "react-bootstrap/Form";
+import Moment from 'moment';
 
-const Header = ({locationName}) => {
-    const today = new Date();
-    const [displayDate, setDisplayDate] = useState(today);
+const Header = () => {
+    const [startDate, setStartDate] = useState(new Date());
+    Moment.locale('en');
+
     return (
-        <div className="header row">
-            <h2 className="col-7">{locationName}</h2>
-            <div className="col-5 date-picker">
-                <Form.Group controlId="menu_date" size="sm">
-                <Form.Control
-                    type="date"
-                    name="menu_date"
-                    value={displayDate.getDate}
-                    defaultValue={today.getDate}
-                    onChange={(e) => setDisplayDate(e)}
-                />
-                </Form.Group>
+        <div className="container-fluid header">
+            <div className="row justify-content-center align-items-center">
+                <h5 className="col text-center header-title">Trojan Dining</h5>
+            </div>
+            <div className="row justify-content-center">
+                <div className="datepicker col-4">
+                    <input type="date" id="datepicker" name="meal-date"
+                        value={Moment(startDate).format('YYYY-MM-DD')} min={Moment(startDate).format('YYYY-MM-DD')} />
+                </div>
+                <div className="legend col-4">
+                    <button onClick={void(0)}>Allergen Key</button>
+                </div>
             </div>
         </div>
     );
