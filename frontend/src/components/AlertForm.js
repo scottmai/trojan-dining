@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 export default function AlertForm() {
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+
+    const inputEmail = (event) => {
+        setEmail(event.target.value);
+    }
+
+    const inputPhone = (event) => {
+        setPhone("+1" + event.target.value);
+    }
+    
+    const handleSubmit = event => {
+        event.preventDefault();
+        const user = {
+            email: email,
+            phone_number: phone
+        }
+        axios.post(' https://trojan-dining.herokuapp.com/notify/', { user })
+            .then(res => {
+            console.log(res);
+            console.log(res.data);
+        })
+    }
     return (
-        <form>
+        <form onSubmit = { handleSubmit }>
             <div className="form-group mt-3">
                 <label for="userEmail" className="text-muted">Email</label>
-                <input type="email" className="form-control" id="email" aria-describedby="emailForm" placeholder="tommytrojan@usc.edu" required/>
+                <input type="email" onChange={inputEmail} className="form-control" id="email" name="email" aria-describedby="emailForm" placeholder="tommytrojan@usc.edu" required/>
             </div>
             <div className="form-check">
                 <input type="checkbox" className="form-check-input" id="emailCheckbox" defaultChecked/>
@@ -13,9 +37,9 @@ export default function AlertForm() {
             </div>
             <div className="form-group mt-3">
                 <label for="userPhone" className="text-muted">Phone</label>
-                <input type="tel" className="form-control" id="tel" aria-describedby="phoneForm" placeholder="123-456-7890" pattern="^\d{3}-\d{3}-\d{4}$" />
+                <input type="tel" onChange={inputPhone} className="form-control" id="tel" name="tel" aria-describedby="phoneForm" placeholder="123-456-7890" pattern="^\d{3}\d{3}\d{4}$" />
             </div>
-            <button type="submit" className="btn subscribeBtn mt-4 position-absolute end-0">Subscribe</button>
+            <button type="submit" className="btn subscribeBtn mt-4 position-absolute end-0" onClick={handleSubmit}>Subscribe</button>
         </form>
     )
 }
