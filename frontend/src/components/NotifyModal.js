@@ -1,24 +1,22 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import ReactModal from 'react-modal'
 import AlertForm from './AlertForm'
 import xIcon from "../assets/icons/altx.png"
 
 ReactModal.setAppElement('#root');
 
-function NotifyModal() {
-      const [modalIsOpen, setModalIsOpen] = useState(false)
-      return (
+const NotifyModal = (props) => {
+    return (
        <div className="notify-modal">
-            <button className="notify-btn" onClick={() => setModalIsOpen(true)}>Notify Me!</button>
             <ReactModal 
-                isOpen={modalIsOpen} 
-                onRequestClose={() => setModalIsOpen(false)}
+                isOpen={props.modalIsOpen} 
+                onRequestClose={() => props.setModalIsOpen(false)}
                 className="Modal"
                 overlayClassName="Overlay"
                 closeTimeoutMS={200} 
             >
                 <div className="position-absolute top-0 end-0">
-                    <button className="close-btn" onClick={() => setModalIsOpen(false)}>
+                    <button className="close-btn" onClick={() => props.setModalIsOpen(false)}>
                         <img className="xIcon" src={xIcon} alt="close button"></img>
                     </button>
                 </div>
