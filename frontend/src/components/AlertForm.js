@@ -13,7 +13,7 @@ export default function AlertForm() {
             </div>
             <div className="form-group mt-3">
                 <label for="userPhone" className="text-muted">Phone</label>
-                <input type="tel" className="form-control" id="tel" aria-describedby="phoneForm" placeholder="123-456-7890" pattern="^\d{4}-\d{3}-\d{4}$" />
+                <input type="tel" className="form-control" id="tel" aria-describedby="phoneForm" placeholder="123-456-7890" pattern="^\d{3}-\d{3}-\d{4}$" />
             </div>
             <button type="submit" className="btn subscribeBtn mt-4 position-absolute end-0">Subscribe</button>
         </form>
