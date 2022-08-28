@@ -15,11 +15,11 @@ export default function AlertForm() {
     
     const handleSubmit = event => {
         event.preventDefault();
-        const user = {
-            email: email,
-            phone_number: phone
-        }
-        axios.post(' https://trojan-dining.herokuapp.com/notify/', { user })
+        const formData = new FormData();
+        formData.append('item_id', "0b134fd9-1adf-4b68-b2aa-f7c705707b70")
+        formData.append('email', email)
+        formData.append('phone_number', phone)
+        axios.post('https://trojan-dining.herokuapp.com/notify/', formData)
             .then(res => {
             console.log(res);
             console.log(res.data);
