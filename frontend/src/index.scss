@@ -259,7 +259,7 @@ body {
             z-index: 4;
             top: 74px;
             margin-top: -1px;
-            padding-top: 10px;
+            padding-top: 8px;
             height: 53px;
             position: sticky;
             border-style: solid;
@@ -282,18 +282,10 @@ body {
             vertical-align: middle;
         }
         .mealtime-icon {
-            width: 50px;
-            &.breakfast {
-                margin-bottom: -10px;
-            }
-            &.lunch {
-                margin-left: 10px;
-                width: 40px;
-            }
-            &.dinner {
-                margin-left: 10px;
-                width: 35px;
-            }
+            width: 30px;
+            position: relative;
+            left: 15px;
+            bottom: 2px;
         }
         .dropdown-icon {
                 animation: animateDownIcon-1 0.5s ease-out;
@@ -351,7 +343,6 @@ body {
         width: 100%;
         padding: 2px 0;
         box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 1.3px;
-
     }
     .col-5 {
         text-align: center;
