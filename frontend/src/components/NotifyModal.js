@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import ReactModal from 'react-modal'
 import AlertForm from './AlertForm'
 import xIcon from "../assets/icons/altx.png"
+import { SelectItemContext } from "./SelectItemContext";
 
 ReactModal.setAppElement('#root');
 
-const NotifyModal = ({ selectedItem, setSelectedItem }) => {
+const NotifyModal = () => {
+    const [selectedItem, setSelectedItem] = useContext(SelectItemContext);
     const mealName = selectedItem.name;
 
     return (
@@ -26,7 +28,7 @@ const NotifyModal = ({ selectedItem, setSelectedItem }) => {
                     <h5 className="modalTitle mb-0">Get notified for { mealName }?</h5>
                     <small className="text-muted mb-3 mt-0">Please fill out at least one field.</small>
                 </div>
-                <AlertForm mealId={selectedItem.item_id}/>
+                <AlertForm/>
             </ReactModal>
         </div>
     )

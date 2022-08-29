@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { SelectItemContext } from './SelectItemContext';
 import axios from 'axios';
 
-export default function AlertForm(mealId) {
+export default function AlertForm() {
+    const [selectedItem, setSelectedItem] = useContext(SelectItemContext);
+    const mealId = selectedItem.item_id;
+
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
