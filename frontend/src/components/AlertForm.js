@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function AlertForm() {
+export default function AlertForm(mealId) {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
@@ -16,7 +16,7 @@ export default function AlertForm() {
     const handleSubmit = event => {
         event.preventDefault();
         const formData = new FormData();
-        formData.append('item_id', "0b134fd9-1adf-4b68-b2aa-f7c705707b70")
+        formData.append('item_id', mealId)
         formData.append('email', email)
         formData.append('phone_number', phone)
         axios.post('https://trojan-dining.herokuapp.com/notify/', formData)
