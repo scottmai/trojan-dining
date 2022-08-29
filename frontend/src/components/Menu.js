@@ -3,18 +3,18 @@ import Header from './Header';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar'
 import axios from 'axios';
-import NotifyModal from './NotifyModal'
 import MealtimeSection from './MealtimeSection';
+import NotifyModal from './NotifyModal';
+import { SelectItemProvider } from './SelectItemContext';
 
 export default function Menu() {
     const [menu, setMenu] = useState(null);
-    const [selectedItem, setSelectedItem] = useState(null);
 
     useEffect(() => {
 
         try {
             async function fetchMenu() {
-                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/')
+                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/?date=2022-08-25')
                 if (menuRes.statusText === "OK") {
                     setMenu(menuRes.data.Menu.meals)
                     console.log(menuRes.data.Menu.meals)
@@ -33,15 +33,17 @@ export default function Menu() {
         return <div>No items 🤔</div>
     }
     return (
-        <div className="menu nostyle">
-            <Header />
-            <div className="container-fluid menuItems">
-                {menu.map(mealtime => (
-                    <MealtimeSection mealtime={mealtime} />
-                ))}
+        <SelectItemProvider>
+            <div className="menu nostyle">
+                <Header />
+                <div className="container-fluid menuItems">
+                    {menu.map(mealtime => (
+                        <MealtimeSection mealtime={mealtime} />
+                    ))}
+                </div>
+                <NotifyModal />
+                <Navbar />
             </div>
-            
-            <Navbar />
-        </div>
+        </SelectItemProvider>
     )
 }
