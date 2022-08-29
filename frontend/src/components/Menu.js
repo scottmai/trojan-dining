@@ -8,6 +8,7 @@ import MealtimeSection from './MealtimeSection';
 
 export default function Menu() {
     const [menu, setMenu] = useState(null);
+    const [selectedItem, setSelectedItem] = useState(null);
 
     useEffect(() => {
 
@@ -34,13 +35,12 @@ export default function Menu() {
     return (
         <div className="menu nostyle">
             <Header />
-            {/* <NotifyModal /> */}
             <div className="container-fluid menuItems">
                 {menu.map(mealtime => (
                     <MealtimeSection mealtime={mealtime} />
                 ))}
             </div>
-
+            
             <Navbar />
         </div>
     )
