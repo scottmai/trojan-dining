@@ -100,12 +100,32 @@ body {
         }
         .close-button {
             position: absolute;
-            right: 0;
+            right: -8px;
             background: none;
             border: none;
             color: #707070;
             padding: 0 15px;
+            img {
+                width: 30px;
+            }
         }
+        &.modal-open {
+            animation: openModal-1 0.3s ease;
+        }
+    }
+}
+
+@keyframes openModal-1 {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }
 

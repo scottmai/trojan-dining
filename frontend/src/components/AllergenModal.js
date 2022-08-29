@@ -1,4 +1,5 @@
 import React from "react";
+import closeIcon from "../assets/icons/x.svg";
 
 const AllergenModal = (props) => {
 
@@ -13,8 +14,8 @@ const AllergenModal = (props) => {
     return (
         <div className="allergenModal">
             <div className="modal-bg" onClick={onClose}> </div>
-            <div className={`container ${props.show ? "modal-open" : ""}`}>
-                <button className="close-button" onClick={onClose}>X</button>
+            <div className={`container ${props.show ? "modal-open" : "modal-close"}`}>
+                <button className="close-button" onClick={onClose}><img src={closeIcon} /></button>
                 <div className="row allergen-list justify-content-center">
                     <div className="col-10">
                         <h2>Allergen Key</h2>
