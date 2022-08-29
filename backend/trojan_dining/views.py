@@ -57,7 +57,7 @@ class GetMenu(APIView):
         # get the menu from that date
         try:
             retrieved_menu = retrieve_menu(datetime.datetime.date(date))
-        except Menu.DoesNotExist:
+        except:
             scrubed_site = scrub_web(date)
             menu_dict = menu_to_dict(scrubed_site)
             save_menu(menu_dict, date) 
