@@ -8,8 +8,10 @@ ReactModal.setAppElement('#root');
 
 const NotifyModal = () => {
     const [selectedItem, setSelectedItem] = useContext(SelectItemContext);
-    const mealName = selectedItem.name;
-
+    let name = "";
+    if (selectedItem != null){
+        name = selectedItem.name;
+    }
     return (
        <div className="notify-modal">
             <ReactModal 
@@ -25,7 +27,7 @@ const NotifyModal = () => {
                     </button>
                 </div>
                 <div>
-                    <h5 className="modalTitle mb-0">Get notified for { mealName }?</h5>
+                    <h5 className="modalTitle mb-0">Get notified for { name }?</h5>
                     <small className="text-muted mb-3 mt-0">Please fill out at least one field.</small>
                 </div>
                 <AlertForm/>
