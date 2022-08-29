@@ -14,7 +14,7 @@ const AllergenModal = (props) => {
         <div className="allergenModal">
             <div className="modal-bg" onClick={onClose}> </div>
             <div className={`container ${props.show ? "modal-open" : ""}`}>
-                <button class="close-button" onClick={onClose}>X</button>
+                <button className="close-button" onClick={onClose}>X</button>
                 <div className="row allergen-list justify-content-center">
                     <div className="col-10">
                         <h2>Allergen Key</h2>
