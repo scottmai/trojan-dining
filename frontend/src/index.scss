@@ -238,12 +238,12 @@ body {
         transform: scaleY(1);
         opacity: 1;
         visibility: visible;
-        max-height: inherit;
+        height: inherit;
     }
     100% {
         transform: scaleY(0);
         opacity: 0;
-        max-height: inherit;
+        height: inherit;
         visibility: visible;
     }
 }
@@ -258,8 +258,9 @@ body {
     pointer-events: none;
     animation: animateDown-2 0.3s ease;
     visibility: hidden;
-    max-height: 0;
+    height: 0;
     opacity: 0;
+    overflow: hidden;
 }
 
 .menuItems {
