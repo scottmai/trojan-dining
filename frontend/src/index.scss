@@ -14,15 +14,23 @@ body {
     background-color: #ffd82a;
 }
 
-.nav-bot {
+.nav-red {
     z-index: 5;
     color: white;
     background-color: #C50000;
-    width: 100%;
-    bottom: 0;
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 10vw;
     position: fixed;
     font-size: 0.9em;
-    height: 45px;
+    float: right;
+    @media only screen and (max-width: 480px)  {
+        width: 100vw;
+        height: 45px;
+        bottom: 0;
+        top: unset;
+    }
 
     button {
         background: none;
@@ -41,8 +49,15 @@ body {
         height: 50px;
     }
     .notifications {
+        width: 100%;
         background-color: #EBAD09;
+        position: absolute;
+        bottom: 0;
         img { width: 25px; }
+        @media only screen and (max-width: 480px)  {
+            position: inherit;
+            width: fit-content;
+        }
     }
     .location {
         border-right: 1px solid #9C0000;
@@ -264,6 +279,11 @@ body {
 }
 
 .menuItems {
+    padding-inline-end: 10vw;
+    @media only screen and (max-width: 480px)  {
+        padding-inline: 12px;
+        margin-right: none;
+    }
     .mealtimeSection {
         background-color: white;
         .mealtime-title {
@@ -346,9 +366,23 @@ body {
     background-color: white;
     position: sticky;
     top: 0;
-    width: 100%;
+    width: 90vw;
     height: 75px;
     box-shadow: 0 0 3px 0 #00000060;
+    
+    @media only screen and (max-width: 480px)  {
+        width: 100%;
+    }
+
+    .header-nav {
+        width: 400px;
+        margin: 0 auto;
+        @media only screen and (max-width: 480px)  {
+            width: 100vw;
+            margin: 0 -12px;
+        }
+    }
+
     h5.header-title {
         padding-top: 10px;
         font-weight: bold;
