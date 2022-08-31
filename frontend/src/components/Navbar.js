@@ -4,7 +4,7 @@ import bellIcon from "../assets/icons/bell-white.png";
 const Navbar = () => {
     return (
         <div className="container-fluid nav-red">
-            <div className="row row-cols-xl-1 row-cols-3">
+            <div className="row row-cols-xl-1 justify-content-center">
                 <button className="col-5 location">Village</button>
                 <button className="col-5 mealtime">Lunch</button>
                 <button className="col-2 notifications">
