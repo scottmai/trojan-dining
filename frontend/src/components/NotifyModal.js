@@ -8,18 +8,17 @@ ReactModal.setAppElement('#root');
 
 const NotifyModal = () => {
     const [selectedItem, setSelectedItem] = useContext(SelectItemContext);
-    let name = "";
-    if (selectedItem != null){
-        name = selectedItem.name;
+    if (selectedItem == null) {
+        return null
     }
     return (
-       <div className="notify-modal">
-            <ReactModal 
-                isOpen={selectedItem == null ? false : true} 
+        <div className="notify-modal">
+            <ReactModal
+                isOpen={selectedItem != null}
                 onRequestClose={() => setSelectedItem(null)}
                 className="Modal"
                 overlayClassName="Overlay"
-                closeTimeoutMS={200} 
+                closeTimeoutMS={200}
             >
                 <div className="position-absolute top-0 end-0">
                     <button className="close-btn" onClick={() => setSelectedItem(null)}>
@@ -27,10 +26,10 @@ const NotifyModal = () => {
                     </button>
                 </div>
                 <div>
-                    <h5 className="modalTitle mb-0">Get notified for { name }?</h5>
+                    <h5 className="modalTitle mb-0">Get notified for {selectedItem.name}?</h5>
                     <small className="text-muted mb-3 mt-0">Please fill out at least one field.</small>
                 </div>
-                <AlertForm/>
+                <AlertForm />
             </ReactModal>
         </div>
     )

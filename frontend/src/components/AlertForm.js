@@ -2,9 +2,9 @@ import React, { useState, useContext } from 'react';
 import { SelectItemContext } from './SelectItemContext';
 import axios from 'axios';
 
+// selectedItem is never null
 export default function AlertForm() {
     const [selectedItem, setSelectedItem] = useContext(SelectItemContext);
-    const mealId = selectedItem.item_id;
 
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -16,27 +16,28 @@ export default function AlertForm() {
     const inputPhone = (event) => {
         setPhone("+1" + event.target.value);
     }
-    
-    const handleSubmit = event => {
+
+    const handleSubmit = async event => {
         event.preventDefault();
         const formData = new FormData();
-        formData.append('item_id', mealId)
+        formData.append('item_id', selectedItem.id)
         formData.append('email', email)
-        formData.append('phone_number', phone)
-        axios.post('https://trojan-dining.herokuapp.com/notify/', formData)
-            .then(res => {
-            console.log(res);
-            console.log(res.data);
-        })
+        if (phone) {
+            formData.append('phone_number', phone)
+        }
+        const response = await axios.post('https://trojan-dining.herokuapp.com/notify/', formData)
+        if (response.statusText === 'OK') {
+            setSelectedItem(null)
+        }
     }
     return (
-        <form onSubmit = { handleSubmit }>
+        <form onSubmit={handleSubmit}>
             <div className="form-group mt-3">
                 <label for="userEmail" className="text-muted">Email</label>
-                <input type="email" onChange={inputEmail} className="form-control" id="email" name="email" aria-describedby="emailForm" placeholder="tommytrojan@usc.edu" required/>
+                <input type="email" onChange={inputEmail} className="form-control" id="email" name="email" aria-describedby="emailForm" placeholder="tommytrojan@usc.edu" required />
             </div>
             <div className="form-check">
-                <input type="checkbox" className="form-check-input" id="emailCheckbox" defaultChecked/>
+                <input type="checkbox" className="form-check-input" id="emailCheckbox" defaultChecked />
                 <small className="form-text text-muted">Receive email notifications too</small>
             </div>
             <div className="form-group mt-3">

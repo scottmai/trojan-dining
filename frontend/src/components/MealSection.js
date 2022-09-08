@@ -11,7 +11,7 @@ const MealSection = (props) => {
         <div className="mealSection">
             <button className="row align-items-center meal-header" onClick={toggleDropdown}>
                 <div className='col-1'>
-                    {(props.items.length == 0) 
+                    {(props.items.length === 0)
                         ? ""
                         : <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />}
                 </div>
@@ -21,7 +21,7 @@ const MealSection = (props) => {
             {/* TODO: Possiby turn allergen colors into tooltip */}
             <div className={`dropdown-container ${isOpen ? 'dd-open' : 'dd-closed'}`}>
                 {props.items.map((item) => (
-                    <MealItem name={item.name} allergens={item.allergens} />
+                    <MealItem item={item} />
                 ))}
             </div>
         </div>
