@@ -57,7 +57,7 @@ class GetMenu(APIView):
         # get the menu from that date
         try:
             retrieved_menu = retrieve_menu(datetime.datetime.date(date))
-        except Menu.DoesNotExist:
+        except:
             scrubed_site = scrub_web(date)
             menu_dict = menu_to_dict(scrubed_site)
             save_menu(menu_dict, date) 
@@ -99,7 +99,10 @@ class PostSubscription(APIView):
             # create subscription if it doesnt exist
             try:  
                 try:
-                    Subscription.objects.get(item_id = item_id, email = email, phone_no = phone_number)
+                    pre_existing_sub = Subscription.objects.get(item_id = item_id, email = email)
+                    pre_existing_sub.phone_no = phone_number
+                    pre_existing_sub.save()
+
                 except:
                     Subscription(item_id = item_id, email = email, phone_no = phone_number).save()
                 return HttpResponse(201)
@@ -114,6 +117,19 @@ class GetSubscriptions(APIView):
 
         for sub in subscription_list:
             sub['name'] = MenuItem.objects.get(item_id = sub['item_id']).name
+            if sub['email']:
+                sub['email_notifications_enabled'] = True
+            else:
+                sub['email_notifications_enabled'] = False
+            
+            if sub['phone_no']: 
+                sub['phone_notifications_enabled'] = True
+            else:
+                sub['phone_notifications_enabled'] = False
+            
+            del sub['email']
+
+            del sub['phone_no']
 
         return JsonResponse({"Subscriptions": subscription_list})
 

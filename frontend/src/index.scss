@@ -52,6 +52,83 @@ body {
     }
 }
 
+.allergenModal {
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    .modal-bg {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;    
+        height: 100%;
+        background-color: #00000066;
+    }
+    .container {
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -250px 0 0 -155px;
+        background-color: white;
+        width: 310px;
+        height: 380px;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        h2 {
+            color: #990000;
+            font-size: 1.1em;
+            font-weight: 700;
+            padding-bottom: 3px;
+        }
+        ul {
+            font-size: 0.9em;
+            color: #707070;
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            span {
+                padding-right: 10px;
+            }
+        }
+        .allergen-list {
+            position: relative;
+            top: 15px;
+        }
+        .close-button {
+            position: absolute;
+            right: -8px;
+            background: none;
+            border: none;
+            color: #707070;
+            padding: 0 15px;
+            img {
+                width: 30px;
+            }
+        }
+        &.modal-open {
+            animation: openModal-1 0.3s ease;
+        }
+    }
+}
+
+@keyframes openModal-1 {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .mealSection {  
     button.meal-header {
         font-size: 0.9em;
@@ -91,48 +168,49 @@ body {
             span {
                 vertical-align: middle;
             }
-            /*** Allergen Color Codes ***/
-            .allergen-dairy {
-                color: #862aff;
-            }
-            .allergen-eggs {
-                color: #ffd82a;
-            }
-            .allergen-fish {
-                color: #348cff;
-            }
-            .allergen-peanuts {
-                color: #753e11;
-            }
-            .allergen-pork {
-                color: #ee1818;
-            }
-            .allergen-sesame {
-                color: #585151;
-            }
-            .allergen-shellfish {
-                color: #07d6c5;
-            }
-            .allergen-soy {
-                color: #c046d8;
-            }
-            .allergen-tree-nuts {
-                color: #b46703;
-            }
-            .allergen-vegan {
-                color: #2aff2a;
-            }
-            .allergen-vegetarian {
-                color: #0b9e37;
-            }
-            .allergen-gluten {
-                color: #f85e91;
-            }
-            .allergen-food-not-analyzed-for-allergens {
-                color: #000000;
-            }
         }
     }
+}
+
+/*** Allergen Color Codes ***/
+.allergen-dairy {
+    color: #862aff;
+}
+.allergen-eggs {
+    color: #ffd82a;
+}
+.allergen-fish {
+    color: #348cff;
+}
+.allergen-peanuts {
+    color: #753e11;
+}
+.allergen-pork {
+    color: #ee1818;
+}
+.allergen-sesame {
+    color: #585151;
+}
+.allergen-shellfish {
+    color: #07d6c5;
+}
+.allergen-soy {
+    color: #c046d8;
+}
+.allergen-tree-nuts {
+    color: #b46703;
+}
+.allergen-vegan {
+    color: #2aff2a;
+}
+.allergen-vegetarian {
+    color: #0b9e37;
+}
+.allergen-gluten {
+    color: #f85e91;
+}
+.allergen-food-not-analyzed-for-allergens {
+    color: #000000;
 }
 
 .dropdown-container {
@@ -201,7 +279,7 @@ body {
             z-index: 4;
             top: 74px;
             margin-top: -1px;
-            padding-top: 10px;
+            padding-top: 8px;
             height: 53px;
             position: sticky;
             border-style: solid;
@@ -224,18 +302,10 @@ body {
             vertical-align: middle;
         }
         .mealtime-icon {
-            width: 50px;
-            &.breakfast {
-                margin-bottom: -10px;
-            }
-            &.lunch {
-                margin-left: 10px;
-                width: 40px;
-            }
-            &.dinner {
-                margin-left: 10px;
-                width: 35px;
-            }
+            width: 30px;
+            position: relative;
+            left: 15px;
+            bottom: 2px;
         }
         .dropdown-icon {
                 animation: animateDownIcon-1 0.5s ease-out;
@@ -292,6 +362,7 @@ body {
         border-radius: 5px;
         width: 100%;
         padding: 2px 0;
+        box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 1.3px;
     }
     .col-5 {
         text-align: center;
