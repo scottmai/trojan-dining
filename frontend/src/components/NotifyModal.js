@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import ReactModal from 'react-modal'
 import AlertForm from './AlertForm'
 import xIcon from "../assets/icons/altx.png"
