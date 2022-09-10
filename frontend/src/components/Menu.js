@@ -36,11 +36,9 @@ export default function Menu() {
             <Header />
             {/* <NotifyModal /> */}
             <div className="container-fluid menuItems">
-                <div className="row">
-                    {menu.map(mealtime => (
-                        <MealtimeSection mealtime={mealtime} />
-                    ))}
-                </div>
+                {menu.map(mealtime => (
+                    <MealtimeSection mealtime={mealtime} />
+                ))}
             </div>
 
             <Navbar />
