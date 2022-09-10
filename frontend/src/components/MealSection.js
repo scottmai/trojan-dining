@@ -10,7 +10,7 @@ const MealSection = (props) => {
     return (
         <div className="mealSection">
             <button className="row align-items-center meal-header" onClick={toggleDropdown}>
-                <div className='col-1'>
+                <div className='col-1 justify-content-end'>
                     {(props.items.length == 0) 
                         ? ""
                         : <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />}

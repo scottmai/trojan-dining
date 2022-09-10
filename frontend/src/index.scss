@@ -14,7 +14,8 @@ body {
     background-color: #ffd82a;
 }
 
-.nav-bot {
+.nav-red {
+    box-sizing: border-box;
     z-index: 5;
     color: white;
     background-color: #C50000;
@@ -35,7 +36,6 @@ body {
          text-decoration: none;
          color: white;
          background: none;
-         border: none;
      }
     .mealtime-icon {
         height: 50px;
@@ -50,6 +50,23 @@ body {
     .mealtime {
         border-left: 1px solid #9C0000;
     }
+
+    @media (min-width: 768px) {
+        justify-content: center;
+        box-sizing: border-box;
+        width: 11%;
+        height: 100%;
+        right: 0;
+        .col, col-2 {
+            width: 100%;
+            border: none;
+        }
+        .notifications {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
 }
 
 .allergenModal {
@@ -60,7 +77,7 @@ body {
     width: 100vw;
     height: 100vh;
     .modal-bg {
-        position: fixed;
+        position: absolute;
         bottom: 0;
         right: 0;
         width: 100%;    
@@ -376,6 +393,21 @@ body {
     }
     ::-webkit-datetime-edit-text { padding: 0 0.1em; }
     ::-webkit-calendar-picker-indicator { opacity: 70%; }
+
+    @media (min-width: 768px) {
+        .btn-nav.row {
+            width: 400px;
+            margin: auto;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .container-fluid.menuItems, .header {
+        box-sizing: border-box;
+        width: 89%;
+        margin: 0;
+    }
 }
 
 .searchBar {
