@@ -3,7 +3,7 @@ import bellIcon from "../assets/icons/bell-white.png";
 
 const Navbar = () => {
     return (
-        <div className="container-fluid nav-red">
+        <div className="container-fluid nav-bot">
             <div className="row justify-content-evenly">
                 <button className="col location">Village</button>
                 <button className="col mealtime">Lunch</button>

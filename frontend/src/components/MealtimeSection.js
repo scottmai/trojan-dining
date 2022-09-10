@@ -24,7 +24,7 @@ const MealtimeSection = (props) => {
     }
 
     return (
-        <div className="mealtimeSection col nostyle">
+        <div className="mealtimeSection nostyle">
             <div className="mealtime-header row" onClick={toggleDropdown}>
                 <h1 id={props.mealtime.name.toLowerCase()} className="mealtime-title">
                     <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
