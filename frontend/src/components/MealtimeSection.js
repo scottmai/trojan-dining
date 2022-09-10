@@ -24,22 +24,20 @@ const MealtimeSection = (props) => {
     }
 
     return (
-        <div className="mealtimeSection grid-item">
-            <div className="card">
-                <button className="mealtime-header row" onClick={toggleDropdown}>
-                    <h1 id={props.mealtime.name.toLowerCase()} className="mealtime-title">
-                        <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
-                        <span>{props.mealtime.name}</span>
-                        <img className={`mealtime-icon ${props.mealtime.name.toLowerCase()}`} alt={props.mealtime.name} src={mealtimeIcon()} />
-                    </h1>
-                </button>
-                <div className={`dropdown-container ${isOpen ? 'dd-open' : 'dd-closed'}`}>
-                    {props.mealtime.dining_halls.map(function (dining_hall) {
-                        return (
-                            <DiningLocation location={dining_hall} mealtime={props.mealtime.name} />
-                        )
-                    })}
-                </div>
+        <div className="mealtimeSection col-6-lg">
+            <button className="mealtime-header row" onClick={toggleDropdown}>
+                <h1 id={props.mealtime.name.toLowerCase()} className="mealtime-title">
+                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
+                    <span>{props.mealtime.name}</span>
+                    <img className={`mealtime-icon ${props.mealtime.name.toLowerCase()}`} alt={props.mealtime.name} src={mealtimeIcon()} />
+                </h1>
+            </button>
+            <div className={`dropdown-container ${isOpen ? 'dd-open' : 'dd-closed'}`}>
+                {props.mealtime.dining_halls.map(function (dining_hall) {
+                    return (
+                        <DiningLocation location={dining_hall} mealtime={props.mealtime.name} />
+                    )
+                })}
             </div>
         </div>
     )
