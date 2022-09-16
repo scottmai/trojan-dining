@@ -37,9 +37,6 @@ body {
          color: white;
          background: none;
      }
-    .mealtime-icon {
-        height: 50px;
-    }
     .notifications {
         background-color: #EBAD09;
         img { width: 25px; }
@@ -172,6 +169,10 @@ body {
 
         .col-1 { padding-left: 3px; }
 
+        .col { padding: 0; }
+
+        .col-2 { width: 35px; }
+
         .notification-btn { height: 20px; }
         
         .allergens {
@@ -283,51 +284,61 @@ body {
 .menuItems {
     .mealtimeSection {
         background-color: white;
+        .mealtime-title, .location-title, .meal-title {
+            font-weight: 700;
+        }
         .mealtime-title {
             font-size: 1.4em;
         }
         .location-title {
             color: #990000;
-            font-size: 1.15em;
+            font-size: 1.1em;
+            padding-left: 5px;
+            margin: auto;
         }
-        .mealtime-title, .location-title, .meal-title {
-            font-weight: 700;
-        }
-        .mealtime-header {
-            z-index: 4;
-            top: 74px;
-            margin-top: -1px;
-            padding-top: 8px;
-            height: 53px;
-            position: sticky;
-            border-style: solid;
-            border-width: 1px 0;
-            border-color: #C7C7C7;
-        }
-        .location-header {
-            z-index: 3;
-            top: 126px;
-            margin-top: -1px;
-            padding-top: 6px;
-            height: 48px;
-            position: sticky;
-            border-style: solid;
-            border-width: 1px 0;
-            border-color: #C7C7C7;
+        .meal-title {
+            color: black;
+            font-size: 0.9em;
+            padding: 8px 0 8px 5px;
+            font-weight: 600;
+            line-height: 1.3em;
         }
         .mealtime-header, .location-header, .meal-header {
             background-color: white;
             vertical-align: middle;
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            border-color: #C7C7C7;
+            cursor: pointer;
+        }
+        .mealtime-header {
+            z-index: 4;
+            top: 74px;
+            padding: 13px 12px 5px;
+            position: sticky;
+            border-width: 1px 0;
+            margin-top: -1px;
+        }
+        .location-header {
+            z-index: 3;
+            top: 128px;
+            padding: 8px 12px;
+            position: sticky;
+        }
+        .meal-header {
+            padding: 0 12px;
         }
         .mealtime-icon {
-            width: 30px;
+            width: auto;
+            height: 35px;
             position: relative;
-            left: 15px;
             bottom: 2px;
         }
         .dropdown-icon {
-                animation: animateDownIcon-1 0.5s ease-out;
-                margin-right: 5px;
+            animation: animateDownIcon-1 0.5s ease-out;
+            width: 30px;
+            height: 30px;
+            padding: 0;
             &.closed {
                 animation: animateDownIcon-2 0.5s ease-out;
                 transform: rotate(-180deg) translateY(5px);

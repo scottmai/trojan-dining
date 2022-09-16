@@ -2,8 +2,8 @@ import bellIcon from "../assets/icons/bell-gray.png";
 
 const MealItem = (props) => (
     <div className="row mealItem align-items-center">
-        <div className="col-1"></div>
-        <div className="col-7">{props.name}</div>
+        <div className="col-2"></div>
+        <div className="col">{props.name}</div>
         <div className="col-3 allergens">
             {(props.allergens.length == 0) 
                 ? <span></span>

@@ -26,11 +26,9 @@ const MealtimeSection = (props) => {
     return (
         <div className="mealtimeSection">
             <div className="mealtime-header row" onClick={toggleDropdown}>
-                <h1 id={props.mealtime.name.toLowerCase()} className="mealtime-title">
-                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
-                    <span>{props.mealtime.name}</span>
-                    <img className={`mealtime-icon ${props.mealtime.name.toLowerCase()}`} alt={props.mealtime.name} src={mealtimeIcon()} />
-                </h1>
+                <img className={`col-2 dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
+                <h1 id={props.mealtime.name.toLowerCase()} className="col-auto mealtime-title">{props.mealtime.name}</h1>
+                <img className={`col-auto mealtime-icon ${props.mealtime.name.toLowerCase()}`} alt={props.mealtime.name} src={mealtimeIcon()} />
             </div>
             <div className={`row dropdown-container ${isOpen ? 'dd-open' : 'dd-closed'}`}>
                 {props.mealtime.dining_halls.map(function (dining_hall) {
