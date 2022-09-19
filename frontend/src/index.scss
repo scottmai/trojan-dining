@@ -1,17 +1,26 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
-body {
+body, html {
     margin: 0;
     padding: 0;
     margin-bottom: 59px;
     font-family: Roboto, sans-serif;
-    overflow-x: none;
+    overflow: none;
     scroll-behavior: smooth;
 }
 
 ::selection {
     background-color: #ffd82a;
+}
+
+.hover-btn {
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    &:hover {
+        background-color: lightgray;
+    }
 }
 
 .nav-red {
