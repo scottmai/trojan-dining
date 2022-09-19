@@ -1,23 +1,31 @@
 import React, {useState} from "react";
-import Form from "react-bootstrap/Form";
+import Moment from 'moment';
+import AllergenModal from './AllergenModal';
 
-const Header = ({locationName}) => {
-    const today = new Date();
-    const [displayDate, setDisplayDate] = useState(today);
+const Header = () => {
+    const [startDate, setStartDate] = useState(new Date());
+    const [showAllergenModal, setAllergenModal] = useState(false);
+    Moment.locale('en');
+
+    const toggleAllergenModal = () => setAllergenModal(!showAllergenModal);
+
     return (
-        <div className="header row">
-            <h2 className="col-7">{locationName}</h2>
-            <div className="col-5 date-picker">
-                <Form.Group controlId="menu_date" size="sm">
-                <Form.Control
-                    type="date"
-                    name="menu_date"
-                    value={displayDate.getDate}
-                    defaultValue={today.getDate}
-                    onChange={(e) => setDisplayDate(e)}
-                />
-                </Form.Group>
+        <div className="header">
+            <div className="container-fluid">
+                <div className="row justify-content-center align-items-center">
+                    <h5 className="col text-center header-title">Trojan Dining</h5>
+                </div>
+                <div className="row btn-nav justify-content-center">
+                    <div className="datepicker col-4">
+                        <input type="date" id="datepicker" name="meal-date"
+                            value={Moment(startDate).format('YYYY-MM-DD')} min={Moment(startDate).format('YYYY-MM-DD')} />
+                    </div>
+                    <div className="legend col-4">
+                        <button onClick={toggleAllergenModal}>Allergen Key</button>
+                    </div>
+                </div>
             </div>
+            <AllergenModal onClose={toggleAllergenModal} show={showAllergenModal} />
         </div>
     );
 }

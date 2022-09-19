@@ -9,7 +9,7 @@ import {
 
 const App = () => {
     return (
-        <div className="App" >
+        <div className="App nostyle">
             <BrowserRouter>
                 <Routes>
                     <Route path="/subscriptions/" element={<SubscriptionsPage />} />
