@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Navbar from './Navbar';
-import SearchBar from './SearchBar'
 import axios from 'axios';
 import MealtimeSection from './MealtimeSection';
 import NotifyModal from './NotifyModal';
@@ -33,17 +32,19 @@ export default function Menu() {
         return <div>No items 🤔</div>
     }
     return (
-        <div className="menu nostyle">
-            <Header />
-            <div className="container-fluid menuItems">
-                <div className='row'>
-                    {menu.map(mealtime => (
-                        <MealtimeSection mealtime={mealtime} />
-                    ))}
+        <SelectItemProvider>
+            <div className="menu nostyle">
+                <Header />
+                <div className="container-fluid menuItems">
+                    <div className='row'>
+                        {menu.map(mealtime => (
+                            <MealtimeSection mealtime={mealtime} />
+                        ))}
+                    </div>
+                    <Navbar />
+                    <NotifyModal />
                 </div>
-                <Navbar />
-                <NotifyModal />
             </div>
-        </div>
+        </SelectItemProvider>
     )
 }
