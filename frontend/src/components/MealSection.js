@@ -9,14 +9,12 @@ const MealSection = (props) => {
 
     return (
         <div className="mealSection">
-            <button className="row align-items-center meal-header" onClick={toggleDropdown}>
-                <div className='col-1'>
-                    {(props.items.length === 0)
-                        ? ""
-                        : <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />}
-                </div>
-                <span className='meal-title col-11'>{props.stations}</span>
-            </button>
+            <div className="row align-items-center meal-header" onClick={toggleDropdown}>
+                {(props.items.length == 0)
+                    ? <div className='col-2 dropdown-icon'></div>
+                    : <img className={`dropdown-icon ${isOpen ? '' : 'closed'} col-2`} src={dropdownIcon} alt="dropdown" />}
+                <span className='meal-title col'>{props.stations}</span>
+            </div>
 
             {/* TODO: Possiby turn allergen colors into tooltip */}
             <div className={`dropdown-container ${isOpen ? 'dd-open' : 'dd-closed'}`}>

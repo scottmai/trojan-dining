@@ -7,10 +7,10 @@ const MealItem = ({ item }) => {
     const [, setSelectedItem] = useContext(SelectItemContext);
     return (
         <div className="row mealItem align-items-center">
-            <div className="col-1"></div>
+            <div className="col-2"></div>
             <div className="col">{name}</div>
             <div className="col-3 allergens">
-                {(allergens.length === 0)
+                {(allergens.length == 0)
                     ? <span></span>
                     : allergens.map((allergen) => <span className={"allergen-" + allergen.name.toLowerCase()}>&#11044;</span>)
                 }

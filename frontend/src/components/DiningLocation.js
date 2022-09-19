@@ -8,12 +8,10 @@ const DiningLocation = (props) => {
     const toggleDropdown = () => setIsOpen(!isOpen);
 
     return (
-        <div className="diningLocation nostyle">
+        <div className="diningLocation col-md-4">
             <div className="location-header row" onClick={toggleDropdown}>
-                <h2 className="location-title">
-                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'}`} src={dropdownIcon} alt="dropdown" />
-                    <span>{props.location.name}</span>
-                </h2>
+                    <img className={`dropdown-icon ${isOpen ? '' : 'closed'} col-2`} src={dropdownIcon} alt="dropdown" />
+                    <h2 className='location-title col'>{props.location.name}</h2>
             </div>
             <div className={`dropdown-container ${isOpen ? 'dd-open' : 'dd-closed'}`}>
                 {props.location.stations.map(station => (
