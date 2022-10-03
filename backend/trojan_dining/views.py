@@ -110,14 +110,9 @@ class PostSubscription(APIView):
                     pre_existing_sub.phone_no = phone_number
                     pre_existing_sub.save()
                 except Exception as e1:
-                    print("b")
-                    print(e1)
                     Subscription(item_id = item_id, email = email, phone_no = phone_number, email_enabled = email_enabled).save()
-                    print("c")
                 return HttpResponse(status = 201)
             except Exception as e2:
-                print("a")
-                print(e2)
                 return HttpResponse(status = 500)
 
 class GetSubscriptions(APIView):
