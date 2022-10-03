@@ -24,3 +24,5 @@ yarn-error.log*
 
 # because we use yarn
 package-lock.json 
+
+.nvmrc

@@ -1,39 +1,39 @@
-import React, {useState} from 'react';
-import ReactModal from 'react-modal';
-import Modal from 'react-modal';
+import React, { useContext } from 'react'
+import ReactModal from 'react-modal'
 import AlertForm from './AlertForm'
-
-const customStyles = {
-    overlay: {
-        zIndex: 8,
-        background: 'rgba(0, 0, 0, 0.80)',
-    },
-    content: {
-        margin: 'auto'
-    }
-};
+import xIcon from "../assets/icons/altx.png"
+import { SelectItemContext } from "./SelectItemContext";
 
 ReactModal.setAppElement('#root');
 
-function NotifyModal() {
-      const [modalIsOpen, setModalIsOpen] = useState(false)
-      return (
-       <div className="notify-modal">
-            <button className="notify-btn" onClick={() => setModalIsOpen(true)}>Notify Me!</button>
-            <Modal 
-                isOpen={modalIsOpen} 
-                onRequestClose={() => setModalIsOpen(false)} 
-                style={customStyles}
+const NotifyModal = () => {
+    const [selectedItem, setSelectedItem] = useContext(SelectItemContext);
+    if (selectedItem == null) {
+        return null
+    }
+    return (
+        <div className="notify-modal">
+            <ReactModal
+                isOpen={selectedItem != null}
+                onRequestClose={() => setSelectedItem(null)}
+                className="Modal"
+                overlayClassName="Overlay"
+                closeTimeoutMS={200}
             >
-                <button className="close-btn" onClick={() => setModalIsOpen(false)}>X</button>
-                <div>
-                    <h3>Want to get updated?</h3>
-                    <p>Sign up to get alerts every time your favorite meal is featured at the dining hall!</p>
+                <div className="position-absolute top-0 end-0">
+                    <button className="close-btn" onClick={() => setSelectedItem(null)}>
+                        <img className="xIcon" src={xIcon} alt="close button"></img>
+                    </button>
                 </div>
-                <AlertForm/>
-            </Modal>
+                <div>
+                    <h5 className="modalTitle mb-0">Get notified for {selectedItem.name}?</h5>
+                    <small className="text-muted mb-3 mt-0">Please fill out at least one field.</small>
+                </div>
+                <AlertForm />
+            </ReactModal>
         </div>
     )
 }
 
 export default NotifyModal;
+

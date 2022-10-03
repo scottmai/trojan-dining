@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Navbar from './Navbar';
-import SearchBar from './SearchBar'
 import axios from 'axios';
-import NotifyModal from './NotifyModal'
 import MealtimeSection from './MealtimeSection';
+import NotifyModal from './NotifyModal';
+import { SelectItemProvider } from './SelectItemContext';
 
 export default function Menu() {
     const [menu, setMenu] = useState(null);
@@ -13,8 +13,7 @@ export default function Menu() {
 
         try {
             async function fetchMenu() {
-                // TODO: change this to current day once backend issues are resolved
-                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/?date=2022-07-30')
+                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/?date=2022-08-25')
                 if (menuRes.statusText === "OK") {
                     setMenu(menuRes.data.Menu.meals)
                     console.log(menuRes.data.Menu.meals)
@@ -26,25 +25,26 @@ export default function Menu() {
             console.log(e)
         }
     }, []);
+
     if (menu == null) {
         return <div>Loading...</div>
     } else if (menu.length === 0) {
         return <div>No items 🤔</div>
     }
     return (
-        <div>
-            <NotifyModal />
-            <div className="container-fluid top-navbar">
-                <SearchBar />
-                <Header locationName={menu[0].dining_halls[0].name} />
+        <SelectItemProvider>
+            <div className="menu nostyle">
+                <Header />
+                <div className="container-fluid menuItems">
+                    <div className='row'>
+                        {menu.map(mealtime => (
+                            <MealtimeSection mealtime={mealtime} />
+                        ))}
+                    </div>
+                    <Navbar />
+                    <NotifyModal />
+                </div>
             </div>
-            <div className="container-fluid menuItems">
-                {menu.map(mealtime => (
-                    <MealtimeSection mealtime={mealtime} />
-                ))}
-            </div>
-
-            <Navbar />
-        </div>
+        </SelectItemProvider>
     )
 }
