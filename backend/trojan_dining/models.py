@@ -57,4 +57,5 @@ class Subscription(models.Model):
     item_id = models.UUIDField(max_length = 32, default = None)
     email = models.CharField(max_length = 100, default = None)
     phone_no = models.CharField(max_length = 100, default = None)
+    email_enabled = models.BooleanField(default = False)
     

@@ -56,6 +56,7 @@ class GetMenu(APIView):
 
         # get the menu from that date
         try:
+            print(datetime.datetime.date(date))
             retrieved_menu = retrieve_menu(datetime.datetime.date(date))
         except:
             scrubed_site = scrub_web(date)
@@ -96,24 +97,36 @@ class PostSubscription(APIView):
                 if (not re.fullmatch(rgx_phone, phone_number)):
                     return HttpResponse(status = 400)
 
+            # check if email is enabled
+            email_enabled = request.POST.get('email_enabled', False)
+            email_enabled = email_enabled == 'True'
+
+            print(f"{email_enabled} {type(email_enabled)}")
+
             # create subscription if it doesnt exist
             try:  
                 try:
-                    pre_existing_sub = Subscription.objects.get(item_id = item_id, email = email)
+                    pre_existing_sub = Subscription.objects.get(item_id = item_id, email = email, email_enabled = email_enabled)
                     pre_existing_sub.phone_no = phone_number
                     pre_existing_sub.save()
-
-                except:
-                    Subscription(item_id = item_id, email = email, phone_no = phone_number).save()
-                return HttpResponse(201)
-            except:
-                return HttpResponse(500)
+                except Exception as e1:
+                    print("b")
+                    print(e1)
+                    Subscription(item_id = item_id, email = email, phone_no = phone_number, email_enabled = email_enabled).save()
+                    print("c")
+                return HttpResponse(status = 201)
+            except Exception as e2:
+                print("a")
+                print(e2)
+                return HttpResponse(status = 500)
 
 class GetSubscriptions(APIView):
     def get(self, request):
         user_email = request.GET.get('email')
         
         subscription_list = list(Subscription.objects.filter(email = user_email).values())
+
+        print(subscription_list)
 
         for sub in subscription_list:
             sub['name'] = MenuItem.objects.get(item_id = sub['item_id']).name

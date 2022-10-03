@@ -4,7 +4,6 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
 def send_email_alert(association_map, email_address):
-
     # for Scott
     def construct_email_notification():
         res = ""
