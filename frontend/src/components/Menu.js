@@ -5,6 +5,7 @@ import axios from 'axios';
 import MealtimeSection from './MealtimeSection';
 import NotifyModal from './NotifyModal';
 import { SelectItemProvider } from './SelectItemContext';
+import Preloader from './Preloader';
 
 export default function Menu() {
     const [menu, setMenu] = useState(null);
@@ -27,7 +28,7 @@ export default function Menu() {
     }, []);
 
     if (menu == null) {
-        return <div>Loading...</div>
+        return <Preloader />
     } else if (menu.length === 0) {
         return <div>No items 🤔</div>
     }
