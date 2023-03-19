@@ -469,14 +469,11 @@ body, html {
 
 .Modal{
     position: absolute;
-    min-height: 380px;
-    min-width: 300px;
-    max-height: 70vh;
-    max-width: 70vw;
+    width: max(300px, 32vw);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px;
+    padding: 40px 30px;
     background: white;
 }
 
@@ -510,7 +507,6 @@ body, html {
 }
 
 .subscribeBtn {
-    margin-right: 30px;
     padding: 5px 22px;
     border-radius: 16px;
     border: none;

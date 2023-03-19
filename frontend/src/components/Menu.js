@@ -9,7 +9,7 @@ import Preloader from './Preloader';
 
 export default function Menu() {
     let menu = null;
-    let date = new Date('2022-10-25');
+    let date = new Date('2022-01-18');
     // let date = new Date();
 
     function formatDate(date)
