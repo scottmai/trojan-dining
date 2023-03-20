@@ -11,7 +11,7 @@ const EmailForm = ({ initialEmail, onUpdateEmail }) => {
     }
     return (
         <form className="email-form" onSubmit={handleSubmit}>
-            <span>Please enter your email to access notification settings</span>
+            <span>Enter your email to access notification settings:</span>
             <input
                 className="email-input"
                 type="email"
@@ -20,7 +20,7 @@ const EmailForm = ({ initialEmail, onUpdateEmail }) => {
                 onChange={handleChange}
             />
             <div className="d-flex justify-content-end">
-                <button className="btn btn-primary" type="submit">Submit</button>
+                <button className="btn" type="submit">Submit</button>
             </div>
         </form>
     )
