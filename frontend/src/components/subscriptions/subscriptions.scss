@@ -45,8 +45,13 @@
                 color: white;
                 background-color: #C50000;
                 border: none;
+                border-radius: 24px;
+                padding: 6px 16px;
             }
-            padding: 0 28px;
+            @media (max-width: 768px)
+            {
+                padding-right: 28px;
+            }
         }
     }
 
