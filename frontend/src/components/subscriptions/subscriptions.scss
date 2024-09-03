@@ -3,12 +3,12 @@
         display: flex;
         align-items: center;
         padding: 16px 0;
-        border-bottom: 1px solid #C7C7C7;
+        box-shadow: 0 0 3px 0 #00000060;
         .back-btn {
-            padding: 16px;
+            padding: 0 16px;
         }
         .title {
-            color: gray;
+            color: black;
             font-size: 24px;
             font-weight: 600;
         }
@@ -19,7 +19,6 @@
     }
     .subscriptions-content {
         margin: auto;
-        padding: 0 16px;
         width: 100%;
         @media (min-width: 768px) {
             & {
@@ -34,20 +33,50 @@
             justify-content: space-between;
             align-self: center;
             border-bottom: 1px solid #C7C7C7;
-            padding: 4px 0;
+            padding: 6px 0;
         }
         .list-header {
-            padding: 8px 0;
+            padding: 12px 0;
+        }
+        .unsubscribe
+        {
+            .btn
+            {
+                color: white;
+                background-color: #C50000;
+                border: none;
+                border-radius: 24px;
+                padding: 6px 16px;
+            }
+            @media (max-width: 768px)
+            {
+                padding-right: 28px;
+            }
         }
     }
 
     .email-form{
+        margin-top: 32px;
+        padding: 0 28px;
         .email-input {
             width: 100%;
             padding: 8px;
-            border: 1px solid #C7C7C7;
-            border-radius: 4px;
+            border-radius: 8px;
+            border: none;
             margin: 8px 0;
+        }
+        input[type="email"].email-input
+        {
+            background-color: #ececec;
+            padding: 8px 16px;
+        }
+        .btn
+        {
+            border-radius: 24px;
+            padding: 6px 24px;
+            color: white;
+            background-color: #C50000;
+            margin-top: 8px;
         }
     }
 

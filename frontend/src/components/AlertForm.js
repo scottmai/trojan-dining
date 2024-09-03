@@ -44,7 +44,9 @@ export default function AlertForm() {
                 <label for="userPhone" className="text-muted">Phone</label>
                 <input type="tel" onChange={inputPhone} className="form-control" id="tel" name="tel" aria-describedby="phoneForm" placeholder="123-456-7890" pattern="^\d{3}\d{3}\d{4}$" />
             </div>
-            <button type="submit" className="btn subscribeBtn mt-4 position-absolute end-0" onClick={handleSubmit}>Subscribe</button>
+            <div className="form-group d-flex justify-content-end">
+                <button type="submit" className="btn subscribeBtn mt-4 end-0" onClick={handleSubmit}>Subscribe</button>
+            </div>
         </form>
     )
 }

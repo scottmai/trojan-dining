@@ -25,10 +25,10 @@ const SubscriptionsPage = () => {
         <div className="subscriptions">
             <div className="subscriptions-header">
                 <Link to="/" className="back-btn">
-                    <img src={chevronLeft} alt="icon" width="28" />
+                    <img src={chevronLeft} alt="icon" width="24" />
                 </Link>
                 <div>
-                    <div className="title">Notifications settings</div>
+                    <div className="title">Notification Settings</div>
                     <div className="user-email" onClick={handleUserEmailClick}>
                         {userEmail}
                     </div>

@@ -1,46 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react'
+import { useCacheFetch } from '../cache-hook'
 import Header from './Header';
 import Navbar from './Navbar';
-import axios from 'axios';
 import MealtimeSection from './MealtimeSection';
 import NotifyModal from './NotifyModal';
 import { SelectItemProvider } from './SelectItemContext';
 import Preloader from './Preloader';
 
 export default function Menu() {
-    const [menu, setMenu] = useState(null);
+    let menu = null;
+    let date = new Date();
 
-    useEffect(() => {
-
-        try {
-            async function fetchMenu() {
-                const menuRes = await axios.get('https://trojan-dining.herokuapp.com/menu/?date=2022-08-25')
-                if (menuRes.statusText === "OK") {
-                    setMenu(menuRes.data.Menu.meals)
-                    console.log(menuRes.data.Menu.meals)
-                }
-            }
-            fetchMenu()
-        }
-        catch (e) {
-            console.log(e)
-        }
-    }, []);
-
-    if (menu == null) {
-        return <Preloader />
-    } else if (menu.length === 0) {
-        return <div>No items 🤔</div>
+    function formatDate(date)
+    {
+        var year = date.toLocaleString("default", { year: "numeric" });
+        var month = date.toLocaleString("default", { month: "2-digit" });
+        var day = date.toLocaleString("default", { day: "2-digit" });
+        return year + "-" + month + "-" + day;
     }
+
+    const { status, data, error } = useCacheFetch(formatDate(date));
+    
+    // console.log(menu);
+
+    if (status === 'fetching') {
+        return <Preloader />
+    }
+    else if (status === 'fetched') {
+        menu = data;
+    }
+    else if (status === 'error') {
+        return <div>Error: {error}</div>
+    }
+    if (menu === null) {
+        return <Preloader />
+        // return <div>No items 🤔.</div>
+    }
+    
     return (
         <SelectItemProvider>
             <div className="menu nostyle">
                 <Header />
                 <div className="container-fluid menuItems">
                     <div className='row'>
-                        {menu.map(mealtime => (
+                        {menu.Menu.meals.map(mealtime => (
                             <MealtimeSection mealtime={mealtime} />
-                        ))}
+                        ))
+                        }
                     </div>
                     <Navbar />
                     <NotifyModal />

@@ -97,8 +97,8 @@ const SubscriptionsList = () => {
                 </div> */}
                 </div>
             ))}
-            <div className="d-flex justify-content-end pt-4">
-                <button className="btn btn-danger" disabled={selectedItems.length === 0} onClick={handleUnsubscribe}>
+            <div className="unsubscribe d-flex justify-content-end pt-4">
+                <button className="btn" disabled={selectedItems.length === 0} onClick={handleUnsubscribe}>
                     {getUnsubscribeButtonText()}
                 </button>
             </div>

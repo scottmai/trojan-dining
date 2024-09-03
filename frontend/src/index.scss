@@ -4,7 +4,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    margin-bottom: 59px;
+    // margin-bottom: 59px;
     font-family: Roboto, sans-serif;
     overflow: none;
     scroll-behavior: smooth;
@@ -35,10 +35,13 @@ body, html {
     font-size: 0.9em;
     height: 45px;
 
-    button {
-        background: none;
-        border: none;
+    div.nav-link {
         color: inherit;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
         height: 45px;
     }
 
@@ -51,13 +54,6 @@ body, html {
         background-color: #EBAD09;
         img { width: 25px; }
     }
-    .location {
-        border-right: 1px solid #9C0000;
-    }
-    .mealtime {
-        border-left: 1px solid #9C0000;
-    }
-
     @media (min-width: 768px) {
         justify-content: center;
         box-sizing: border-box;
@@ -473,14 +469,11 @@ body, html {
 
 .Modal{
     position: absolute;
-    min-height: 380px;
-    min-width: 300px;
-    max-height: 70vh;
-    max-width: 70vw;
+    width: max(300px, 32vw);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px;
+    padding: 40px 30px;
     background: white;
 }
 
@@ -514,9 +507,8 @@ body, html {
 }
 
 .subscribeBtn {
-    margin-right: 30px;
     padding: 5px 22px;
-    border-radius: 10px;
+    border-radius: 16px;
     border: none;
     background: #C50000;
     color: #fff;
@@ -531,12 +523,13 @@ body, html {
 
 .close-btn {
     background: none;
+    padding: 10px;
     border: none;
 }
 
 .xIcon {
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
 }
 
 .preloader {
